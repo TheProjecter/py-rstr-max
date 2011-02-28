@@ -12,7 +12,16 @@ def leq2(a1,a2,b1,b2) :
 
 def leq3(a1,a2,a3,b1,b2,b3) :
   return (a1 < b1 or (a1 == b1 and leq2(a2,a3,b2,b3)))
-    
+
+def simple_kark_sort(s):
+  print repr(s)
+  n = len(s)
+  s += (unichr(1) * 3)
+  SA = [0 for _ in s]
+  alpha = sorted(set(s))
+  kark_sort(s, SA, n, alpha)
+  return SA
+
 def kark_sort(s, SA, n, alpha) :
   n0 = int((n+2)/3)
   n1 = int((n+1)/3)

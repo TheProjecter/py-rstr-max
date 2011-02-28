@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import tools_karkkainen_sanders as tools
+
 class SubString:
   def __init__(self, _str, start, length, direction=1):
     self._str = _str
@@ -35,34 +37,24 @@ class SubString:
 def pick(s):
   return iter(s).next()
 
-def longestPrefix(subString1, subString2):
-    minLength = min(len(subString1), len(subString2))
-    for i in xrange(minLength):
-      if subString1[i] != subString2[i]:
-        return i
-    return minLength
-
 def getSuffixes(_str):
   n = len(_str)
   return [SubString(_str, i, n-i) for i in xrange(n)]
 
+def simple_kark_sort(s):
+  n = len(s)
+  SA = [0 for _ in s]
+  s += unichr(1) * 3
+  alpha = sorted(set(s))
+  tools.kark_sort(s, SA, n, alpha)
+  return SA
+
 def getSortedSuffixes(suffixes):
+  s = str(suffixes[0])
+  n = len(s)
+  result = []
+  return [SubString(s, v, n-v) for v in simple_kark_sort(s)]
   return sorted(suffixes)
-
-def getSortedPrefixes(_str):
-  n = len(_str)
-  return sorted(SubString(_str, 0, i+1) for i in xrange(n))
-
-#def getLongestPrefixes(_str, sortedAffixes):
-#  iterSortedAffixes = iter(sortedAffixes)
-#  prev = iterSortedAffixes.next()
-#  lst = []
-#  for idx, current in enumerate(iterSortedAffixes):
-#    len_ = longestPrefix(current, prev)
-#    #print "$$$$", current[:len_], prev, current
-#    lst.append((idx, len_, max(current._start+len_, prev._start+len_)))
-#    prev = current
-#  return lst
 
 def getLongestPrefixes(affixes, sortedAffixes):
   n = len(affixes)
@@ -164,26 +156,26 @@ def test():
     'aaaa',
     'bbaaabb',
     'baaab',
-    'azerty',
+    #'azerty',
     'je suis content que ca fonctionne',
     ]
-#  bench = ['a'*(2**i) for i in xrange(16)]
-#  bench = ["totortoto"]
+  bench = ['a'*(2**i+8) for i in xrange(20)]
+  #bench = ["totortoto"]
   for s in bench:
     print '<start :'
     suffixes = getSuffixes(s)
-    sortedSuffixes = getSortedSuffixes(suffixes)
     import time
     t= time.time()
+    sortedSuffixes = getSortedSuffixes(suffixes)
     longestPrefixes = getLongestPrefixes(suffixes, sortedSuffixes)
     results = getRepeatedStrings(sortedSuffixes, longestPrefixes)
     print len(s), '->', time.time() - t 
-    #print s
+    #print repr(s)
     #print sortedSuffixes
     #print longestPrefixes
-    for ((end, nb), l) in results.iteritems():
-      print repr(SubString(s, end-l, l)), '*', nb, ',',
-    print 
+    #for ((end, nb), l) in results.iteritems():
+    #  print repr(SubString(s, end-l, l)), '*', nb, ',',
+    #print 
     print '>stop'
 
 def main():
