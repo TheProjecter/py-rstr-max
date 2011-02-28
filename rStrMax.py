@@ -137,7 +137,6 @@ def getRepeatedStrings(sortedAffixes, longestPrefixes):
     id_ = (end_, stop-start+1)
     v = results.get(id_, 0)
     results[id_] = max(v, len_)
-    #results.append((len_, start, stop))
   stack = Stack(fct)
   prev = sortedAffixes[0]
   prev_len = 0
@@ -165,10 +164,10 @@ def test():
     'aaaa',
     'bbaaabb',
     'baaab',
-    #'azerty',
-    #'je suis content que ca fonctionne',
+    'azerty',
+    'je suis content que ca fonctionne',
     ]
-  bench = ['a'*(2**i) for i in xrange(16)]
+#  bench = ['a'*(2**i) for i in xrange(16)]
 #  bench = ["totortoto"]
   for s in bench:
     print '<start :'
@@ -178,13 +177,13 @@ def test():
     t= time.time()
     longestPrefixes = getLongestPrefixes(suffixes, sortedSuffixes)
     results = getRepeatedStrings(sortedSuffixes, longestPrefixes)
+    print len(s), '->', time.time() - t 
     #print s
     #print sortedSuffixes
     #print longestPrefixes
-    #for ((end, nb), l) in results.iteritems():
-    #  print str(SubString(s, end-l, l)), '*', nb, ',',
-    #print 
-    print len(s), '->', time.time() - t 
+    for ((end, nb), l) in results.iteritems():
+      print repr(SubString(s, end-l, l)), '*', nb, ',',
+    print 
     print '>stop'
 
 def main():
