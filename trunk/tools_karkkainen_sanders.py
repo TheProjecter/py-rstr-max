@@ -40,7 +40,7 @@ def kark_sort(s, SA, n, alpha) :
 ##end moditication
 
   s12.extend([0,0,0])
-  s_2 = s[2:]
+#  s_2 = s[2:]
 
   radixpass(s12, SA12, s[2:], n02, alpha)
   radixpass(SA12, s12, s[1:], n02, alpha)
