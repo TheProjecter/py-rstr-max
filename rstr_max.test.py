@@ -17,18 +17,15 @@ str1_unicode = unicode(str1,'utf-8','replace')
 
 rstr = Rstr_max()
 rstr.add_str(str1_unicode)
-rstr.add_str(str1_unicode)
-rstr.add_str(str1_unicode)
-rstr.add_str(str1_unicode)
 array_repeated = rstr.go()
 
-print "str length nb_occur"
-for r in array_repeated :
-  first_suffix = rstr.get_suffix(r[1][0])
-  global_str = rstr.get_str(first_suffix[2])
-  l = first_suffix[0] + r[0]
-  s = global_str[first_suffix[0]:l].encode('utf-8', 'replace')
-  print "[%s] %d %d"%(s, r[0], len(r[1])) 
+#print "str length nb_occur"
+#for r in array_repeated :
+#  first_suffix = rstr.get_suffix(r[1][0])
+#  global_str = rstr.get_str(first_suffix[2])
+#  l = first_suffix[0] + r[0]
+#  s = global_str[first_suffix[0]:l].encode('utf-8', 'replace')
+#  print "[%s] %d %d"%(s, r[0], len(r[1])) 
 
 #    foreach($rstr[1] as $id_su){
 #      $suffix = $factory_rstr->__get_suffix($id_su);

@@ -5,13 +5,6 @@ from tools_karkkainen_sanders import *
 from suffix_array import *
 from string import *
 
-def reverse_string(s) :
-  return s[::-1]
-
-def array_merge(a1,a2) :
-  a1.extend(a2)
-  return a1
-
 def does_include(s1, s2) :
   return (s1[0] + s1[1] >= s2[0] + s2[1] and s1[0] <= s2[0])
 
@@ -23,11 +16,9 @@ class Rstr_max :
     self.array_suffix = []
     self.array_str = []
     self.global_equiv = []
-    self.global_equiv_rev = []
 
     self.distrib_corres = []
     self.distrib = {}
-    pass
 
   def get_suffix(self,i) :
     return self.array_suffix[i]
@@ -45,39 +36,40 @@ class Rstr_max :
     self.array_str.append(str_unicode)
     id_str = len(self.array_str) - 1
     len_str = len(str_unicode)
-    for i,s in enumerate(str_unicode) :
-      suffix = (i, len_str-i, id_str)
-      self.array_suffix.append(suffix)
+#    for i,s in enumerate(str_unicode) :
+    for i in xrange(len_str) :
+      self.array_suffix.append((i, len_str-i, id_str))
+#      suffix = (i, len_str-i, id_str)
 
     self.global_equiv.append(str_unicode)
 #    l_str_rev_unicode = [reverse_string(str_unicode)]
-    l_str_rev_unicode = [str_unicode[::-1]]
-    l_str_rev_unicode.extend(self.global_equiv_rev)   
-#    self.global_equiv_rev = array_merge([str_rev_unicode], self.global_equiv_rev)
-    self.global_equiv_rev = l_str_rev_unicode
 
-  def step_1_sort_suffix(self) :
-    caractere_frontier = chr(2)
-    caractere_final = chr(1)
+#    self.global_equiv_rev = array_merge([str_rev_unicode], self.global_equiv_rev)
+#    l_str_rev_unicode = [str_unicode[::-1]]
+#    l_str_rev_unicode.extend(self.global_equiv_rev)   
+#    self.global_equiv_rev = l_str_rev_unicode
+
+  def step1_sort_suffix(self) :
+    char_frontier = chr(2)
+    char_final = chr(1)
     global_suffix = ''
 
     x = k = 0
-    for id_suffix,mot in enumerate(self.global_equiv) :
+    for mot in self.global_equiv :
       global_suffix += mot
       for l in mot :
         self.distrib_corres.append(k)
         self.distrib[k] = x
         k += 1
         x += 1
-      global_suffix += caractere_frontier
+      global_suffix += char_frontier
       k +=1
 
-    rev = reverse_string(global_suffix)
-    global_suffix_rev = rev[1:] + caractere_frontier
+    global_suffix_rev = global_suffix[::-1] + char_frontier
 
     self.n = len(global_suffix)
-    global_suffix += caractere_final*3
-    global_suffix_rev += caractere_final*3
+    global_suffix += char_final*3
+    global_suffix_rev += char_final*3
 
     alphabet = lst_char(global_suffix)
 
@@ -143,7 +135,8 @@ class Rstr_max :
     if mini > 0 :
       pos = [i for i in xrange(b-1,e)]
       beg = self.SA[b-1]
-      corres = self.n - (self.distrib_corres[beg] + mini - 1) - 2
+#      corres = self.n - (self.distrib_corres[beg] + mini - 1) - 2
+      corres = self.n - self.distrib_corres[beg] - mini - 1
       self.array_repeated.append(pos)
       cpt = len(self.array_repeated) - 1
       if not self.corres_su_pre.has_key(corres) :
@@ -188,7 +181,7 @@ class Rstr_max :
     self.array_repeated = sort_list
 
   def go(self) :
-    self.step_1_sort_suffix()
+    self.step1_sort_suffix()
     k = self.step2_lcp()
     self.step3_rstr(k)
     self.step4_rstr_max()
