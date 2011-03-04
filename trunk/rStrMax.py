@@ -168,7 +168,7 @@ def test():
   #bench = ['a'*(2**i) for i in xrange(10, 21)]
   #bench = ["totortoto"]
   s = open('Python.htm').read()
-  s = unicode(s, "utf-8", 'replace')[:100000]
+  s = unicode(s, "utf-8", 'replace')[:10000]
   
   bench = [s]
   for s in bench:

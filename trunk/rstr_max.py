@@ -193,7 +193,7 @@ if (__name__ == '__main__') :
   limit_recur = sys.getrecursionlimit()
   sys.setrecursionlimit(600000)
   str1 = open('Python.htm','r').read()
-  s = unicode(str1,'utf-8','replace')[:100000]
+  s = unicode(str1,'utf-8','replace')[:10000]
   
   rstr = Rstr_max()
   rstr.add_str(s)
