@@ -1,0 +1,1274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="fr" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Python (langage) - Wikipédia</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="generator" content="MediaWiki 1.17wmf1" />
+<link rel="alternate" type="application/x-wiki" title="Modifier" href="/w/index.php?title=Python_(langage)&amp;action=edit" />
+<link rel="edit" title="Modifier" href="/w/index.php?title=Python_(langage)&amp;action=edit" />
+<link rel="apple-touch-icon" href="http://fr.wikipedia.org/apple-touch-icon.png" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipédia (fr)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://fr.wikipedia.org/w/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de Wikipédia" href="/w/index.php?title=Sp%C3%A9cial:Modifications_r%C3%A9centes&amp;feed=atom" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/fr.wikipedia.org/load.php?debug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%7Cmediawiki.legacy.shared%7Cskins.vector&amp;only=styles&amp;skin=vector" type="text/css" media="all" />
+<meta name="ResourceLoaderDynamicStyles" content="" /><link rel="stylesheet" href="http://bits.wikimedia.org/fr.wikipedia.org/load.php?debug=false&amp;lang=fr&amp;modules=site&amp;only=styles&amp;skin=vector&amp;version=20110301T220806Z" type="text/css" media="all" />
+<style type="text/css" media="all">a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: frwiki:resourceloader:filter:minify-css:3:f2a9127573a22335c2a9102b208c73e7 */</style><link rel="stylesheet" href="http://bits.wikimedia.org/fr.wikipedia.org/load.php?debug=false&amp;lang=fr&amp;modules=user&amp;only=styles&amp;skin=vector&amp;version=19700101T000001Z" type="text/css" media="all" />
+
+<style type="text/css">/*<![CDATA[*/
+.source-c {line-height: normal;}
+.source-c li, .source-c pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for c
+ * CSS class: source-c, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.c.source-c .de1, .c.source-c .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.c.source-c  {font-family:monospace;}
+.c.source-c .imp {font-weight: bold; color: red;}
+.c.source-c li, .c.source-c .li1 {font-weight: normal; vertical-align:top;}
+.c.source-c .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.c.source-c .li2 {font-weight: bold; vertical-align:top;}
+.c.source-c .kw1 {color: #b1b100;}
+.c.source-c .kw2 {color: #000000; font-weight: bold;}
+.c.source-c .kw3 {color: #000066;}
+.c.source-c .kw4 {color: #993333;}
+.c.source-c .co1 {color: #666666; font-style: italic;}
+.c.source-c .co2 {color: #339933;}
+.c.source-c .coMULTI {color: #808080; font-style: italic;}
+.c.source-c .es0 {color: #000099; font-weight: bold;}
+.c.source-c .es1 {color: #000099; font-weight: bold;}
+.c.source-c .es2 {color: #660099; font-weight: bold;}
+.c.source-c .es3 {color: #660099; font-weight: bold;}
+.c.source-c .es4 {color: #660099; font-weight: bold;}
+.c.source-c .es5 {color: #006699; font-weight: bold;}
+.c.source-c .br0 {color: #009900;}
+.c.source-c .sy0 {color: #339933;}
+.c.source-c .st0 {color: #ff0000;}
+.c.source-c .nu0 {color: #0000dd;}
+.c.source-c .nu6 {color: #208080;}
+.c.source-c .nu8 {color: #208080;}
+.c.source-c .nu12 {color: #208080;}
+.c.source-c .nu16 {color:#800080;}
+.c.source-c .nu17 {color:#800080;}
+.c.source-c .nu18 {color:#800080;}
+.c.source-c .nu19 {color:#800080;}
+.c.source-c .me1 {color: #202020;}
+.c.source-c .me2 {color: #202020;}
+.c.source-c .ln-xtra, .c.source-c li.ln-xtra, .c.source-c div.ln-xtra {background-color: #ffc;}
+.c.source-c span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+.source-python {line-height: normal;}
+.source-python li, .source-python pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for python
+ * CSS class: source-python, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.python.source-python .de1, .python.source-python .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.python.source-python  {font-family:monospace;}
+.python.source-python .imp {font-weight: bold; color: red;}
+.python.source-python li, .python.source-python .li1 {font-weight: normal; vertical-align:top;}
+.python.source-python .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.python.source-python .li2 {font-weight: bold; vertical-align:top;}
+.python.source-python .kw1 {color: #ff7700;font-weight:bold;}
+.python.source-python .kw2 {color: #008000;}
+.python.source-python .kw3 {color: #dc143c;}
+.python.source-python .kw4 {color: #0000cd;}
+.python.source-python .co1 {color: #808080; font-style: italic;}
+.python.source-python .coMULTI {color: #808080; font-style: italic;}
+.python.source-python .es0 {color: #000099; font-weight: bold;}
+.python.source-python .br0 {color: black;}
+.python.source-python .sy0 {color: #66cc66;}
+.python.source-python .st0 {color: #483d8b;}
+.python.source-python .nu0 {color: #ff4500;}
+.python.source-python .me1 {color: black;}
+.python.source-python .ln-xtra, .python.source-python li.ln-xtra, .python.source-python div.ln-xtra {background-color: #ffc;}
+.python.source-python span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=2678400";
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.17/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr ns-0 ns-subject page-Python_langage skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- sitenotice -->
+			<div id="siteNotice"><!-- centralNotice loads here --></div>
+			<!-- /sitenotice -->
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">Python (langage)</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+				<!-- tagline -->
+				<div id="siteSub">Un article de Wikipédia, l'encyclopédie libre.</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Aller à : <a href="#mw-head">Navigation</a>,
+					<a href="#p-search">rechercher</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<div class="homonymie"><a href="/wiki/Aide:Homonymie" title="Aide:Homonymie"><img alt="Page d'aide sur l'homonymie" src="http://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Disambig_colour.svg/20px-Disambig_colour.svg.png" width="20" height="15" /></a> Pour les articles homonymes, voir <a href="/wiki/Python">Python</a>.</div>
+<table class="infobox_v2" cellspacing="7" border="0">
+<tr>
+<td colspan="2" class="entete informatique" style="background-color:#3778ae;"><span style="color: #fff;">Python</span></td>
+</tr>
+<tr>
+<td colspan="2" align="center"><a href="/wiki/Fichier:Python_logo.svg" class="image"><img alt="Python logo.svg" src="http://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Python_logo.svg/250px-Python_logo.svg.png" width="250" height="74" /></a><br />
+<br /></td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 2px #3778ae solid; color:#000; background:inherit; text-align: center;"></td>
+</tr>
+<tr style="vertical-align: top;">
+<th scope="row" style="text-align:left;">Apparu en</th>
+<td><a href="/wiki/1990">1990</a></td>
+</tr>
+<tr style="vertical-align: top;">
+<th scope="row" style="text-align:left;">Auteur</th>
+<td><a href="/wiki/Guido_van_Rossum">Guido van Rossum</a></td>
+</tr>
+<tr style="vertical-align: top;">
+<th scope="row" style="text-align:left;">Développeurs</th>
+<td><a href="/wiki/Python_Software_Foundation">Python Software Foundation</a></td>
+</tr>
+<tr style="vertical-align: top;">
+<td><b>Dernière version</b></td>
+<td><a href="http://www.python.org/" class="external text" rel="nofollow">3.2</a> <small>(<a href="/wiki/20_f%C3%A9vrier" title="20 février">20</a>&#160;<a href="/wiki/F%C3%A9vrier_2011" title="Février 2011">février</a>&#160;<a href="/wiki/2011_en_informatique" title="2011 en informatique">2011</a>)</small> <sub class="plainlinks">[<a href="http://fr.wikipedia.org/w/index.php?title=Mod%C3%A8le:Derni%C3%A8re_version_stable/Python_(langage)&amp;action=edit" class="external text" rel="nofollow">+/−</a>]</sub></td>
+</tr>
+<tr style="vertical-align: top;">
+<td><b>Version en développement</b></td>
+<td><sub class="plainlinks">[<a href="http://fr.wikipedia.org/w/index.php?title=Mod%C3%A8le:Derni%C3%A8re_version_avanc%C3%A9e/Python_(langage)&amp;action=edit" class="external text" rel="nofollow">+/−</a>]</sub></td>
+</tr>
+<tr style="vertical-align: top;">
+<th scope="row" style="text-align:left;">Paradigmes</th>
+<td><a href="/wiki/Programmation_orient%C3%A9e_objet" title="Programmation orientée objet">Objet</a>, <a href="/wiki/Programmation_imp%C3%A9rative" title="Programmation impérative">impératif</a></td>
+</tr>
+<tr style="vertical-align: top;">
+<th scope="row" style="text-align:left;">Typage</th>
+<td><a href="/wiki/Typage_fort" title="Typage fort">Fort</a>, <a href="/wiki/Typage_dynamique" title="Typage dynamique">dynamique</a></td>
+</tr>
+<tr style="vertical-align: top;">
+<th scope="row" style="text-align:left;">Influencé par</th>
+<td><a href="/wiki/ABC_(langage)" title="ABC (langage)">ABC</a>, <a href="/wiki/C_(langage)" title="C (langage)">C</a>, <a href="/wiki/ICON">ICON</a>, <a href="/wiki/Modula-3" class="mw-redirect" title="Modula-3">Modula-3</a>, <a href="/wiki/Perl_(langage)" title="Perl (langage)">Perl</a>, <a href="/wiki/Smalltalk">Smalltalk</a>, <a href="/wiki/Tool_Command_Language" title="Tool Command Language">Tcl</a></td>
+</tr>
+<tr style="vertical-align: top;">
+<th scope="row" style="text-align:left;">A influencé</th>
+<td><a href="/wiki/Ruby">Ruby</a>, <a href="/wiki/Groovy">Groovy</a>, <a href="/wiki/Boo_(langage)" title="Boo (langage)">Boo</a></td>
+</tr>
+<tr style="vertical-align: top;">
+<th scope="row" style="text-align:left;">Implémentations</th>
+<td><a href="/wiki/CPython">CPython</a>, <a href="/wiki/Jython">Jython</a>, <a href="/wiki/IronPython">IronPython</a>, <a href="/wiki/PyPy">PyPy</a></td>
+</tr>
+<tr style="vertical-align: top;">
+<th scope="row" style="text-align:left;"><a href="/wiki/Syst%C3%A8me_d%27exploitation">Système d'exploitation</a></th>
+<td><a href="/wiki/Multiplate-forme">Multiplate-forme</a></td>
+</tr>
+<tr style="vertical-align: top;">
+<th scope="row" style="text-align:left;"><a href="/wiki/Licence_de_logiciel" title="Licence de logiciel">Licence</a></th>
+<td><a href="/wiki/Python_Software_Foundation_License">Python Software Foundation License</a></td>
+</tr>
+<tr style="vertical-align: top;">
+<th scope="row" style="text-align:left;"><a href="/wiki/Site_Web">Site Web</a></th>
+<td><a href="http://www.python.org/" class="external text" rel="nofollow">www.python.org</a></td>
+</tr>
+</table>
+<p><b>Python</b> est un <a href="/wiki/Langage_de_programmation">langage de programmation</a> multi-<a href="/wiki/Paradigme_(programmation)" title="Paradigme (programmation)">paradigme</a>. Il favorise la <a href="/wiki/Programmation_imp%C3%A9rative">programmation impérative</a> structurée, et <a href="/wiki/Orient%C3%A9_objet" title="Orienté objet" class="mw-redirect">orientée objet</a>. Il est doté d'un <a href="/wiki/Typage_dynamique">typage dynamique</a> <a href="/wiki/Typage_fort" title="Typage fort">fort</a>, d'une gestion automatique de la mémoire par <a href="/wiki/Ramasse-miettes_(informatique)" title="Ramasse-miettes (informatique)">ramasse-miettes</a> et d'un <a href="/wiki/Syst%C3%A8me_de_gestion_d%27exceptions">système de gestion d'exceptions</a>&#160;; il est ainsi similaire à <a href="/wiki/Perl_(langage)" title="Perl (langage)">Perl</a>, <a href="/wiki/Ruby">Ruby</a>, <a href="/wiki/Scheme">Scheme</a>, <a href="/wiki/Smalltalk">Smalltalk</a> et <a href="/wiki/Tool_Command_Language" title="Tool Command Language">Tcl</a>.</p>
+<p>Le langage Python est placé sous une licence libre proche de la <a href="/wiki/Licence_BSD">licence BSD</a><sup id="cite_ref-0" class="reference"><a href="#cite_note-0"><span class="cite_crochet">[</span>1<span class="cite_crochet">]</span></a></sup> et fonctionne sur la plupart des plates-formes informatiques, des <a href="/wiki/Supercalculateur" title="Supercalculateur" class="mw-redirect">supercalculateurs</a> aux <a href="/wiki/Ordinateur_central" title="Ordinateur central">ordinateurs centraux</a>, de <a href="/wiki/Windows" class="mw-redirect" title="Windows">Windows</a> à <a href="/wiki/Unix" class="mw-redirect" title="Unix">Unix</a> en passant par <a href="/wiki/Linux">Linux</a> et <a href="/wiki/Mac_OS">Mac OS</a>, avec <a href="/wiki/Java_(langage)" title="Java (langage)">Java</a> ou encore <a href="/wiki/Microsoft_.NET" title="Microsoft .NET">.NET</a>. Il est conçu pour optimiser la productivité des programmeurs en offrant des outils de <a href="/wiki/Langage_de_haut_niveau" title="Langage de haut niveau">haut niveau</a> et une syntaxe simple à utiliser. Il est également apprécié par les pédagogues qui y trouvent un langage où la syntaxe, clairement séparée des mécanismes de <a href="/wiki/Langage_de_bas_niveau" title="Langage de bas niveau">bas niveau</a>, permet une initiation plus aisée aux concepts de base de la programmation<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span class="cite_crochet">[</span>2<span class="cite_crochet">]</span></a></sup>.</p>
+<table id="toc" class="toc">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Sommaire</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Utilisations"><span class="tocnumber">1</span> <span class="toctext">Utilisations</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Historique"><span class="tocnumber">2</span> <span class="toctext">Historique</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Au_CWI"><span class="tocnumber">2.1</span> <span class="toctext">Au CWI</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Au_CNRI"><span class="tocnumber">2.2</span> <span class="toctext">Au CNRI</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#.C3.80_BeOpen"><span class="tocnumber">2.3</span> <span class="toctext">À BeOpen</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#La_Python_Software_Foundation"><span class="tocnumber">2.4</span> <span class="toctext">La Python Software Foundation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Caract.C3.A9ristiques"><span class="tocnumber">3</span> <span class="toctext">Caractéristiques</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Syntaxe"><span class="tocnumber">3.1</span> <span class="toctext">Syntaxe</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="#Types_de_base"><span class="tocnumber">3.1.1</span> <span class="toctext">Types de base</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#Programmation_fonctionnelle"><span class="tocnumber">3.1.2</span> <span class="toctext">Programmation fonctionnelle</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#Programmation_objet"><span class="tocnumber">3.1.3</span> <span class="toctext">Programmation objet</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#M.C3.A9thodes_sp.C3.A9ciales_et_surcharge_des_op.C3.A9rateurs"><span class="tocnumber">3.1.4</span> <span class="toctext">Méthodes spéciales et surcharge des opérateurs</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#G.C3.A9n.C3.A9rateurs"><span class="tocnumber">3.1.5</span> <span class="toctext">Générateurs</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-14"><a href="#R.C3.A9flexivit.C3.A9"><span class="tocnumber">3.2</span> <span class="toctext">Réflexivité</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Typage"><span class="tocnumber">3.3</span> <span class="toctext">Typage</span></a>
+<ul>
+<li class="toclevel-3 tocsection-16"><a href="#Compilation"><span class="tocnumber">3.3.1</span> <span class="toctext">Compilation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-17"><a href="#Mod.C3.A8le_objet"><span class="tocnumber">3.4</span> <span class="toctext">Modèle objet</span></a>
+<ul>
+<li class="toclevel-3 tocsection-18"><a href="#M.C3.A9thodes"><span class="tocnumber">3.4.1</span> <span class="toctext">Méthodes</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#Visibilit.C3.A9"><span class="tocnumber">3.4.2</span> <span class="toctext">Visibilité</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="#H.C3.A9ritage"><span class="tocnumber">3.4.3</span> <span class="toctext">Héritage</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-21"><a href="#Biblioth.C3.A8que_standard"><span class="tocnumber">4</span> <span class="toctext">Bibliothèque standard</span></a></li>
+<li class="toclevel-1 tocsection-22"><a href="#Interfaces_graphiques"><span class="tocnumber">5</span> <span class="toctext">Interfaces graphiques</span></a></li>
+<li class="toclevel-1 tocsection-23"><a href="#La_communaut.C3.A9_Python"><span class="tocnumber">6</span> <span class="toctext">La communauté Python</span></a>
+<ul>
+<li class="toclevel-2 tocsection-24"><a href="#Adoption_de_Python"><span class="tocnumber">6.1</span> <span class="toctext">Adoption de Python</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-25"><a href="#Impl.C3.A9mentations"><span class="tocnumber">7</span> <span class="toctext">Implémentations</span></a></li>
+<li class="toclevel-1 tocsection-26"><a href="#Les_distributions"><span class="tocnumber">8</span> <span class="toctext">Les distributions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-27"><a href="#Historique_des_versions"><span class="tocnumber">8.1</span> <span class="toctext">Historique des versions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-28"><a href="#D.C3.A9veloppement"><span class="tocnumber">9</span> <span class="toctext">Développement</span></a>
+<ul>
+<li class="toclevel-2 tocsection-29"><a href="#Les_PEP"><span class="tocnumber">9.1</span> <span class="toctext">Les PEP</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#Python_3000"><span class="tocnumber">9.2</span> <span class="toctext">Python 3000</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#Philosophie"><span class="tocnumber">9.3</span> <span class="toctext">Philosophie</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#Planning_et_compatibilit.C3.A9"><span class="tocnumber">9.4</span> <span class="toctext">Planning et compatibilité</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-33"><a href="#Notes_et_r.C3.A9f.C3.A9rences"><span class="tocnumber">10</span> <span class="toctext">Notes et références</span></a></li>
+<li class="toclevel-1 tocsection-34"><a href="#Voir_aussi"><span class="tocnumber">11</span> <span class="toctext">Voir aussi</span></a>
+<ul>
+<li class="toclevel-2 tocsection-35"><a href="#Liste_de_frameworks_principaux"><span class="tocnumber">11.1</span> <span class="toctext">Liste de frameworks principaux</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href="#Articles_connexes"><span class="tocnumber">11.2</span> <span class="toctext">Articles connexes</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="#Liens_externes"><span class="tocnumber">11.3</span> <span class="toctext">Liens externes</span></a></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+<h2><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=1" title="Modifier la section&#160;: Utilisations">modifier</a>]</span> <span class="mw-headline" id="Utilisations">Utilisations</span></h2>
+<p>Python est un <a href="/wiki/Langage_de_programmation" title="Langage de programmation">langage</a> qui peut s'utiliser dans de nombreux contextes et s'adapter à tout type d'utilisation grâce à des bibliothèques spécialisées à chaque traitement. Il est cependant particulièrement utilisé comme <a href="/wiki/Langage_de_script">langage de script</a> pour automatiser des tâches simples mais fastidieuses comme par exemple un script qui récupérerait la météo sur internet ou qui s'intégrerait dans un logiciel de <a href="/wiki/Conception_assist%C3%A9e_par_ordinateur">conception assistée par ordinateur</a> afin d'automatiser certains enchaînements d'actions répétitives. On l'utilise également comme langage de développement de prototype lorsqu'on a besoin d'une application fonctionnelle avant de l'optimiser avec un langage de plus bas niveau. Il est particulièrement répandu dans le monde scientifique, et possède de nombreuses extensions destinées aux applications numériques.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=2" title="Modifier la section&#160;: Historique">modifier</a>]</span> <span class="mw-headline" id="Historique">Historique</span></h2>
+<h3><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=3" title="Modifier la section&#160;: Au CWI">modifier</a>]</span> <span class="mw-headline" id="Au_CWI">Au CWI</span></h3>
+<div class="thumb tleft">
+<div class="thumbinner" style="width:152px;"><a href="/wiki/Fichier:Guido_van_Rossum.jpg" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Guido_van_Rossum.jpg/150px-Guido_van_Rossum.jpg" width="150" height="201" class="thumbimage" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/Fichier:Guido_van_Rossum.jpg" class="internal" title="Agrandir"><img src="http://bits.wikimedia.org/skins-1.17/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+Guido van Rossum, créateur de Python.</div>
+</div>
+</div>
+<p>À la fin des <a href="/wiki/Ann%C3%A9es_1980">années 1980</a>, le <a href="/wiki/D%C3%A9veloppeur" title="Développeur">programmeur</a> <a href="/wiki/Guido_van_Rossum">Guido van Rossum</a> participait au développement du langage de programmation <a href="/wiki/ABC_(langage)" title="ABC (langage)">ABC</a> au <a href="/wiki/Centrum_voor_Wiskunde_en_Informatica">Centrum voor Wiskunde en Informatica</a> (CWI) aux <a href="/wiki/Pays-Bas">Pays-Bas</a>. Il travaillait alors dans l’équipe du système d’exploitation <a href="/w/index.php?title=Amoeba_(syst%C3%A8me_d%27exploitation)&amp;action=edit&amp;redlink=1" class="new" title="Amoeba (système d'exploitation) (page inexistante)">Amoeba</a> dont les appels systèmes étaient difficilement interfaçables avec le <a href="/wiki/Bourne_shell">bourne shell</a> qui était utilisé comme interface utilisateur. Il estima alors qu’un langage de script inspiré d’ABC pourrait être intéressant comme interpréteur de commandes pour Amoeba<sup id="cite_ref-FAQ1.2_2-0" class="reference"><a href="#cite_note-FAQ1.2-2"><span class="cite_crochet">[</span>3<span class="cite_crochet">]</span></a></sup></p>
+<p>En <a href="/wiki/1989">1989</a>, profitant d’une semaine de vacances durant les fêtes de Noël, il utilise son Macintosh personnel<sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span class="cite_crochet">[</span>4<span class="cite_crochet">]</span></a></sup> pour écrire la première version du langage. Fan de la série télévisée des <a href="/wiki/Monty_Python">Monty Python</a>, il décide de baptiser ce projet Python. Il s’est principalement inspiré d’ABC, par exemple pour l’<a href="/wiki/Indentation_comme_syntaxe">indentation comme syntaxe</a> ou les types de haut niveau mais aussi de <a href="/wiki/Modula-3" class="mw-redirect" title="Modula-3">Modula-3</a> pour la gestion des <a href="/wiki/Syst%C3%A8me_de_gestion_d%27exceptions" title="Système de gestion d'exceptions">exceptions</a>, du <a href="/wiki/Langage_C" class="mw-redirect" title="Langage C">langage C</a> et des outils UNIX<sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span class="cite_crochet">[</span>5<span class="cite_crochet">]</span></a></sup>.</p>
+<p>Durant l’année suivante le langage commence à être adopté par l’équipe du projet Amoeba, Guido poursuivant son développement principalement pendant son temps libre. En février 1991, la première version publique, numérotée 0.9.0<sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span class="cite_crochet">[</span>6<span class="cite_crochet">]</span></a></sup>, est postée sur le forum <a href="/wiki/Usenet">Usenet</a> alt.sources. La dernière version sortie au CWI fut Python 1.2.</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=4" title="Modifier la section&#160;: Au CNRI">modifier</a>]</span> <span class="mw-headline" id="Au_CNRI">Au CNRI</span></h3>
+<p>En <a href="/wiki/1995">1995</a>, Van Rossum continua son travail sur Python au <a href="/w/index.php?title=Corporation_for_National_Research_Initiatives&amp;action=edit&amp;redlink=1" class="new" title="Corporation for National Research Initiatives (page inexistante)">CNRI</a>&#160;<a href="http://en.wikipedia.org/wiki/Corporation_for_National_Research_Initiatives" class="extiw" title="en:Corporation for National Research Initiatives"><span style="font-family:monospace;font-weight:bold;font-size:small" title="Équivalent de l’article « Corporation for National Research Initiatives » dans une autre langue">(en)</span></a> à <a href="/w/index.php?title=Reston&amp;action=edit&amp;redlink=1" class="new" title="Reston (page inexistante)">Reston</a>&#160;<a href="http://en.wikipedia.org/wiki/Reston,_Virginia" class="extiw" title="en:Reston, Virginia"><span style="font-family:monospace;font-weight:bold;font-size:small" title="Équivalent de l’article « Reston » dans une autre langue">(en)</span></a>, aux <a href="/wiki/%C3%89tats-Unis">États-Unis</a>, où il sortit plusieurs versions du logiciel.</p>
+<p>À partir d'<a href="/wiki/Ao%C3%BBt_1995" title="Août 1995">août</a>&#160;<a href="/wiki/1995_en_informatique" title="1995 en informatique">1995</a>, l'équipe python travaille au CNRI sur <i>Grail</i><sup id="cite_ref-6" class="reference"><a href="#cite_note-6"><span class="cite_crochet">[</span>7<span class="cite_crochet">]</span></a></sup> un <a href="/wiki/Navigateur_web" class="mw-redirect" title="Navigateur web">navigateur web</a> utilisant <a href="/wiki/Tk_(informatique)" title="Tk (informatique)">Tk</a>. Il est l'équivalent pour python du navigateur <a href="/wiki/HotJava">HotJava</a>, permettant d'exécuter des applets dans un environnement sécurisé. La première version publique, disponible en novembre, est la 0.2<sup id="cite_ref-7" class="reference"><a href="#cite_note-7"><span class="cite_crochet">[</span>8<span class="cite_crochet">]</span></a></sup>. Il a entraîné le développement de modules pour la librairie standard comme <i>rexec</i><sup id="cite_ref-8" class="reference"><a href="#cite_note-8"><span class="cite_crochet">[</span>9<span class="cite_crochet">]</span></a></sup>, <i>htmllib</i> ou <i>urllib</i><sup id="cite_ref-9" class="reference"><a href="#cite_note-9"><span class="cite_crochet">[</span>10<span class="cite_crochet">]</span></a></sup>. La version 0.6 sera la dernière de <i>Grail</i>; elle est publiée en avril 1999<sup id="cite_ref-10" class="reference"><a href="#cite_note-10"><span class="cite_crochet">[</span>11<span class="cite_crochet">]</span></a></sup>.</p>
+<p>En <a href="/wiki/1999">1999</a>, le projet <i>Computer Programming for Everybody</i> (CP4E) est lancé avec collaboration entre le CNRI et la <a href="/wiki/DARPA" class="mw-redirect" title="DARPA">DARPA</a>. Il s'agit d'utiliser python comme langage d'enseignement de la programmation. Cette initiative conduira à la création de l'environnement de développement IDLE. Les subventions fournies par la DARPA ne suffisant pas à pérenniser le projet, Guido doit quitter le CNRI<sup id="cite_ref-11" class="reference"><a href="#cite_note-11"><span class="cite_crochet">[</span>12<span class="cite_crochet">]</span></a></sup>. Python 1.6 fut la dernière version sortie au CNRI.</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=5" title="Modifier la section&#160;: À BeOpen">modifier</a>]</span> <span class="mw-headline" id=".C3.80_BeOpen">À BeOpen</span></h3>
+<p>Après la sortie de Python 1.6, et après que Van Rossum a quitté le CNRI pour travailler avec des développeurs de logiciels commerciaux, le CNRI et la <a href="/wiki/Free_Software_Foundation">Free Software Foundation</a> collaborèrent pour modifier la licence de Python afin de la rendre compatible avec la GPL. Python 1.6.1 est essentiellement le même que Python 1.6 avec quelques correctifs mineurs et la nouvelle licence compatible GPL.</p>
+<p>En <a href="/wiki/2000">2000</a>, l'équipe principale de développement de Python déménagea à <a href="/w/index.php?title=BeOpen.com&amp;action=edit&amp;redlink=1" class="new" title="BeOpen.com (page inexistante)">BeOpen.com</a> pour former l'équipe <a href="/w/index.php?title=PythonLabs&amp;action=edit&amp;redlink=1" class="new" title="PythonLabs (page inexistante)">PythonLabs</a> de BeOpen. Python 2.0 fut la seule version sortie à BeOpen.com. Après cette version, Guido Van Rossum et les autres développeurs de PythonLabs rejoignirent <a href="/w/index.php?title=Digital_Creations&amp;action=edit&amp;redlink=1" class="new" title="Digital Creations (page inexistante)">Digital Creations</a>.</p>
+<p>Andrew M. Kuchling a publié en décembre 1999<sup id="cite_ref-12" class="reference"><a href="#cite_note-12"><span class="cite_crochet">[</span>13<span class="cite_crochet">]</span></a></sup> un texte nommé <i>python warts</i><sup id="cite_ref-13" class="reference"><a href="#cite_note-13"><span class="cite_crochet">[</span>14<span class="cite_crochet">]</span></a></sup> qui synthétise les griefs les plus fréquents exprimés à l'encontre du langage. Ce document aura une influence certaine sur les développements futurs du langage<sup id="cite_ref-14" class="reference"><a href="#cite_note-14"><span class="cite_crochet">[</span>15<span class="cite_crochet">]</span></a></sup>.</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=6" title="Modifier la section&#160;: La Python Software Foundation">modifier</a>]</span> <span class="mw-headline" id="La_Python_Software_Foundation">La Python Software Foundation</span></h3>
+<p>Python 2.1 fut une version dérivée de Python 1.6.1, ainsi que de Python 2.0. Sa licence fut renommée <a href="/wiki/Python_Software_Foundation_License">Python Software Foundation License</a>. Tout code, documentation et spécifications ajouté, depuis la sortie de Python 2.1 alpha, est détenu par la <a href="/wiki/Python_Software_Foundation">Python Software Foundation</a> (PSF), une association sans but lucratif fondée en 2001, modelée d'après l'<a href="/wiki/Apache_Software_Foundation">Apache Software Foundation</a>.</p>
+<p>Afin de réparer certains défauts du langage (ex: orientation objet avec deux types de classes), et pour nettoyer la bibliothèque standard de ses éléments obsolètes et redondants, Python a choisi de casser la compatibilité ascendante dans la nouvelle version majeure&#160;: Python 3.0, publié en décembre 2008. Cette version a été suivie rapidement par une version 3.1 qui corrige les erreurs de jeunesse de la version 3.0 en la rendant directement obsolète.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=7" title="Modifier la section&#160;: Caractéristiques">modifier</a>]</span> <span class="mw-headline" id="Caract.C3.A9ristiques">Caractéristiques</span></h2>
+<h3><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=8" title="Modifier la section&#160;: Syntaxe">modifier</a>]</span> <span class="mw-headline" id="Syntaxe">Syntaxe</span></h3>
+<p>Python a été conçu pour être un langage lisible. Il vise à être visuellement épuré, et utilise des mots anglais fréquemment là où d'autres langages utilisent de la ponctuation, et possède également moins de constructions syntaxiques que de nombreux langages structurés tels que C, Perl, ou Pascal. Les commentaires sont indiqués par le caractère <a href="/wiki/Di%C3%A8se">dièse</a>.</p>
+<p>Les blocs sont identifiés par l'<a href="/wiki/Indentation">indentation</a>, au lieu d'accolades comme en <a href="/wiki/Langage_C" title="Langage C" class="mw-redirect">C</a>/<a href="/wiki/C_plus_plus" title="C plus plus" class="mw-redirect">C++</a>, ou de Begin ... End comme en <a href="/wiki/Langage_Pascal" title="Langage Pascal" class="mw-redirect">Pascal</a>. Une augmentation de l'indentation marque le début d'un bloc, et une réduction de l'indentation marque la fin du bloc courant. Les parenthèses sont facultatives dans les structures de contrôle&#160;:</p>
+<table class="wikitable">
+<tr>
+<th width="50%">Fonction factorielle en C</th>
+<th width="50%">Fonction factorielle en Python</th>
+</tr>
+<tr valign="top">
+<td>
+<div dir="ltr" class="mw-geshi" style="text-align: left;">
+<div class="c source-c" style="font-family:monospace;">
+<pre class="de1">
+ <span class="co1">// Fonction factorielle en C</span>
+ <span class="kw4">int</span> factorielle<span class="br0">(</span><span class="kw4">int</span> x<span class="br0">)</span> 
+ <span class="br0">{</span>      
+     <span class="kw1">if</span> <span class="br0">(</span>x <span class="sy0">&lt;</span> 2<span class="br0">)</span>                    
+         <span class="kw1">return</span> <span class="nu0">1</span><span class="sy0">;</span>                   
+     <span class="kw1">else</span>
+         <span class="kw1">return</span> x <span class="sy0">*</span> factorielle<span class="br0">(</span>x<span class="sy0">-</span>1<span class="br0">)</span><span class="sy0">;</span>
+ <span class="br0">}</span>
+</pre></div>
+</div>
+</td>
+<td>
+<div dir="ltr" class="mw-geshi" style="text-align: left;">
+<div class="python source-python" style="font-family:monospace;">
+<pre class="de1">
+ <span class="co1"># Fonction factorielle en python</span>
+ <span class="kw1">def</span> factorielle<span class="br0">(</span>x<span class="br0">)</span>:
+     <span class="kw1">if</span> x <span class="sy0">&lt;</span> 2:
+         <span class="kw1">return</span> 1
+     <span class="kw1">else</span>:
+         <span class="kw1">return</span> x <span class="sy0">*</span> factorielle<span class="br0">(</span>x-<span class="nu0">1</span><span class="br0">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</table>
+<h4><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=9" title="Modifier la section&#160;: Types de base">modifier</a>]</span> <span class="mw-headline" id="Types_de_base">Types de base</span></h4>
+<p>Les types de base en Python sont relativement complets et puissants, il y a entre autres&#160;:</p>
+<ul>
+<li>Les objets numériques
+<ul>
+<li><code>int</code> est un entier illimité. Avant la version 3.0, ce type était dénommé <code>long</code>, et le type <code>int</code> correspondait à un entier 32 ou 64 bits. Néanmoins, une conversion automatique évitait tout débordement.</li>
+<li><code>float</code> est un flottant équivalent au type <code>double</code> du C, soit un nombre entre <span style="white-space:nowrap">-1,7</span>×10<sup>308</sup> et <span style="white-space:nowrap">1,7</span>×10<sup>308</sup></li>
+<li><code>complex</code> est une approximation d'un <a href="/wiki/Nombre_complexe">nombre complexe</a> (typiquement deux <code>floats</code>)</li>
+</ul>
+</li>
+<li>Les objets «&#160;itérables&#160;»
+<ul>
+<li>Les objets <code>tuple</code> (ou <code><a href="/wiki/N-uplet">n-uplet</a></code>) sont des listes <a href="/wiki/Objet_non_mutable" title="Objet non mutable">non mutables</a> d'objets hétérogènes.</li>
+<li>Les objets <code>list</code> sont des tableaux dynamiques (ils étendent automatiquement leur taille lorsque nécessaire) et acceptent des types de données hétérogènes.</li>
+<li>Les objets <code>set</code> sont des ensembles non ordonnés d'objets.</li>
+<li>Les objets (<code>frozenset</code>) forment une variante <a href="/wiki/Objet_non_mutable" title="Objet non mutable">non mutable</a> des <code>set</code>.</li>
+<li>Les objets <code>dict</code> sont des <a href="/wiki/Tableau_associatif" title="Tableau associatif">tableaux associatifs</a> (ou dictionnaires) permettant d'associer un objet (une clef) à un autre.</li>
+<li>Les objets <code>str</code> sont des chaînes de caractères. À partir de la version 3.0, les caractères sont encodés <a href="/wiki/Unicode">Unicode</a> sur 16 ou 32 bits&#160;; les chaines d'octets ASCII sont des objets <code>bytes</code>. Dans les versions précédentes, ces objets étaient respectivement de type <code>unicode</code> et <code>str</code>.</li>
+</ul>
+</li>
+</ul>
+<p>Les objets itérables sont parcourus à l'aide d'une boucle <code>for</code> de la manière suivante&#160;:</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;">
+<div class="python source-python" style="font-family:monospace;">
+<pre class="de1">
+<span class="kw1">for</span> element <span class="kw1">in</span> objet_iterable:
+  traiter<span class="br0">(</span>element<span class="br0">)</span>
+</pre></div>
+</div>
+<p>Pour une chaîne de caractère, l'itération a lieu caractère par caractère. Un caractère est une chaîne de longueur 1.</p>
+<p>Il est possible de dériver les classes des types de base pour créer ses propres types. On peut également fabriquer ses propres types d'objets itérables sans hériter des itérables de base en implémentant le protocole d'itération du langage.</p>
+<h4><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=10" title="Modifier la section&#160;: Programmation fonctionnelle">modifier</a>]</span> <span class="mw-headline" id="Programmation_fonctionnelle">Programmation fonctionnelle</span></h4>
+<p>Python permet de programmer dans un style <a href="/wiki/Programmation_fonctionnelle" title="Programmation fonctionnelle">fonctionnel</a>. Les <a href="/wiki/Compr%C3%A9hension_de_liste" title="Compréhension de liste" class="mw-redirect">compréhensions de listes</a> sont disponibles. Par exemple, pour construire la liste des carrés des entiers naturels plus petits que 10, on peut utiliser l'expression&#160;:</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;">
+<div class="python source-python" style="font-family:monospace;">
+<pre class="de1">
+l = <span class="br0">[</span>x<span class="sy0">**</span>2 <span class="kw1">for</span> x <span class="kw1">in</span> <span class="kw2">range</span><span class="br0">(</span><span class="nu0">10</span><span class="br0">)</span><span class="br0">]</span>
+<span class="co1"># l = [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</span>
+</pre></div>
+</div>
+<p>la liste des nombres <b>pairs</b>&#160;:</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;">
+<div class="python source-python" style="font-family:monospace;">
+<pre class="de1">
+l = <span class="br0">[</span>entier <span class="kw1">for</span> entier <span class="kw1">in</span> <span class="kw2">range</span><span class="br0">(</span>10<span class="br0">)</span> <span class="kw1">if</span> entier <span class="sy0">%</span> <span class="nu0">2</span> == <span class="nu0">0</span><span class="br0">]</span>
+<span class="co1"># l = [0, 2, 4, 6, 8]</span>
+</pre></div>
+</div>
+<p>Une forme limitée de <a href="/wiki/Lambda_calcul" title="Lambda calcul" class="mw-redirect">fonctions lambda</a>, ou fonctions anonymes, est disponible&#160;:</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;">
+<div class="python source-python" style="font-family:monospace;">
+<pre class="de1">
+<span class="kw1">lambda</span> x: x + <span class="nu0">2</span>
+</pre></div>
+</div>
+<p>Les fonctions lambda peuvent être définies en ligne et utilisées comme arguments dans des expressions fonctionnelles&#160;:</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;">
+<div class="python source-python" style="font-family:monospace;">
+<pre class="de1">
+ <span class="kw2">filter</span><span class="br0">(</span><span class="kw1">lambda</span> x: x <span class="sy0">&lt;</span> <span class="nu0">5</span>, une_liste<span class="br0">)</span>
+</pre></div>
+</div>
+<p>retournera une liste constituée des éléments de une_liste inférieurs à 5. Le même résultat peut être obtenu avec</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;">
+<div class="python source-python" style="font-family:monospace;">
+<pre class="de1">
+ <span class="br0">[</span>x <span class="kw1">for</span> x <span class="kw1">in</span> une_liste <span class="kw1">if</span> x <span class="sy0">&lt;</span> <span class="nu0">5</span><span class="br0">]</span>
+</pre></div>
+</div>
+<p>Les lambdas de Python n'admettent que des expressions et ne peuvent être utilisées comme fonctions anonymes généralisées&#160;; mais en Python, toutes les fonctions sont des objets, elles peuvent donc être passés en arguments d'autres fonctions, et appelés lorsque nécessaire. En effet, les fonctions définies avec <b>def</b> sont équivalentes à celles définies avec <b>lambda</b>, il est d'ailleurs possible de <b>def</b>inir une fonction à l'intérieur d'une autre fonction et ainsi obtenir une définition de fonction dans une variable locale, exemple&#160;:</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;">
+<div class="python source-python" style="font-family:monospace;">
+<pre class="de1">
+<span class="kw1">def</span> filtre_inferieur_a_5<span class="br0">(</span>une_liste<span class="br0">)</span>:
+    <span class="kw1">def</span> mon_filtre<span class="br0">(</span>x<span class="br0">)</span>: <span class="co1"># variable locale mon_filtre</span>
+        <span class="kw1">return</span> x <span class="sy0">&lt;</span> 5
+    <span class="kw1">return</span> <span class="kw2">filter</span><span class="br0">(</span>mon_filtre, une_liste<span class="br0">)</span>
+</pre></div>
+</div>
+<h4><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=11" title="Modifier la section&#160;: Programmation objet">modifier</a>]</span> <span class="mw-headline" id="Programmation_objet">Programmation objet</span></h4>
+<p>La programmation objet est très bien supportée par Python&#160;: tous les types de base, les fonctions, les instances de classes (les objets «&#160;classiques&#160;» des langages C++ et Java) et les classes elles-mêmes (qui sont des instances de méta-classes) sont des objets.</p>
+<p>Une classe se définit avec le mot <code>class</code>. Les classes Python supportent l'héritage multiple&#160;; il n'y a pas de <a href="/wiki/Surcharge_des_op%C3%A9rateurs" title="Surcharge des opérateurs">surcharge statique</a> comme en C++, mais le mécanisme des arguments optionnels et par mot-clef est plus général et plus flexible. En Python, l'attribut d'un objet peut référencer une variable d'instance ou de classe (le plus souvent une méthode). Il est possible de lire ou de modifier un attribut dynamiquement avec les fonctions&#160;:</p>
+<ul>
+<li><code>getattr(objet, 'nom_attribut')</code></li>
+<li><code>setattr(objet, 'nom_attribut', nouvel_attribut)</code></li>
+</ul>
+<p>Exemple de deux classes simples&#160;:</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;">
+<div class="python source-python" style="font-family:monospace;">
+<pre class="de1">
+<span class="kw1">class</span> Personne:
+   <span class="kw1">def</span> <span class="kw4">__init__</span><span class="br0">(</span><span class="kw2">self</span>, nom, prenom<span class="br0">)</span>:
+       <span class="kw2">self</span>.<span class="me1">nom</span> = nom
+       <span class="kw2">self</span>.<span class="me1">prenom</span> = prenom
+   <span class="kw1">def</span> presenter<span class="br0">(</span><span class="kw2">self</span><span class="br0">)</span> :
+       <span class="kw1">return</span> <span class="kw2">self</span>.<span class="me1">nom</span> + <span class="st0">" "</span> + <span class="kw2">self</span>.<span class="me1">prenom</span>
+ 
+<span class="kw1">class</span> Etudiant<span class="br0">(</span>Personne<span class="br0">)</span>:
+   <span class="kw1">def</span> <span class="kw4">__init__</span><span class="br0">(</span><span class="kw2">self</span>, niveau, nom, prenom<span class="br0">)</span>:
+       Personne.<span class="kw4">__init__</span><span class="br0">(</span><span class="kw2">self</span>, nom, prenom<span class="br0">)</span>
+       <span class="kw2">self</span>.<span class="me1">niveau</span> = niveau
+   <span class="kw1">def</span> presenter<span class="br0">(</span><span class="kw2">self</span><span class="br0">)</span>:
+       <span class="kw1">return</span> <span class="kw2">self</span>.<span class="me1">niveau</span> + Personne.<span class="me1">presenter</span><span class="br0">(</span><span class="kw2">self</span><span class="br0">)</span>
+ 
+e = Etudiant<span class="br0">(</span><span class="st0">"Licence INFO"</span>, <span class="st0">"Dupontel"</span>, <span class="st0">"Albert"</span><span class="br0">)</span>
+<span class="kw1">assert</span> e.<span class="me1">nom</span> == <span class="st0">"Dupontel"</span>
+</pre></div>
+</div>
+<h4><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=12" title="Modifier la section&#160;: Méthodes spéciales et surcharge des opérateurs">modifier</a>]</span> <span class="mw-headline" id="M.C3.A9thodes_sp.C3.A9ciales_et_surcharge_des_op.C3.A9rateurs">Méthodes spéciales et surcharge des opérateurs</span></h4>
+<p>Python fournit un mécanisme élégant et orienté objet pour la surcharge des opérateurs: tout objet python peut se voir doter de méthodes dites spéciales.</p>
+<p>Ces méthodes, commençant et finissant par deux underscores, sont appelées lors de l'utilisation d'un opérateur sur l'objet&#160;: + (méthode __add__), += (méthode __iadd__), [] (méthode __getitem__), () (méthode __call__), ... Des méthodes comme __repr__ et __str__, permettent de définir la représentation d'un objet dans l'interpréteur interactif et son rendu avec le mot clé <i>print</i>.</p>
+<p>Les possibilités sont nombreuses et sont décrites dans la documentation du langage<sup id="cite_ref-15" class="reference"><a href="#cite_note-15"><span class="cite_crochet">[</span>16<span class="cite_crochet">]</span></a></sup>.</p>
+<p>Par exemple on peut définir l'addition de deux vecteurs à 2 dimensions avec la classe suivante&#160;:</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;">
+<div class="python source-python" style="font-family:monospace;">
+<pre class="de1">
+<span class="kw1">class</span> Vector2D:
+    <span class="kw1">def</span> <span class="kw4">__init__</span><span class="br0">(</span><span class="kw2">self</span>, x, y<span class="br0">)</span>:
+        <span class="co1"># On utilise un tuple pour stocker les coordonnées</span>
+        <span class="kw2">self</span>.<span class="me1">coords</span> = <span class="br0">(</span>x, y<span class="br0">)</span>
+ 
+    <span class="kw1">def</span> <span class="kw4">__add__</span><span class="br0">(</span><span class="kw2">self</span>, other<span class="br0">)</span>:
+        <span class="co1"># L'instruction a+b sera résolue comme a.__add__(b)</span>
+        <span class="co1"># On construit un objet Vector2D à partir des coordonnées propres à l'objet, et à l'autre opérande</span>
+        <span class="kw1">return</span> Vector2D<span class="br0">(</span><span class="kw2">self</span>.<span class="me1">coords</span><span class="br0">[</span>0<span class="br0">]</span>+other.<span class="me1">coords</span><span class="br0">[</span>0<span class="br0">]</span>, <span class="kw2">self</span>.<span class="me1">coords</span><span class="br0">[</span>1<span class="br0">]</span>+other.<span class="me1">coords</span><span class="br0">[</span>1<span class="br0">]</span><span class="br0">)</span>
+ 
+    <span class="kw1">def</span> <span class="kw4">__repr__</span><span class="br0">(</span><span class="kw2">self</span><span class="br0">)</span>:
+        <span class="co1"># L'affichage de l'objet dans l'interpréteur</span>
+        <span class="kw1">return</span> <span class="st0">"Vector2D(%s, %s)"</span> <span class="sy0">%</span><span class="kw2">self</span>.<span class="me1">coords</span>
+ 
+a = Vector2D<span class="br0">(</span>1, 2<span class="br0">)</span>
+b = Vector2D<span class="br0">(</span>3, 4<span class="br0">)</span>
+<span class="kw1">print</span><span class="br0">(</span>a + b<span class="br0">)</span> <span class="co1"># Vector2D(4, 6)</span>
+</pre></div>
+</div>
+<h4><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=13" title="Modifier la section&#160;: Générateurs">modifier</a>]</span> <span class="mw-headline" id="G.C3.A9n.C3.A9rateurs">Générateurs</span></h4>
+<p>Le mot-clef <i>yield</i> utilisé dans une fonction permet de faire de cette fonction un générateur. L'appel de cette fonction renvoie un objet de type <i>generator</i>, qui peut être utilisé dans une boucle <i>for</i>, par exemple.</p>
+<p>À chaque appel, le générateur effectue son traitement jusqu'à rencontrer le mot-clé <i>yield</i>, renvoie la valeur de l'expression <i>yield</i>, et à l'appel suivant, reprend son déroulement juste après le <i>yield</i>. Par exemple pour calculer la <a href="/wiki/Suite_de_Fibonacci">suite de Fibonacci</a>, on peut faire&#160;:</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;">
+<div class="python source-python" style="font-family:monospace;">
+<pre class="de1">
+<span class="kw1">def</span> gen_fibonacci<span class="br0">(</span><span class="br0">)</span>:
+    <span class="st0">"""Générateur de la suite de Fibonacci"""</span>
+    a, b = 0, 1
+ 
+    <span class="kw1">while</span> <span class="kw2">True</span>:
+        <span class="kw1">yield</span> a  <span class="co1"># Renvoi de la valeur de "a", résultat de l'itération en cours</span>
+        a, b = b, a + b
+ 
+fi = gen_fibonacci<span class="br0">(</span><span class="br0">)</span>
+<span class="kw1">for</span> i <span class="kw1">in</span> <span class="kw2">range</span><span class="br0">(</span>20<span class="br0">)</span>:
+    <span class="kw1">print</span> fi.<span class="me1">next</span><span class="br0">(</span><span class="br0">)</span>
+</pre></div>
+</div>
+<table class="wikitable">
+<tr>
+<th width="50%">L'exécution de</th>
+<th width="50%">renverra</th>
+</tr>
+<tr valign="top">
+<td>
+<div dir="ltr" class="mw-geshi" style="text-align: left;">
+<div class="python source-python" style="font-family:monospace;">
+<pre class="de1">
+<span class="kw1">def</span> gen_nombres_pairs<span class="br0">(</span><span class="br0">)</span>:
+    <span class="st0">"""Générateur de nombres pairs"""</span>
+    a = 0
+    <span class="kw1">while</span> <span class="kw2">True</span>:
+        <span class="kw1">print</span> <span class="st0">"Génère le nombre"</span>, a
+        <span class="kw1">yield</span> a
+        a += 2
+ 
+pi = gen_nombres_pairs<span class="br0">(</span><span class="br0">)</span>
+<span class="kw1">for</span> i <span class="kw1">in</span> <span class="kw2">range</span><span class="br0">(</span>4<span class="br0">)</span>:
+    <span class="kw1">print</span> pi.<span class="me1">next</span><span class="br0">(</span><span class="br0">)</span>
+</pre></div>
+</div>
+</td>
+<td>
+<p>Génère le nombre 0<br />
+0<br />
+Génère le nombre 2<br />
+2<br />
+Génère le nombre 4<br />
+4<br />
+Génère le nombre 6<br />
+6</p>
+</td>
+</tr>
+</table>
+<p>Un générateur peut sembler identique à une fonction qui retourne une liste, mais contrairement à une liste qui contient <i>tous</i> ses éléments un générateur calcule ses éléments <i>un</i> par un.</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=14" title="Modifier la section&#160;: Réflexivité">modifier</a>]</span> <span class="mw-headline" id="R.C3.A9flexivit.C3.A9">Réflexivité</span></h3>
+<p>Grâce à un usage intensif des dictionnaires (conteneur associatif implémenté avec des <a href="/wiki/Table_de_hachage" title="Table de hachage">tables de hachage</a>), Python permet d'explorer les divers objets du langage (<a href="/wiki/Introspection_(informatique)" title="Introspection (informatique)" class="mw-redirect">introspection</a>) et dans certains cas de les modifier (<a href="/wiki/Intercession(informatique)" title="Intercession(informatique)" class="mw-redirect">intercession</a>).</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=15" title="Modifier la section&#160;: Typage">modifier</a>]</span> <span class="mw-headline" id="Typage">Typage</span></h3>
+<p>Le <a href="/wiki/Typage" class="mw-redirect" title="Typage">typage</a> n'est pas vérifié à la compilation. De ce fait, des opérations sur un objet peuvent échouer, signifiant que l'objet en question n'est pas du bon type. Malgré l'absence de typage statique, Python est fortement typé, interdisant des opérations ayant peu de sens (comme, par exemple, additionner un nombre à une chaîne de caractères) au lieu de tenter silencieusement de la convertir en une forme qui a du sens. Python propose des fonctions permettant de transformer les variables dans un autre type&#160;:</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;">
+<div class="python source-python" style="font-family:monospace;">
+<pre class="de1">
+points = <span class="nu0">3.2</span> <span class="co1"># points est du type float</span>
+<span class="kw1">print</span><span class="br0">(</span><span class="st0">"Tu as "</span> + points + <span class="st0">" points !"</span><span class="br0">)</span> <span class="co1"># Génère une erreur de typage</span>
+points = <span class="kw2">int</span><span class="br0">(</span>points<span class="br0">)</span> <span class="co1"># points est maintenant du type int (entier), sa valeur est arrondie à l'unité inférieure (ici 3)</span>
+<span class="kw1">print</span><span class="br0">(</span><span class="st0">"Tu as "</span> + points + <span class="st0">" points !"</span><span class="br0">)</span> <span class="co1"># Génère une erreur de typage</span>
+points = <span class="kw2">str</span><span class="br0">(</span>points<span class="br0">)</span> <span class="co1"># points est maintenant du type str (chaîne de caractères)</span>
+<span class="kw1">print</span><span class="br0">(</span><span class="st0">"Tu as "</span> + points + <span class="st0">" points !"</span><span class="br0">)</span> <span class="co1"># Plus d'erreur de typage, affiche 'Tu as 3 points !'</span>
+</pre></div>
+</div>
+<p>De même, chaque variable devra être déclarée avant d'être utilisée.</p>
+<p>Python propose aussi un mécanisme de <a href="/wiki/Typage_fort">typage fort</a> grâce à l'API <i>trait</i> ou au design pattern <i>decorators</i>.</p>
+<h4><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=16" title="Modifier la section&#160;: Compilation">modifier</a>]</span> <span class="mw-headline" id="Compilation">Compilation</span></h4>
+<p>Il est possible d'effectuer une analyse statique des modules Python avec des outils comme Pylint ou PyChecker. Sans nécessiter une exécution, ces outils repèrent des fautes ou des constructions déconseillées. Par exemple, une classe qui hérite d'une classe abstraite et qui ne surcharge pas les méthodes abstraites, ou bien des variables utilisées avant d'être déclarées, ou encore des attributs d'instance déclarés en dehors de la méthode __init__.</p>
+<p>Il est aussi possible de générer un Bytecode Python.</p>
+<p>Des outils comme PyInstaller<sup id="cite_ref-16" class="reference"><a href="#cite_note-16"><span class="cite_crochet">[</span>17<span class="cite_crochet">]</span></a></sup> ou d'autres plus spécifiques comme Freeze sous <a href="/wiki/Unix" class="mw-redirect" title="Unix">Unix</a>, py2app<sup id="cite_ref-17" class="reference"><a href="#cite_note-17"><span class="cite_crochet">[</span>18<span class="cite_crochet">]</span></a></sup> sous OS X et <a href="/wiki/Py2exe">py2exe</a> sous <a href="/wiki/Microsoft_Windows" title="Microsoft Windows">Windows</a> permettent de «&#160;compiler&#160;» un programme Python sous forme d'un exécutable comprenant le programme et un interpréteur Python. Le programme ne tourne pas plus rapidement (il n'est pas compilé sous forme de code machine) mais cela simplifie largement sa distribution, notamment sur des machines où l'interpréteur python n'est pas installé.</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=17" title="Modifier la section&#160;: Modèle objet">modifier</a>]</span> <span class="mw-headline" id="Mod.C3.A8le_objet">Modèle objet</span></h3>
+<p>En python <i>tout est objet</i>, dans le sens qu'une variable peut contenir une <a href="/wiki/R%C3%A9f%C3%A9rence_(informatique)" title="Référence (informatique)">référence</a> vers tous les éléments manipulés par le langage&#160;: nombres, méthodes, modules, etc.<sup id="cite_ref-18" class="reference"><a href="#cite_note-18"><span class="cite_crochet">[</span>19<span class="cite_crochet">]</span></a></sup> Néanmoins, avant la version 2.2, les classes et les instances de classes étaient un type d'objet particulier, ce qui signifiait qu'il était par exemple impossible de dériver sa propre sous-classe de l'objet <i>list</i>.</p>
+<h4><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=18" title="Modifier la section&#160;: Méthodes">modifier</a>]</span> <span class="mw-headline" id="M.C3.A9thodes">Méthodes</span></h4>
+<p>Le modèle objet de Python est inspiré de celui de Modula-3<sup id="cite_ref-19" class="reference"><a href="#cite_note-19"><span class="cite_crochet">[</span>20<span class="cite_crochet">]</span></a></sup>. Parmi ces emprunts se trouve l'obligation de déclarer l'instance de l'objet courant, conventionnellement nommée <i>self</i>, comme premier argument des méthodes, et à chaque fois que l'on souhaite accéder à une donnée de cette instance dans le corps de cette méthode. Cette pratique n'est pas naturelle pour des programmeurs venant par exemple de C++ ou Java, la profusion des <i>self</i> étant souvent critiquée comme étant une pollution visuelle qui gène la lecture du code. Les promoteurs du <i>self</i> explicite estiment au contraire qu'il évite le recours à des conventions de nommage pour les données membres et qu'il simplifie des tâches comme l'appel à une méthode de la superclasse ou la résolution d'homonymie entre données membres<sup id="cite_ref-20" class="reference"><a href="#cite_note-20"><span class="cite_crochet">[</span>21<span class="cite_crochet">]</span></a></sup>. Il permet par ailleurs un traitement orthogonal des méthodes et fonctions.</p>
+<p>Python reconnaît trois types de méthodes&#160;:</p>
+<ul>
+<li>les méthodes d'instances, qui sont celles définies par défaut. Elles reçoivent comme premier argument une instance de la classe où elles ont été définies.</li>
+<li>les méthodes de classes, qui reçoivent comme premier argument la classe où elles ont été définie. Elles peuvent être appelées depuis une instance ou directement depuis la classe. Elles permettent de définir des constructeurs alternatifs comme la méthode <i>fromkeys()</i> de l'objet <i>dict</i>.</li>
+<li>les méthodes statiques, qui ne reçoivent pas de premier argument implicite. Elles sont similaires aux méthodes statiques que l'on trouve en Java ou C++.</li>
+</ul>
+<h4><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=19" title="Modifier la section&#160;: Visibilité">modifier</a>]</span> <span class="mw-headline" id="Visibilit.C3.A9">Visibilité</span></h4>
+<p>Le langage a un support très limité de l'<a href="/wiki/Encapsulation_(programmation)" title="Encapsulation (programmation)">encapsulation</a>. Il n'y a pas, comme en java par exemple, de contrôle de l'accessibilité par des mots clefs comme <i>protected</i> ou <i>private</i>.</p>
+<p>La philosophie de python est de différencier conceptuellement l'encapsulation du masquage d'information. Le masquage d'information vise à prévenir les utilisations frauduleuses, c'est une préoccupation de <a href="/wiki/S%C3%A9curit%C3%A9_du_syst%C3%A8me_d%27information" title="Sécurité du système d'information">sécurité informatique</a> . Le module <i>bastion</i> de la librairie standard, qui n'est plus maintenu dans les dernières versions du langage, permettait ainsi de contrôler l'accès aux attributs d'un objet dans le cadre d'un environnement d'exécution restreint.</p>
+<p>L'encapsulation est une problématique de développement logiciel. Le slogan des développeurs python est <i>we're all consenting adults here</i><sup id="cite_ref-21" class="reference"><a href="#cite_note-21"><span class="cite_crochet">[</span>22<span class="cite_crochet">]</span></a></sup> (nous sommes entre adultes consentants). Ils estiment en effet qu'il suffit d'indiquer, par des conventions d'écriture, les parties publiques des interfaces et que c'est aux utilisateurs des objets de se conformer à ces conventions ou de prendre leurs responsabilités. L'usage est de préfixer par un underscore les membres privés. Le langage permet par ailleurs d'utiliser un double underscore pour éviter les collisions de noms, en préfixant automatiquement le nom de la donnée par celui de la classe où elle est définie.</p>
+<p>L'utilisation de la fonction property() permet de définir des propriétés qui ont pour but d'intercepter, à l'aide de méthodes, les accès à une donnée membre. Cela rend inutile la définition systématiques d'accesseurs et le masquage des données comme il est courant de le faire en C++ par exemple.</p>
+<h4><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=20" title="Modifier la section&#160;: Héritage">modifier</a>]</span> <span class="mw-headline" id="H.C3.A9ritage">Héritage</span></h4>
+<p>Python supporte l'<a href="/wiki/H%C3%A9ritage_multiple">héritage multiple</a>. Depuis la version 2.3, il utilise l'<a href="/w/index.php?title=Algorithme_C3&amp;action=edit&amp;redlink=1" class="new" title="Algorithme C3 (page inexistante)">algorithme C3</a>, issu du langage <a href="/wiki/Dylan_(langage)" title="Dylan (langage)">Dylan</a><sup id="cite_ref-22" class="reference"><a href="#cite_note-22"><span class="cite_crochet">[</span>23<span class="cite_crochet">]</span></a></sup>, pour résoudre l'<a href="/w/index.php?title=Ordre_de_r%C3%A9solution_de_m%C3%A9thode&amp;action=edit&amp;redlink=1" class="new" title="Ordre de résolution de méthode (page inexistante)">ordre de résolution de méthode</a> (<i>MRO</i>). Les versions précédentes utilisaient un <a href="/wiki/Algorithme_de_parcours_en_profondeur">algorithme de parcours en profondeur</a> qui posait des problèmes dans le cas d'un <a href="/w/index.php?title=H%C3%A9ritage_en_diamant&amp;action=edit&amp;redlink=1" class="new" title="Héritage en diamant (page inexistante)">héritage en diamant</a><sup id="cite_ref-23" class="reference"><a href="#cite_note-23"><span class="cite_crochet">[</span>24<span class="cite_crochet">]</span></a></sup>.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=21" title="Modifier la section&#160;: Bibliothèque standard">modifier</a>]</span> <span class="mw-headline" id="Biblioth.C3.A8que_standard">Bibliothèque standard</span></h2>
+<div class="thumb tright">
+<div class="thumbinner" style="width:252px;"><a href="/wiki/Fichier:Python_batteries_included.jpg" class="image"><img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Python_batteries_included.jpg/250px-Python_batteries_included.jpg" width="250" height="107" class="thumbimage" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/Fichier:Python_batteries_included.jpg" class="internal" title="Agrandir"><img src="http://bits.wikimedia.org/skins-1.17/common/images/magnify-clip.png" width="15" height="11" alt="" /></a></div>
+Python est fourni «&#160;Piles Incluses&#160;».</div>
+</div>
+</div>
+<p>Python possède une grande <a href="/wiki/Biblioth%C3%A8que_standard">bibliothèque standard</a>, fournissant des outils convenant à de nombreuses tâches diverses. Le nombre de modules de la bibliothèque standard peut être augmenté avec des modules spécifiques écrits en C ou en Python.</p>
+<p>La bibliothèque standard est particulièrement bien conçue pour écrire des applications utilisant Internet, avec un grand nombre de formats et de protocoles standards gérés (tels que <a href="/wiki/MIME" class="mw-redirect" title="MIME">MIME</a> et <a href="/wiki/HTTP" class="mw-redirect" title="HTTP">HTTP</a>). Des modules pour créer des <a href="/wiki/Interface_graphique" title="Interface graphique">interfaces graphiques</a> et manipuler des <a href="/wiki/Expression_rationnelle" title="Expression rationnelle">expressions rationnelles</a> sont également fournis. Python inclut également un <a href="/wiki/Framework">framework</a> de <a href="/wiki/Test_unitaire" title="Test unitaire">tests unitaire</a> pour créer des suites de test exhaustives.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=22" title="Modifier la section&#160;: Interfaces graphiques">modifier</a>]</span> <span class="mw-headline" id="Interfaces_graphiques">Interfaces graphiques</span></h2>
+<p>Python possède plusieurs modules disponibles pour la création de logiciels avec une interface graphique. Le plus répandu est <a href="/wiki/Tkinter">Tkinter</a>. Ce module convient à beaucoup d'applications et peut être considéré comme suffisant dans la plupart des cas. Néanmoins, d'autres modules ont été créés pour pouvoir lier Python à d'autres <a href="/wiki/Biblioth%C3%A8ques_logicielles" class="mw-redirect" title="Bibliothèques logicielles">bibliothèques logicielles</a> ('<a href="/wiki/Toolkit">toolkit</a>'), pour davantage de fonctionnalités, pour une meilleure intégration avec le système d'exploitation utilisé, ou simplement pour pouvoir utiliser Python avec sa bibliothèque préférée. En effet, certains programmeurs trouvent l'utilisation de Tkinter plus pénible que d'autres bibliothèques. Ces autres modules ne font pas partie de la bibliothèque standard et doivent donc être obtenus séparément.</p>
+<p>Les principaux modules donnant accès aux bibliothèques d'interface graphique sont <a href="/wiki/Tkinter">Tkinter</a> pour <a href="/wiki/Tk_(informatique)" title="Tk (informatique)">Tk</a>, <a href="/wiki/WxPython">wxPython</a> pour <a href="/wiki/WxWidgets">wxWidgets</a>, <a href="/wiki/PyGTK">PyGTK</a> pour <a href="/wiki/GTK%2B">GTK+</a>, <a href="/wiki/PyQt">PyQt</a> et <a href="/wiki/PySide">PySide</a> pour <a href="/wiki/Qt">Qt</a>, FxPy pour le <a href="/wiki/FOX_Toolkit">FOX Toolkit</a>, et Pmw pour Mega-Widgets, il existe aussi une implémentation de SDL&#160;: <a href="/wiki/Pygame">Pygame</a>, un binding de la <a href="/wiki/SFML" class="mw-redirect" title="SFML">SFML</a>&#160;: PySFML, ainsi qu'une bibliothèque écrite spécialement pour Python&#160;: <a href="/w/index.php?title=Pyglet&amp;action=edit&amp;redlink=1" class="new" title="Pyglet (page inexistante)">Pyglet</a>&#160;<a href="http://en.wikipedia.org/wiki/Pyglet" class="extiw" title="en:Pyglet"><span style="font-family:monospace;font-weight:bold;font-size:small" title="Équivalent de l’article « Pyglet » dans une autre langue">(en)</span></a>.</p>
+<p>Il est aussi possible de créer des applications <a href="/wiki/Silverlight">Silverlight</a> en python sur la plateforme <a href="/wiki/IronPython">IronPython</a>.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=23" title="Modifier la section&#160;: La communauté Python">modifier</a>]</span> <span class="mw-headline" id="La_communaut.C3.A9_Python">La communauté Python</span></h2>
+<p>Van Rossum est le principal auteur de Python, et son rôle de décideur central permanent de Python est reconnu avec humour par le titre de «&#160;Dictateur bienveillant à vie&#160;» (<i>Benevolent Dictator for Life</i>, BDFL).</p>
+<p>Il est assisté d'une équipe de <i>core developers</i> qui ont un accès en écriture au dépôt de CPython et qui se coordonnent sur la liste de diffusion python-dev. Ils travaillent principalement sur le langage et la bibliothèque de base. Ils reçoivent ponctuellement les contributions d'autres développeurs Python via la plateforme de gestion de bug Roundup, qui a remplacé <a href="/wiki/SourceForge_(logiciel)" title="SourceForge (logiciel)" class="mw-redirect">SourceForge</a>.</p>
+<p>Les utilisateurs ou développeurs de bibliothèques tierces utilisent diverses autres ressources. Le principal média généraliste autour de Python est le forum Usenet anglais comp.lang.python.</p>
+<p>Les allusions aux Monty Python sont assez fréquentes. Les didacticiels consacrés à Python utilisent souvent les mots <i>spam</i> et <i>eggs</i> comme <a href="/wiki/Variable_m%C3%A9tasyntaxique">variable métasyntaxique</a>. Il s'agit d'une référence à l'épisode 25 de la deuxième saison du <a href="/wiki/Monty_Python%27s_Flying_Circus">Monty Python's Flying Circus</a>, ou deux clients tentent de commander un repas à l'aide d'une carte qui contient du jambon en conserve (le spam) dans pratiquement tous les plats. Ce sketch a été aussi pris pour référence pour désigner un email non sollicité.</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=24" title="Modifier la section&#160;: Adoption de Python">modifier</a>]</span> <span class="mw-headline" id="Adoption_de_Python">Adoption de Python</span></h3>
+<p>Plusieurs entreprises mentionnent sur leur site officiel<sup id="cite_ref-24" class="reference"><a href="#cite_note-24"><span class="cite_crochet">[</span>25<span class="cite_crochet">]</span></a></sup> qu'elles utilisent Python&#160;:</p>
+<ul>
+<li><a href="/wiki/Google">Google</a> (<a href="/wiki/Guido_van_Rossum">Guido van Rossum</a> travaille depuis 2005 au sein de cette entreprise<sup id="cite_ref-25" class="reference"><a href="#cite_note-25"><span class="cite_crochet">[</span>26<span class="cite_crochet">]</span></a></sup>)&#160;;</li>
+<li><a href="/wiki/Industrial_Light_%26_Magic">Industrial Light &amp; Magic</a>&#160;;</li>
+<li>la <a href="/wiki/NASA" class="mw-redirect" title="NASA">NASA</a>&#160;;</li>
+<li>et CCP Games, les créateurs du <a href="/wiki/Jeu_vid%C3%A9o">jeu vidéo</a> <a href="/wiki/EVE_Online">EVE Online</a>.</li>
+</ul>
+<p>Python est aussi le langage de commande d'un grand nombre de logiciels libres:</p>
+<ul>
+<li><a href="/wiki/FreeCAD" title="FreeCAD">FreeCAD</a> Logiciel de CAO 3D</li>
+<li><a href="/wiki/Blender" title="Blender">Blender</a> logiciel d'image de synthèse</li>
+<li><a href="/wiki/Inkscape" title="Inkscape">Inkscape</a> logiciel de dessin vectoriel</li>
+</ul>
+<h2><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=25" title="Modifier la section&#160;: Implémentations">modifier</a>]</span> <span class="mw-headline" id="Impl.C3.A9mentations">Implémentations</span></h2>
+<p>Outre l'implémentation de référence, nommée <a href="/wiki/CPython">CPython</a> (car écrite en langage <a href="/wiki/C_(langage)" title="C (langage)">C</a>), il existe d'autres systèmes implémentant le langage Python&#160;:</p>
+<ul>
+<li><a href="/wiki/Stackless_Python">Stackless Python</a>, une version de CPython n'utilisant pas la pile d'appel du langage <a href="/wiki/C_(langage)" title="C (langage)">C</a>&#160;;</li>
+<li><a href="/wiki/Jython">Jython</a>, un <a href="/wiki/Interpr%C3%A8te_(informatique)" title="Interprète (informatique)">interprète</a> Python pour <a href="/wiki/Machine_virtuelle_Java">machine virtuelle Java</a>. Il a accès aux bibliothèques fournies avec l'<a href="/wiki/Environnement_de_d%C3%A9veloppement">environnement de développement</a> <a href="/wiki/Java_(langage)" title="Java (langage)">Java</a>&#160;;</li>
+<li><a href="/wiki/IronPython">IronPython</a>, un interprète / compilateur (expérimental) pour plateforme <a href="/wiki/Microsoft_.NET" title="Microsoft .NET">.Net</a> / <a href="/wiki/Mono_(informatique)" title="Mono (informatique)" class="mw-redirect">Mono</a>&#160;;</li>
+<li><a href="/wiki/PyPy">PyPy</a> un <a href="/wiki/Interpr%C3%A8te_(informatique)" title="Interprète (informatique)">interprète</a> Python écrit dans un sous-ensemble de Python compilable vers le <a href="/wiki/Langage_C" title="Langage C" class="mw-redirect">C</a> ou <a href="/wiki/LLVM" class="mw-redirect" title="LLVM">LLVM</a>&#160;;</li>
+<li>un <a href="/wiki/Compilateur">compilateur</a> (expérimental) pour <a href="/wiki/Parrot_(machine_virtuelle)" title="Parrot (machine virtuelle)">Parrot</a>, la machine virtuelle de <a href="/wiki/Perl_(langage)" title="Perl (langage)">Perl</a> 6&#160;;</li>
+<li><a href="/w/index.php?title=Shed_Skin&amp;action=edit&amp;redlink=1" class="new" title="Shed Skin (page inexistante)">Shed Skin</a> un <a href="/wiki/Compilateur">compilateur</a> Python écrit en Python vers le <a href="/wiki/C%2B%2B">C++</a></li>
+</ul>
+<p>Ces autres implémentations ne bénéficient pas forcément de la totalité de la bibliothèque de fonctions écrites en <a href="/wiki/C_(langage)" title="C (langage)">C</a> pour l'implémentation de référence.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=26" title="Modifier la section&#160;: Les distributions">modifier</a>]</span> <span class="mw-headline" id="Les_distributions">Les distributions</span></h2>
+<p>Différentes distributions sont disponibles, qui incluent parfois beaucoup de packages dédiés à un domaine donné&#160;:</p>
+<ul>
+<li>Python(x,y)&#160;: une distribution Python à l'usage des scientifiques basée sur Qt et Eclipse</li>
+<li>Enthought Python Distribution (EPD)&#160;: Distribution scientifique</li>
+</ul>
+<h3><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=27" title="Modifier la section&#160;: Historique des versions">modifier</a>]</span> <span class="mw-headline" id="Historique_des_versions">Historique des versions</span></h3>
+<table class="wikitable sortable">
+<tr>
+<th>Version</th>
+<th>Date de sortie</th>
+<th class="unsortable">Nouveautés<sup id="cite_ref-26" class="reference"><a href="#cite_note-26"><span class="cite_crochet">[</span>27<span class="cite_crochet">]</span></a></sup></th>
+</tr>
+<tr>
+<td>1.5(.2)</td>
+<td><a href="/wiki/13_avril" title="13 avril">13</a>&#160;<a href="/wiki/Avril_1999" title="Avril 1999">avril</a>&#160;<a href="/wiki/1999_en_informatique" title="1999 en informatique">1999</a></td>
+<td>
+<ul>
+<li>Ajout du mot clé <b>assert</b></li>
+<li>Possibilité d'importer une hiérarchie de modules (import spam.ham.eggs)</li>
+<li>Nouveau module <a href="/wiki/Expression_rationnelle" title="Expression rationnelle">re</a> qui remplace regex</li>
+<li>Les exceptions sont maintenant des classes</li>
+<li>Ajout de l'option -O qui supprime les assertions et informations de ligne de fichier</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>1.6</td>
+<td><a href="/wiki/5_septembre" title="5 septembre">5</a>&#160;<a href="/wiki/Septembre_2000" title="Septembre 2000">septembre</a>&#160;<a href="/wiki/2000_en_informatique" title="2000 en informatique">2000</a></td>
+<td>
+<ul>
+<li>La méthode append() des listes n'accepte plus qu'un seul argument</li>
+<li>Le résultat des fonctions str() et repr() est maintenant beaucoup plus souvent différent, exemple&#160;: str(1L)=='1' et repr(1L)=='1L'</li>
+<li>Les chaînes de caractères ont maintenant des méthodes (" abc ".strip())</li>
+<li>Le module re est compatible avec l'ancien moteur, est plus rapide, et accepte les chaînes Unicode</li>
+<li>Ajout du module distutils</li>
+<li>Nouveau prototype «&#160;def f(*args, **kw)&#160;» pour les fonctions, avant il fallait utiliser apply()</li>
+<li>int() et long() acceptent maintenant une base en second argument</li>
+<li>L'opérateur in peut être surchagé avec une méthode __contains__()</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>2.0</td>
+<td><a href="/wiki/16_octobre" title="16 octobre">16</a>&#160;<a href="/wiki/Octobre_2000" title="Octobre 2000">octobre</a>&#160;<a href="/wiki/2000_en_informatique" title="2000 en informatique">2000</a></td>
+<td>
+<ul>
+<li>Changement majeur&#160;: support d'Unicode</li>
+<li>Ajout des compréhensions de liste (<i>List Comprehensions</i>)</li>
+<li>Ajout des opérateurs avec assignement (a+=b, a*=b, etc.)</li>
+<li>Les chaînes str ont maintenant des méthodes</li>
+<li>Nouveau <a href="/wiki/Ramasse-miettes_(informatique)" title="Ramasse-miettes (informatique)">ramasse-miettes à cycles</a></li>
+<li>Nouveau prototype «&#160;def f(*args, **kw)&#160;» pour les fonctions, avant il fallait utiliser apply()</li>
+<li>Ajout des modules distutils, xml.dom.minidom module et xml.sax</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>2.1</td>
+<td><a href="/wiki/17_avril" title="17 avril">17</a>&#160;<a href="/wiki/Avril_2001" title="Avril 2001">avril</a>&#160;<a href="/wiki/2001_en_informatique" title="2001 en informatique">2001</a></td>
+<td>
+<ul>
+<li>Création du module __future__ pour rendre les transitions plus douces</li>
+<li>Comparaisons riches (méthodes __lt__, __le__, ..., __ne__)</li>
+<li>Framework d'avertissement</li>
+<li>Ajout des modules <a href="/wiki/Introspection_(informatique)" title="Introspection (informatique)" class="mw-redirect">inspect</a>, <a href="/wiki/Commentaire_(informatique)" title="Commentaire (informatique)">pydoc</a>, <a href="/wiki/M%C3%A9thode_agile" title="Méthode agile">doctest</a>, <a href="/wiki/Test_unitaire" title="Test unitaire">pyunit</a></li>
+<li>Ajout des références faibles (<i>weak references</i>)</li>
+<li>Les fonctions peuvent avoir des attributs</li>
+<li><i>Nested Scopes</i></li>
+<li>La version 2.0.1 (<a href="/wiki/Juin_2001" title="Juin 2001">juin</a>&#160;<a href="/wiki/2001_en_informatique" title="2001 en informatique">2001</a>) sera la première version compatible <a href="/wiki/Licence_publique_g%C3%A9n%C3%A9rale_GNU" title="Licence publique générale GNU">GPL</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>2.2</td>
+<td><a href="/wiki/21_d%C3%A9cembre" title="21 décembre">21</a>&#160;<a href="/wiki/D%C3%A9cembre_2001" title="Décembre 2001">décembre</a>&#160;<a href="/wiki/2001_en_informatique" title="2001 en informatique">2001</a></td>
+<td>
+<ul>
+<li>Unification de Type et de Class: on peut maintenant hériter des types de base</li>
+<li>Ajout des <a href="/wiki/It%C3%A9rateur_(motif_de_conception)" title="Itérateur (motif de conception)" class="mw-redirect">itérateurs</a> et <a href="/wiki/G%C3%A9n%C3%A9rateur_(informatique)" title="Générateur (informatique)">générateurs</a></li>
+<li>Nouvel opérateur a // b pour la division entière</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>2.3</td>
+<td><a href="/wiki/29_juillet" title="29 juillet">29</a>&#160;<a href="/wiki/Juillet_2003" title="Juillet 2003">juillet</a>&#160;<a href="/wiki/2003_en_informatique" title="2003 en informatique">2003</a></td>
+<td>
+<ul>
+<li>Ajout des fonctions enumerate() et sum()</li>
+<li>Le type <a href="/wiki/Alg%C3%A8bre_de_Boole_(logique)" title="Algèbre de Boole (logique)">bool</a> est maintenant vraiment distinct d'un entier</li>
+<li>Beaucoup d'améliorations du support <a href="/wiki/Unicode">Unicode</a></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>2.4</td>
+<td><a href="/wiki/30_novembre" title="30 novembre">30</a>&#160;<a href="/wiki/Novembre_2004" title="Novembre 2004">novembre</a>&#160;<a href="/wiki/2004_en_informatique" title="2004 en informatique">2004</a></td>
+<td>
+<ul>
+<li>Ajout des décorateurs de fonction/méthode (@decorateur)</li>
+<li>Conversion automatique d'un entier court en entier long si le résultat d'une opération est trop grand</li>
+<li>Expressions de générateur retournant les résultats l'un après l'autre et non pas sous forme d'une liste, exemple&#160;: sum( x for x in xrange(10000) )</li>
+<li>Ajout des fonctions reversed() et sorted()</li>
+<li>La fonction sort() accepte les mots clés cmp, key et reverse</li>
+<li>Création du module decimal et du routeur</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>2.5</td>
+<td><a href="/wiki/19_septembre" title="19 septembre">19</a>&#160;<a href="/wiki/Septembre_2006" title="Septembre 2006">septembre</a>&#160;<a href="/wiki/2006_en_informatique" title="2006 en informatique">2006</a></td>
+<td>
+<ul>
+<li>Ajout de l'opérateur <b>with</b></li>
+<li>Ajout des méthodes send(), throw() et close() aux générateurs</li>
+<li>Expression conditionnelle (a if test else b)</li>
+<li>Les imports de module peuvent être relatifs</li>
+<li>Ajout des méthodes partition() et rpartition() aux chaînes str et unicode</li>
+<li>Ajout des fonctions any() et all()</li>
+<li>Intégration des bibliothèques ctypes, ElementTree, hashlib, sqlite3 et wsgiref</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>2.6</td>
+<td><a href="/wiki/1er_octobre" title="1er octobre"><abbr class="abbr" title="Premier">1<sup>er</sup></abbr></a>&#160;<a href="/wiki/Octobre_2008" title="Octobre 2008">octobre</a>&#160;<a href="/wiki/2008_en_informatique" title="2008 en informatique">2008</a></td>
+<td>
+<ul>
+<li>Nouvelle syntaxe de formatage de chaînes de caractères</li>
+<li>Classes de bases abstraites</li>
+<li>Décorateurs de classes</li>
+<li>Modules <a href="/wiki/Json" class="mw-redirect" title="Json">json</a>, multiprocessing, contextmanager et fractions</li>
+<li>Amélioration de la compatibilité avec Python 3</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>2.7</td>
+<td><a href="/wiki/3_juillet" title="3 juillet">3</a>&#160;<a href="/wiki/Juillet_2010" title="Juillet 2010">juillet</a>&#160;<a href="/wiki/2010_en_informatique" title="2010 en informatique">2010</a></td>
+<td>
+<ul>
+<li>Syntaxe pour les ensembles littéraux&#160;: {1, 2, 3} au lieu de set((1, 2, 3))</li>
+<li>Compréhension de dictionnaire et d'ensemble, exemples&#160;: {i: i*2 for i in range(3)} (dictionnaire) et {i*2 for i in range(3)} (ensemble)</li>
+<li>Possibilité de spécifier plusieurs gestionnaires de contexte avec une seule déclaration with</li>
+<li>Réimplementation de la bibliothèque io (entrées/sorties) en C pour offrir de meilleures performances. Cette bibliothèque est notamment utile pour accéder à un fichier texte en Unicode.</li>
+<li>Dictionnaires ordonnés (enfin&#160;!) comme décrits dans la PEP 372&#160;: from collections import OrderedDict</li>
+<li>La méthode format gère la numérotation automatique&#160;: '{} {}!'.format('Hello', 'World') donne 'Hello World'!</li>
+<li>Le formatage des nombres gère les séparateurs de milliers, exemple&#160;: '{:,}'.format(10800) donne '10,800'</li>
+<li>Amélioration de précision lors des conversions chaîne vers flottant et flottant vers chaîne. Pour un flottant, float(repr(x)) donnera toujours x.</li>
+<li>Nouveau module argparse pour parser la ligne de commande&#160;: version améliorée du module optparse</li>
+<li>Configuration basée sur des dictionnaires pour le module logging</li>
+<li>Objets memoryview&#160;: vue en lecture seule ou lecture-écriture d'un objet binaire (API similaire à celle du type bytes)</li>
+<li>Type PyCapsule pour l'API C (pour les modules d'extension)</li>
+<li>Les types int et long gagnent une méthode bit_length()&#160;: nombre de bits nécessaires pour représenter la valeur absolue du nombre</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>3.0</td>
+<td><a href="/wiki/3_d%C3%A9cembre" title="3 décembre">3</a>&#160;<a href="/wiki/D%C3%A9cembre_2008" title="Décembre 2008">décembre</a>&#160;<a href="/wiki/2008_en_informatique" title="2008 en informatique">2008</a><sup id="cite_ref-27" class="reference"><a href="#cite_note-27"><span class="cite_crochet">[</span>28<span class="cite_crochet">]</span></a></sup></td>
+<td>
+<ul>
+<li>Fusion des types 'int' et 'long'</li>
+<li>Les chaînes sont en Unicode par défaut, 'bytes' remplace l'ancien type 'str'</li>
+<li>Utilise des itérateurs plutôt que des listes là où c'est approprié (ex&#160;: dict.keys())</li>
+<li>a/b est la vraie division par défaut</li>
+<li>exec et print deviennent des fonctions</li>
+<li>None et as deviennent des mots clé</li>
+<li>Le fichier __init__.py n'est plus nécessaire pour les modules Python</li>
+<li>`x`, l'opérateur &lt;&gt;, et la méthode find() des chaînes disparaissent</li>
+<li>De nombreuses fonctions disparaissent&#160;: apply(), buffer(), callable(), ...</li>
+<li>reduce() disparaît au profit des boucles explicites</li>
+</ul>
+<p><i>Voir la <a href="http://www.python.org/dev/peps/pep-3100/" class="external text" rel="nofollow">PEP 3100</a> pour les détails</i></p>
+</td>
+</tr>
+<tr>
+<td>3.1</td>
+<td><a href="/wiki/27_juin" title="27 juin">27</a>&#160;<a href="/wiki/Juin_2009" title="Juin 2009">juin</a>&#160;<a href="/wiki/2009">2009</a><sup id="cite_ref-28" class="reference"><a href="#cite_note-28"><span class="cite_crochet">[</span>29<span class="cite_crochet">]</span></a></sup></td>
+<td>
+<ul>
+<li>Ajout d'un type de dictionnaire ordonné,</li>
+<li>Optimisations diverses apportées au type 'int',</li>
+<li>Nouvelles fonctionnalités du module 'unittest',</li>
+<li>Module d'entrées/sorties 'io' rendu plus rapide,</li>
+<li>Implémentation de référence de l'instruction «&#160;import&#160;» en pur Python</li>
+<li>Nouvelle syntaxe pour les instructions 'with' imbriquées.</li>
+</ul>
+</td>
+</tr>
+</table>
+<h2><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=28" title="Modifier la section&#160;: Développement">modifier</a>]</span> <span class="mw-headline" id="D.C3.A9veloppement">Développement</span></h2>
+<h3><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=29" title="Modifier la section&#160;: Les PEP">modifier</a>]</span> <span class="mw-headline" id="Les_PEP">Les PEP</span></h3>
+<p>Les Proposition d'Amélioration de Python (ou «&#160;PEP&#160;»&#160;: <i>Python Enhancement Proposal</i>) sont des documents textuels qui ont pour objet d'être la voie d'amélioration de Python et de précéder à toutes ses modifications ultérieures. Un pep est une proposition d'orientation pour le développement (<i>process PEP</i>), une proposition technique (Standard Track PEP) ou une simple recommandation (<i>Informational PEP</i>, la plus célèbre étant certainement celle de Tim Peters&#160;: <a href="http://www.python.org/dev/peps/pep-0020/" class="external free" rel="nofollow">http://www.python.org/dev/peps/pep-0020/</a>) . À leur sortie, les PEPs sont relus et commentés par le BDFL<sup id="cite_ref-29" class="reference"><a href="#cite_note-29"><span class="cite_crochet">[</span>30<span class="cite_crochet">]</span></a></sup>.</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=30" title="Modifier la section&#160;: Python 3000">modifier</a>]</span> <span class="mw-headline" id="Python_3000">Python 3000</span></h3>
+<p>Une nouvelle version de Python, appelée Python 3.0 (le projet était appelé «&#160;Python 3000&#160;» ou «&#160;Py3K&#160;») abolit la compatibilité descendante avec la série des versions 2.x, dans le but d'éliminer les faiblesses actuelles du langage. La ligne de conduite du projet était de «&#160;réduire la redondance dans le fonctionnement de python par la suppression des méthodes obsolètes&#160;». Python 3.0a1, la première version alpha, a été publiée le 31 août 2007<sup id="cite_ref-autogenerated1_30-0" class="reference"><a href="#cite_note-autogenerated1-30"><span class="cite_crochet">[</span>31<span class="cite_crochet">]</span></a></sup>, et il existe un PEP<sup id="cite_ref-31" class="reference"><a href="#cite_note-31"><span class="cite_crochet">[</span>32<span class="cite_crochet">]</span></a></sup> qui détaille les changements prévus.</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=31" title="Modifier la section&#160;: Philosophie">modifier</a>]</span> <span class="mw-headline" id="Philosophie">Philosophie</span></h3>
+<p>Python 3.0 a été développé avec la même philosophie que dans ses versions antérieures, donc toute référence à la philosophie de Python s'appliquera aussi bien à la version 3.0. Comme toujours, Python a accumulé beaucoup de nouvelles méthodes qui font en fait acte de redondance avec d'autres préexistantes. Python 3.0 , en recherchant la suppression du code redondant et des modules semblables, suit la grande directive philosophique de Python «&#160;Il ne devrait subsister qu'une seule méthode, qui soit à la fois optimale <b>et</b> naturelle pour chaque chose&#160;».</p>
+<p>En dépit de cela, Python 3.0 restera un langage multi-paradigme. Les programmeurs auront encore le choix entre l'orientation objet, la programmation structurée, la programmation fonctionnelle et d'autres paradigmes&#160;; en dépit du choix existant, Python 3.0 a cependant pour but d'être utilisé de manière plus naturelle que dans les versions 2.x.</p>
+<h3><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=32" title="Modifier la section&#160;: Planning et compatibilité">modifier</a>]</span> <span class="mw-headline" id="Planning_et_compatibilit.C3.A9">Planning et compatibilité</span></h3>
+<p>Python 3.0a1, la première version alpha de Python 3.0, a été publiée le 31 août 2007. Les version 2.x et 3.x de Python seront publiées en parallèle pendant plusieurs cycles de développement, pendant lesquels la série des 2.x subsistera principalement pour la compatibilité, en incluant quelques caractéristiques importées depuis Python 2.3. Le PEP 3000<sup id="cite_ref-32" class="reference"><a href="#cite_note-32"><span class="cite_crochet">[</span>33<span class="cite_crochet">]</span></a></sup> contient plus d'informations à propos du processus de publication d'une version.</p>
+<p>Comme <a href="/wiki/Perl_6">Perl 6</a>, Python 3.0 rompt la compatibilité descendante (rétro-compatibilité). L'utilisation de code écrit pour les séries 2.x n'est pas garanti avec Python 3.0. Ce dernier apporte des changements fondamentaux, comme le passage généralisé à l'Unicode pour les chaînes de caractères et une distinction forte entre les chaînes de caractère et les objets «&#160;bytes&#160;». Le typage dynamique associé à certaines méthodes sur les objets de type dictionnaire font qu'une transition parfaite de Python 2.x vers Python 3.0 est très difficile. Comme toujours, un outil nommé «&#160;2to3&#160;» réalise la plus grande part du travail de traduction des version 2.x vers les versions 3.x, en indiquant les zones de codes sujettes à caution par des commentaires spéciaux et des mises en garde. De plus, dans sa pré-version, 2to3 semble réussir franchement à réaliser une traduction correcte<sup id="cite_ref-33" class="reference"><a href="#cite_note-33"><span class="cite_crochet">[</span>34<span class="cite_crochet">]</span></a></sup>. Dans le cadre d'une migration de python 2.x vers Python 3.x, le PEP 3000 recommande de conserver le code original comme base des modifications et de le <i>traduire</i> pour la plateforme 3.x en utilisant 2to3.</p>
+<p>Python 2.6 devra fournir des caractéristiques de compatibilité ascendante, aussi bien qu'un mode «&#160;mise en garde&#160;» qui devrait faire prendre conscience des problèmes potentiels de transition pour le passage à Python 3.0<sup id="cite_ref-34" class="reference"><a href="#cite_note-34"><span class="cite_crochet">[</span>35<span class="cite_crochet">]</span></a></sup>.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=33" title="Modifier la section&#160;: Notes et références">modifier</a>]</span> <span class="mw-headline" id="Notes_et_r.C3.A9f.C3.A9rences">Notes et références</span></h2>
+<div class="references-small" style="column-count:2; -moz-column-count:2; -webkit-column-count:2;">
+<div style="font-size: 85%">
+<ol class="references">
+<li id="cite_note-0"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-0">↑</a></span> <a href="http://www.python.org/psf/license/" class="external text" rel="nofollow">Python License</a></li>
+<li id="cite_note-1"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-1">↑</a></span> <span style="font-family:monospace;font-weight:bold;font-size:small">(<abbr class="abbr" title="Langue&#160;: anglais">en</abbr>)</span> <a href="http://www.openbookproject.net//thinkCSpy/preface.xhtml#auto2" class="external text" rel="nofollow">«&#160;il faut treize paragraphes pour expliquer un <i>hello world!</i> en C++, en python il n'en faut que 2&#160;»</a></li>
+<li id="cite_note-FAQ1.2-2"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-FAQ1.2_2-0">↑</a></span> <a href="http://www.python.org/doc/faq/general/#why-was-python-created-in-the-first-place" class="external text" rel="nofollow"><i><span class="lang-en" lang="en" xml:lang="en">FAQ Python 1.2 Why was Python created in the first place?</span></i></a></li>
+<li id="cite_note-3"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-3">↑</a></span> <a href="http://homepages.cwi.nl/~jack/macpython/intro.html" class="external text" rel="nofollow"><i><span class="lang-en" lang="en" xml:lang="en">Introduction to MacPython</span></i></a></li>
+<li id="cite_note-4"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-4">↑</a></span> <a href="http://www.python.org/doc/essays/foreword/" class="external text" rel="nofollow">Introduction de la 1er édition du livre "Programming Python" de Mark Lutz</a>, Guido van Rossum 1996</li>
+<li id="cite_note-5"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-5">↑</a></span> Selon le fichier <a href="http://svn.python.org/projects/python/trunk/Misc/HISTORY" class="external text" rel="nofollow">HISTORY</a> mais la plus ancienne version accessible dans les archives du forum est la <a href="http://groups.google.com/group/alt.sources/browse_thread/thread/3b6652abb0e23b03/53ee3620bc53c281" class="external text" rel="nofollow">0.9.1</a></li>
+<li id="cite_note-6"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-6">↑</a></span> <a href="http://grail.sourceforge.net/info/team.html" class="external text" rel="nofollow">The Grail Development Team</a></li>
+<li id="cite_note-7"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-7">↑</a></span> <a href="http://grail.sourceforge.net/info/papers/restofus.html" class="external text" rel="nofollow"><i>Grail -- The Browser For The Rest Of Us</i></a></li>
+<li id="cite_note-8"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-8">↑</a></span> <a href="http://docs.python.org/lib/module-rexec.html" class="external text" rel="nofollow">28.1 rexec - Restricted execution framework</a></li>
+<li id="cite_note-9"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-9">↑</a></span> <a href="http://grail.sourceforge.net/info/diagram.gif" class="external free" rel="nofollow">http://grail.sourceforge.net/info/diagram.gif</a></li>
+<li id="cite_note-10"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-10">↑</a></span> <a href="http://grail.sourceforge.net/" class="external text" rel="nofollow">Grail Home Page</a></li>
+<li id="cite_note-11"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-11">↑</a></span> <a href="http://www.python.org/doc/essays/cp4e" class="external text" rel="nofollow">Computer Programming for Everybody</a></li>
+<li id="cite_note-12"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-12">↑</a></span> <a href="http://mail.python.org/pipermail/python-list/1999-December/018678.html" class="external text" rel="nofollow">Python warts</a></li>
+<li id="cite_note-13"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-13">↑</a></span> <a href="http://web.archive.org/web/20031002184114/www.amk.ca/python/writing/warts.html" class="external text" rel="nofollow">Python Warts</a></li>
+<li id="cite_note-14"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-14">↑</a></span> <a href="http://www.python.org/download/releases/2.2.3/descrintro/" class="external text" rel="nofollow">Unifying types and classes in Python 2.2</a></li>
+<li id="cite_note-15"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-15">↑</a></span> <a href="http://docs.python.org/ref/specialnames.html" class="external text" rel="nofollow">documentation du langage</a></li>
+<li id="cite_note-16"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-16">↑</a></span> <span style="font-family:monospace;font-weight:bold;font-size:small">(<abbr class="abbr" title="Langue&#160;: anglais">en</abbr>)</span> <a href="http://pyinstaller.python-hosting.com/" class="external text" rel="nofollow">Site officiel de PyInstaller</a></li>
+<li id="cite_note-17"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-17">↑</a></span> <a href="http://svn.pythonmac.org/py2app/py2app/trunk/doc/index.html#abstract" class="external free" rel="nofollow">http://svn.pythonmac.org/py2app/py2app/trunk/doc/index.html#abstract</a></li>
+<li id="cite_note-18"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-18">↑</a></span> <a href="http://diveintopython.adrahon.org/getting_to_know_python/everything_is_an_object.html" class="external text" rel="nofollow">2.4. Tout est objet</a></li>
+<li id="cite_note-19"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-19">↑</a></span> <a href="http://docs.python.org/tut/node11.html" class="external text" rel="nofollow"><i>Python Tutorial</i></a> chapitre 9</li>
+<li id="cite_note-20"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-20">↑</a></span> <a href="http://effbot.org/pyfaq/why-must-self-be-used-explicitly-in-method-definitions-and-calls.htm" class="external text" rel="nofollow">Why must 'self' be used explicitly in method definitions and calls?</a></li>
+<li id="cite_note-21"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-21">↑</a></span> <a href="http://www.mactech.com/articles/mactech/Vol.20/20.11/PythonForAppleScripters/index.html" class="external text" rel="nofollow">Python For AppleScripters</a></li>
+<li id="cite_note-22"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-22">↑</a></span> <a href="http://192.220.96.201/dylan/linearization-oopsla96.html" class="external text" rel="nofollow">A Monotonic Superclass Linearization for Dylan</a></li>
+<li id="cite_note-23"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-23">↑</a></span> <a href="http://www.python.org/download/releases/2.3/mro/" class="external text" rel="nofollow">The Python 2.3 Method Resolution Order</a></li>
+<li id="cite_note-24"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-24">↑</a></span> <a href="http://www.python.org/about/quotes/" class="external text" rel="nofollow">Quotes about Python</a></li>
+<li id="cite_note-25"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-25">↑</a></span> <a href="http://www.oreillynet.com/onlamp/blog/2005/12/python_creator_guido_van_rossu.html" class="external text" rel="nofollow"><i>Python Creator Guido van Rossum now working at Google</i></a>, article sur <i>ONLamp.com</i></li>
+<li id="cite_note-26"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-26">↑</a></span> <span style="font-family:monospace;font-weight:bold;font-size:small">(<abbr class="abbr" title="Langue&#160;: anglais">en</abbr>)</span> <a href="http://docs.python.org/whatsnew/" class="external text" rel="nofollow">What’s New in Python</a> sur python.org</li>
+<li id="cite_note-27"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-27">↑</a></span> Python 3.0 <a href="http://www.python.org/download/releases/3.0/" class="external free" rel="nofollow">http://www.python.org/download/releases/3.0/</a></li>
+<li id="cite_note-28"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-28">↑</a></span> Python 3.1 <a href="http://www.python.org/download/releases/3.1/" class="external free" rel="nofollow">http://www.python.org/download/releases/3.1/</a></li>
+<li id="cite_note-29"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-29">↑</a></span> <a href="http://www.python.org/doc/essays/pepparade.html" class="external text" rel="nofollow">Parade of the PEPs</a></li>
+<li id="cite_note-autogenerated1-30"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-autogenerated1_30-0">↑</a></span> <a href="http://python.org/download/releases/3.0/" class="external text" rel="nofollow">Python 3.0a3 Release</a></li>
+<li id="cite_note-31"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-31">↑</a></span> <a href="http://www.python.org/peps/pep-3000.html" class="external text" rel="nofollow">PEP 3000 - Python 3000</a></li>
+<li id="cite_note-32"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-32">↑</a></span> <a href="http://www.python.org/dev/peps/pep-3000/" class="external text" rel="nofollow">Plan de développement PEP3000</a></li>
+<li id="cite_note-33"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-33">↑</a></span> Sam Ruby, <a href="http://intertwingly.net/blog/2007/09/01/2to3" class="external text" rel="nofollow">2to3</a>, 1er septembre 2007</li>
+<li id="cite_note-34"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-34">↑</a></span> <a href="http://www.python.org/dev/peps/pep-0361/" class="external text" rel="nofollow">PEP 361</a></li>
+</ol>
+</div>
+</div>
+<h2><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=34" title="Modifier la section&#160;: Voir aussi">modifier</a>]</span> <span class="mw-headline" id="Voir_aussi">Voir aussi</span></h2>
+<div class="noprint" id="autres_projets">
+<p>Sur les autres projets Wikimédia&#160;:</p>
+<ul class="noarchive">
+<li class="commons"><span class="plainlinks"><a href="http://commons.wikimedia.org/wiki/Category:Python_(programming_language)?uselang=fr" class="external text" rel="nofollow">«&#160;Python (langage)&#160;», sur <span>Wikimedia Commons</span></a> (ressources multimédia)</span></li>
+<li class="dictionary"><a href="http://fr.wiktionary.org/wiki/Python" class="extiw" title="wikt:Python">«&#160;Python (langage)&#160;», sur le <span>Wiktionnaire</span></a> (dictionnaire universel)</li>
+<li class="versity"><a href="http://fr.wikiversity.org/wiki/Cat%C3%A9gorie:Python" class="extiw" title="v:Catégorie:Python">«&#160;Python (langage)&#160;», sur <span>Wikiversity</span></a> (communauté pédagogique libre)</li>
+<li class="books"><a href="http://fr.wikibooks.org/wiki/Cat%C3%A9gorie:Python" class="extiw" title="b:Catégorie:Python">«&#160;Python (langage)&#160;», sur <span>Wikibooks</span></a> (livres pédagogiques)</li>
+</ul>
+</div>
+<h3><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=35" title="Modifier la section&#160;: Liste de frameworks principaux">modifier</a>]</span> <span class="mw-headline" id="Liste_de_frameworks_principaux">Liste de frameworks principaux</span></h3>
+<ul>
+<li>Bibliothèques scientifiques&#160;:
+<ul>
+<li>Calcul&#160;: <a href="/wiki/NumPy">NumPy</a>, <a href="/wiki/SciPy">SciPy</a>, <a href="/wiki/IMSL" title="IMSL" class="mw-redirect">PyIMSL Studio</a>, <a href="/w/index.php?title=Sympy&amp;action=edit&amp;redlink=1" class="new" title="Sympy (page inexistante)">Sympy</a>, <a href="/wiki/SAGE_(logiciel_de_calcul_formel)" title="SAGE (logiciel de calcul formel)">SAGE</a></li>
+<li>Système expert&#160;: <a href="/w/index.php?title=PyCLIPS&amp;action=edit&amp;redlink=1" class="new" title="PyCLIPS (page inexistante)">pyCLIPS</a>, <a href="/w/index.php?title=Pyswip&amp;action=edit&amp;redlink=1" class="new" title="Pyswip (page inexistante)">pyswip</a></li>
+<li>Visualisation&#160;: <a href="/w/index.php?title=Pydot&amp;action=edit&amp;redlink=1" class="new" title="Pydot (page inexistante)">pydot</a>, <a href="/w/index.php?title=Maplotlib&amp;action=edit&amp;redlink=1" class="new" title="Maplotlib (page inexistante)">maplotlib</a>, <a href="/w/index.php?title=Pyngl&amp;action=edit&amp;redlink=1" class="new" title="Pyngl (page inexistante)">pyngl</a>, <a href="/w/index.php?title=MayaVi&amp;action=edit&amp;redlink=1" class="new" title="MayaVi (page inexistante)">MayaVi</a></li>
+<li>Datamining&#160;: <a href="/wiki/Orange_(logiciel)" title="Orange (logiciel)">Orange</a></li>
+<li>Simulation&#160;: <a href="/w/index.php?title=SimPy&amp;action=edit&amp;redlink=1" class="new" title="SimPy (page inexistante)">simPy</a></li>
+<li>Chimie&#160;: <a href="/w/index.php?title=Pymol&amp;action=edit&amp;redlink=1" class="new" title="Pymol (page inexistante)">pymol</a>, <a href="/w/index.php?title=MMTK&amp;action=edit&amp;redlink=1" class="new" title="MMTK (page inexistante)">MMTK</a>, <a href="/wiki/Chimera_(logiciel)" title="Chimera (logiciel)" class="mw-redirect">Chimera</a>, <a href="/w/index.php?title=PyQuante&amp;action=edit&amp;redlink=1" class="new" title="PyQuante (page inexistante)">PyQuante</a></li>
+<li>Biologie&#160;: <a href="/w/index.php?title=Biopython&amp;action=edit&amp;redlink=1" class="new" title="Biopython (page inexistante)">Biopython</a></li>
+</ul>
+</li>
+<li>Utilitaire&#160;: <a href="/w/index.php?title=EGenix&amp;action=edit&amp;redlink=1" class="new" title="EGenix (page inexistante)">eGenix</a>, <a href="/w/index.php?title=Ctype&amp;action=edit&amp;redlink=1" class="new" title="Ctype (page inexistante)">ctype</a>
+<ul>
+<li>Parser&#160;: <a href="/w/index.php?title=PyParsing&amp;action=edit&amp;redlink=1" class="new" title="PyParsing (page inexistante)">PyParsing</a></li>
+</ul>
+</li>
+<li>Graphisme&#160;: <a href="/wiki/Pygame">Pygame</a>, <a href="/wiki/Python_Imaging_Library" title="Python Imaging Library">pil</a>, <a href="/wiki/Soya_3D">Soya 3D</a>, <a href="/w/index.php?title=Vpython&amp;action=edit&amp;redlink=1" class="new" title="Vpython (page inexistante)">Vpython</a>, <a href="/w/index.php?title=Pymedia&amp;action=edit&amp;redlink=1" class="new" title="Pymedia (page inexistante)">pymedia</a>, <a href="/wiki/NodeBox">NodeBox</a></li>
+<li>Framework Web&#160;: <a href="/wiki/Django_(framework)" title="Django (framework)">Django</a>, Karrigell, webware, Grok, <a href="/wiki/Turbogears" class="mw-redirect" title="Turbogears">Turbogears</a>, Pylons</li>
+<li><a href="/wiki/Serveur_HTTP" title="Serveur HTTP">serveur web</a>, <a href="/wiki/Syst%C3%A8me_de_gestion_de_contenu" title="Système de gestion de contenu">CMS</a>&#160;: <a href="/wiki/Plone">Plone</a>, <a href="/wiki/Zope">zope</a>, <a href="/wiki/Google_App_Engine">Google App Engine</a>,<a href="/wiki/CherryPy">CherryPy</a>, <a href="/wiki/MoinMoin">MoinMoin</a></li>
+<li><a href="/wiki/Syst%C3%A8me_d%27information_g%C3%A9ographique" title="Système d'information géographique">cartographie</a>&#160;: TileCache, FeatureServer, Cartoweb 4, Shapely, GeoDjango, PCL</li>
+<li>Protocoles&#160;:
+<ul>
+<li>pyTango</li>
+<li>Serialisation&#160;: simplejson</li>
+<li>TCP, UDP, SSL/TLS, multicast, Unix sockets, HTTP, NNTP, IMAP, SSH, IRC, FTP&#160;: twisted</li>
+</ul>
+</li>
+<li>vecteur&#160;: Geojson, OWSLib, Quadtree, Rtree, Shapely, WorldMill, ZCO</li>
+<li><a href="/wiki/Mapping_objet-relationnel" title="Mapping objet-relationnel">ORM</a>&#160;: SQLObject, <a href="/wiki/SQLAlchemy">SQLAlchemy</a>, Storm, Django ORM</li>
+<li>driver <a href="/wiki/Syst%C3%A8me_de_gestion_de_base_de_donn%C3%A9es" title="Système de gestion de base de données">SGBD</a>&#160;: <a href="/wiki/Postgresql" title="Postgresql" class="mw-redirect">PyGresQL</a>, Psycopg, <a href="/w/index.php?title=MySQL-python&amp;action=edit&amp;redlink=1" class="new" title="MySQL-python (page inexistante)">MySQL</a></li>
+</ul>
+<h3><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=36" title="Modifier la section&#160;: Articles connexes">modifier</a>]</span> <span class="mw-headline" id="Articles_connexes">Articles connexes</span></h3>
+<ul>
+<li><a href="/wiki/Afpy" title="Afpy">Association Francophone Python</a></li>
+<li><a href="/wiki/Python_Software_Foundation_License">Python Software Foundation License</a></li>
+<li><span style="font-family:monospace;font-weight:bold;font-size:small">(<abbr class="abbr" title="Langue&#160;: anglais">en</abbr>)</span> <a href="http://en.wikipedia.org/wiki/IPython" class="extiw" title="en:IPython">IPython</a></li>
+</ul>
+<h3><span class="editsection">[<a href="/w/index.php?title=Python_(langage)&amp;action=edit&amp;section=37" title="Modifier la section&#160;: Liens externes">modifier</a>]</span> <span class="mw-headline" id="Liens_externes">Liens externes</span></h3>
+<ul>
+<li><span style="font-family:monospace;font-weight:bold;font-size:small">(<abbr class="abbr" title="Langue&#160;: anglais">en</abbr>)</span> <a href="http://www.python.org/" class="external text" rel="nofollow">Site officiel</a></li>
+<li><span style="font-family:monospace;font-weight:bold;font-size:small">(<abbr class="abbr" title="Langue&#160;: français">fr</abbr>)</span> <a href="http://www.dmoz.org/World/Français/Informatique/Programmation/Langages/Python/" class="external text" rel="nofollow">Catégorie Python</a> de l’annuaire <a href="/wiki/Open_Directory_Project" title="Open Directory Project">dmoz</a></li>
+</ul>
+<div style="clear:both;"></div>
+<div class="navbox_group">
+<table class="navbox collapsible noprint autocollapse" style="margin:auto;">
+<tr>
+<th colspan="2" style="text-align:center;">
+<div style="float:left; width:6em; text-align:left">
+<div class="noprint plainlinksneverexpand" style="background-color:transparent; padding:0; font-size:xx-small; color:#000000; white-space:nowrap;"><a href="/wiki/Mod%C3%A8le:Palette_Python" title="Modèle:Palette Python"><abbr class="abbr" title="Voir ce modèle.">v</abbr></a>&#160;· <a href="/w/index.php?title=Discussion_mod%C3%A8le:Palette_Python&amp;action=edit&amp;redlink=1" class="new" title="Discussion modèle:Palette Python (page inexistante)"><abbr class="abbr" style="color:#002bb8;" title="Discussion sur ce modèle.">d</abbr></a>&#160;· <a href="http://fr.wikipedia.org/w/index.php?title=Mod%C3%A8le:Palette_Python&amp;action=edit" class="external text" rel="nofollow"><abbr class="abbr" title="Modifier ce modèle. Merci de prévisualiser avant de sauvegarder.">m</abbr></a></div>
+</div>
+<span style="font-size:110%"><strong class="selflink">Python</strong></span></th>
+</tr>
+<tr>
+<td class="group" style="">Implémentation</td>
+<td class="list" style=""><a href="/wiki/CPython">CPython</a>&#160;<b>·</b> <a href="/wiki/IronPython">IronPython</a>&#160;<b>·</b> <a href="/wiki/Jython">Jython</a>&#160;<b>·</b> <a href="/w/index.php?title=Psyco&amp;action=edit&amp;redlink=1" class="new" title="Psyco (page inexistante)">Psyco</a>&#160;<b>·</b> <a href="/wiki/PyPy">PyPy</a>&#160;<b>·</b> <a href="/w/index.php?title=PyS60&amp;action=edit&amp;redlink=1" class="new" title="PyS60 (page inexistante)">PyS60</a>&#160;<b>·</b> <a href="/w/index.php?title=Shed_Skin&amp;action=edit&amp;redlink=1" class="new" title="Shed Skin (page inexistante)">Shed Skin</a>&#160;<b>·</b> <a href="/wiki/Stackless_Python">Stackless Python</a>&#160;<b>·</b> <a href="/w/index.php?title=Unladen_Swallow&amp;action=edit&amp;redlink=1" class="new" title="Unladen Swallow (page inexistante)">Unladen Swallow</a></td>
+</tr>
+<tr>
+<td class="group" style=""><a href="/wiki/Framework">Framework</a></td>
+<td class="list even" style=""><a href="/wiki/CherryPy">CherryPy</a>&#160;<b>·</b> <a href="/wiki/Django_(framework)" title="Django (framework)">Django</a>&#160;<b>·</b> <a href="/wiki/Web2py">Web2py</a>&#160;<b>·</b> <a href="/w/index.php?title=Porcupine_(framework)&amp;action=edit&amp;redlink=1" class="new" title="Porcupine (framework) (page inexistante)">Porcupine</a>&#160;<b>·</b> <a href="/w/index.php?title=Pylons&amp;action=edit&amp;redlink=1" class="new" title="Pylons (page inexistante)">Pylons</a>&#160;<b>·</b> <a href="/wiki/TurboGears">TurboGears</a>&#160;<b>·</b> <a href="/w/index.php?title=Quixote&amp;action=edit&amp;redlink=1" class="new" title="Quixote (page inexistante)">Quixote</a></td>
+</tr>
+<tr>
+<td class="group" style=""><a href="/wiki/Environnement_de_d%C3%A9veloppement_int%C3%A9gr%C3%A9" title="Environnement de développement intégré">IDE</a></td>
+<td class="list" style=""><a href="/w/index.php?title=Boa_Constructor&amp;action=edit&amp;redlink=1" class="new" title="Boa Constructor (page inexistante)">Boa Constructor</a>&#160;<b>·</b> <a href="/w/index.php?title=IDLE_(Python)&amp;action=edit&amp;redlink=1" class="new" title="IDLE (Python) (page inexistante)">IDLE</a>&#160;<b>·</b> <a href="/w/index.php?title=Komodo_(logiciel)&amp;action=edit&amp;redlink=1" class="new" title="Komodo (logiciel) (page inexistante)">Komodo</a>&#160;<b>·</b> <a href="/w/index.php?title=PyDev&amp;action=edit&amp;redlink=1" class="new" title="PyDev (page inexistante)">PyDev</a>&#160;<b>·</b> <a href="/w/index.php?title=PyScripter&amp;action=edit&amp;redlink=1" class="new" title="PyScripter (page inexistante)">PyScripter</a></td>
+</tr>
+</table>
+<table class="navbox collapsible noprint autocollapse" style="margin:auto;">
+<tr>
+<th colspan="2" style="text-align:center;">
+<div style="float:left; width:6em; text-align:left">
+<div class="noprint plainlinksneverexpand" style="background-color:transparent; padding:0; font-size:xx-small; color:#000000; white-space:nowrap;"><a href="/wiki/Mod%C3%A8le:Palette_Langages_de_programmation" title="Modèle:Palette Langages de programmation"><abbr class="abbr" title="Voir ce modèle.">v</abbr></a>&#160;· <a href="/wiki/Discussion_mod%C3%A8le:Palette_Langages_de_programmation" title="Discussion modèle:Palette Langages de programmation"><abbr class="abbr" style="color:#002bb8;" title="Discussion sur ce modèle.">d</abbr></a>&#160;· <a href="http://fr.wikipedia.org/w/index.php?title=Mod%C3%A8le:Palette_Langages_de_programmation&amp;action=edit" class="external text" rel="nofollow"><abbr class="abbr" title="Modifier ce modèle. Merci de prévisualiser avant de sauvegarder.">m</abbr></a></div>
+</div>
+<span style="font-size:110%"><a href="/wiki/Langage_de_programmation" title="Langage de programmation">Langages de programmation</a></span></th>
+</tr>
+<tr>
+<td class="group" style=""><a href="/wiki/Programmation_orient%C3%A9e_objet" title="Programmation orientée objet">Langages à objets</a></td>
+<td class="list" style=""><span style="white-space:nowrap"><a href="/wiki/ActionScript">ActionScript</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/AppleScript">AppleScript</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/C%2B%2B">C++</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/C_sharp" title="C sharp">C#</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/D_(langage)" title="D (langage)">D</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/CodeGear_Delphi" title="CodeGear Delphi">Delphi</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Eiffel_(langage)" title="Eiffel (langage)">Eiffel</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Groovy_(langage)" title="Groovy (langage)">Groovy</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Java_(langage)" title="Java (langage)">Java</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/JavaScript">JavaScript</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Lisaac">Lisaac</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Logo_(langage)" title="Logo (langage)">Logo</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Objective-C">Objective-C</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Pharo">Pharo</a></span>&#160;• <span style="white-space:nowrap"><strong class="selflink">Python</strong></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Ruby">Ruby</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Simula">Simula</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Smalltalk">Smalltalk</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Visual_Basic">Visual Basic</a></span></td>
+</tr>
+<tr>
+<td class="group" style=""><a href="/wiki/Programmation_imp%C3%A9rative" title="Programmation impérative">Langages impératifs</a></td>
+<td class="list even" style=""><span style="white-space:nowrap"><a href="/wiki/APL_(langage)" title="APL (langage)">APL</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Active_Server_Pages" title="Active Server Pages">ASP</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Assembleur">Assembleur</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/BASIC">BASIC</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/BCPL">BCPL</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Shell_Unix">Shell Unix</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/C_(langage)" title="C (langage)">C</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Common_Business_Oriented_Language" title="Common Business Oriented Language" class="mw-redirect">COBOL</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Natural">Natural</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Forth_(langage)" title="Forth (langage)">Forth</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Fortran">Fortran</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Limbo_(langage)" title="Limbo (langage)">Limbo</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Lua">Lua</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Modula-2">Modula-2</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/OPL_(langage_informatique)" title="OPL (langage informatique)">OPL</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Pascal_(langage)" title="Pascal (langage)">Pascal</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Perl_(langage)" title="Perl (langage)">Perl</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/PHP">PHP</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Windows_PowerShell">Windows PowerShell</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Tool_Command_Language" title="Tool Command Language">Tcl</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/WLangage">WLangage</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/NQC" class="mw-redirect" title="NQC">NQC</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/NXC" class="mw-redirect" title="NXC">NXC</a></span></td>
+</tr>
+<tr>
+<td class="group" style=""><a href="/wiki/Programmation_fonctionnelle" title="Programmation fonctionnelle">Langages fonctionnels</a></td>
+<td class="list" style=""><span style="white-space:nowrap"><a href="/wiki/Haskell">Haskell</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/ML_(langage)" title="ML (langage)">ML</a>/<a href="/wiki/Objective_Caml" title="Objective Caml">OCaml</a>/<a href="/wiki/F_Sharp" title="F Sharp">F#</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Lisp">Lisp</a>/<a href="/wiki/Common_Lisp">Common Lisp</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Scheme">Scheme</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Extensible_Stylesheet_Language_Transformations" title="Extensible Stylesheet Language Transformations">XSLT</a></span></td>
+</tr>
+<tr>
+<td class="group" style=""><a href="/wiki/Programmation_d%C3%A9clarative" title="Programmation déclarative">Langages déclaratifs</a></td>
+<td class="list even" style=""><span style="white-space:nowrap"><a href="/wiki/Clips_(langage)" title="Clips (langage)">Clips</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Prolog">Prolog</a></span></td>
+</tr>
+<tr>
+<td class="group" style=""><a href="/wiki/Programmation_concurrente" title="Programmation concurrente">Langages concurrents</a></td>
+<td class="list" style=""><span style="white-space:nowrap"><a href="/wiki/Ada_(langage)" title="Ada (langage)">Ada 95</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Erlang_(langage)" title="Erlang (langage)">Erlang</a></span></td>
+</tr>
+<tr>
+<td class="below" style="" colspan="2"><b>Voir aussi&#160;:</b> <span style="white-space:nowrap"><a href="/wiki/Conception_de_logiciel" title="Conception de logiciel">Conception</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Programmation_informatique" title="Programmation informatique">Codage</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Test_(informatique)" title="Test (informatique)">Tests</a></span>&#160;• <span style="white-space:nowrap"><a href="/wiki/Optimisation_de_code" title="Optimisation de code">Optimisations</a></span></td>
+</tr>
+</table>
+</div>
+<ul id="bandeau-portail" class="bandeau-portail">
+<li><span class="bandeau-portail-element"><span class="bandeau-portail-icone"><a href="/wiki/Portail:Informatique" title="Portail de l’informatique"><img alt="Portail de l’informatique" src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Crystal_mycomputer.png/24px-Crystal_mycomputer.png" width="24" height="24" /></a></span> <span class="bandeau-portail-texte"><a href="/wiki/Portail:Informatique" title="Portail:Informatique">Portail de l’informatique</a></span></span></li>
+<li><span class="bandeau-portail-element"><span class="bandeau-portail-icone"><a href="/wiki/Portail:Logiciels_libres" title="Portail des logiciels libres"><img alt="Portail des logiciels libres" src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Nuvola_apps_emacs.png/24px-Nuvola_apps_emacs.png" width="24" height="24" /></a></span> <span class="bandeau-portail-texte"><a href="/wiki/Portail:Logiciels_libres" title="Portail:Logiciels libres">Portail des logiciels libres</a></span></span></li>
+<li><span class="bandeau-portail-element"><span class="bandeau-portail-icone"><a href="/wiki/Portail:Programmation_informatique" title="Portail de la programmation informatique"><img alt="Portail de la programmation informatique" src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Nuvola_apps_kcmsystem.svg/24px-Nuvola_apps_kcmsystem.svg.png" width="24" height="24" /></a></span> <span class="bandeau-portail-texte"><a href="/wiki/Portail:Programmation_informatique" title="Portail:Programmation informatique">Portail de la programmation informatique</a></span></span></li>
+</ul>
+<p><span id="interwiki-ru-adq" style="display:none;" class="AdQ"></span> <span class="BA" id="interwiki-de-ba" style="display:none;"></span> <span class="BA" id="interwiki-en-ba" style="display:none;"></span></p>
+
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 5275/1000000
+Post-expand include size: 78199/2048000 bytes
+Template argument size: 21472/2048000 bytes
+Expensive parser function count: 65/500
+-->
+
+<!-- Saved in parser cache with key frwiki:pcache:idhash:2340-0!*!0!!fr!4 and timestamp 20110302180249 -->
+<div class="printfooter">
+Ce document provient de « <a href="http://fr.wikipedia.org/wiki/Python_(langage)">http://fr.wikipedia.org/wiki/Python_(langage)</a> ».</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Cat%C3%A9gorie:Accueil" title="Catégorie:Accueil">Catégories</a> : <span dir='ltr'><a href="/wiki/Cat%C3%A9gorie:Python" title="Catégorie:Python">Python</a></span> | <span dir='ltr'><a href="/wiki/Cat%C3%A9gorie:Langage_de_programmation" title="Catégorie:Langage de programmation">Langage de programmation</a></span> | <span dir='ltr'><a href="/wiki/Cat%C3%A9gorie:Langage_imp%C3%A9ratif" title="Catégorie:Langage impératif">Langage impératif</a></span> | <span dir='ltr'><a href="/wiki/Cat%C3%A9gorie:Langage_fonctionnel" title="Catégorie:Langage fonctionnel">Langage fonctionnel</a></span> | <span dir='ltr'><a href="/wiki/Cat%C3%A9gorie:Langage_orient%C3%A9_objet" title="Catégorie:Langage orienté objet">Langage orienté objet</a></span> | <span dir='ltr'><a href="/wiki/Cat%C3%A9gorie:Langage_de_script" title="Catégorie:Langage de script">Langage de script</a></span></div><div id="mw-hidden-catlinks" class="mw-hidden-cats-hidden">Catégories cachées : <span dir='ltr'><a href="/wiki/Cat%C3%A9gorie:Article_contenant_un_appel_%C3%A0_traduction_en_anglais" title="Catégorie:Article contenant un appel à traduction en anglais">Article contenant un appel à traduction en anglais</a></span> | <span dir='ltr'><a href="/wiki/Cat%C3%A9gorie:Portail:Informatique/Articles_li%C3%A9s" title="Catégorie:Portail:Informatique/Articles liés">Portail:Informatique/Articles liés</a></span> | <span dir='ltr'><a href="/wiki/Cat%C3%A9gorie:Portail:Programmation_informatique/Articles_li%C3%A9s" title="Catégorie:Portail:Programmation informatique/Articles liés">Portail:Programmation informatique/Articles liés</a></span> | <span dir='ltr'><a href="/wiki/Cat%C3%A9gorie:Article_de_qualit%C3%A9_en_russe" title="Catégorie:Article de qualité en russe">Article de qualité en russe</a></span></div></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Outils personnels</h5>
+	<ul>
+					<li  id="pt-login"><a href="/w/index.php?title=Sp%C3%A9cial:Connexion&amp;returnto=Python_(langage)" title="Vous êtes encouragé(e) à vous identifier ; ce n’est cependant pas obligatoire. [o]" accesskey="o">Créer un compte ou se connecter</a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Espaces de noms</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><span><a href="/wiki/Python_(langage)"  title="Voir la page de contenu [c]" accesskey="c">Article</a></span></li>
+					<li  id="ca-talk"><span><a href="/wiki/Discussion:Python_(langage)"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variantes</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Affichages</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="/wiki/Python_(langage)" >Lire</a></span></li>
+					<li id="ca-edit"><span><a href="/w/index.php?title=Python_(langage)&amp;action=edit"  title="Vous pouvez modifier cette page ! [e]" accesskey="e">Modifier</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="/w/index.php?title=Python_(langage)&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Afficher l’historique</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Rechercher</label></h5>
+	<form action="/w/index.php" id="searchform">
+		<input type='hidden' name="title" value="Spécial:Recherche"/>
+				<div id="simpleSearch">
+						<input id="searchInput" name="search" type="text"  title="Rechercher dans Wikipédia [C]" accesskey="C"  value="" />
+						<button id="searchButton" type='submit' name='button'  title="Rechercher les pages comportant ce texte."><img src="http://bits.wikimedia.org/skins-1.17/vector/images/search-ltr.png?301-2" alt="Rechercher" /></button>
+					</div>
+			</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(http://upload.wikimedia.org/wikipedia/commons/5/5a/Wikipedia-logo-v2-fr.png);" href="/wiki/Wikip%C3%A9dia:Accueil_principal"  title="Page principale"></a></div>
+				<!-- /logo -->
+				
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- navigation -->
+<div class="portal" id='p-navigation'>
+	<h5>Navigation</h5>
+	<div class="body">
+				<ul>
+					<li id="n-Accueil"><a href="/wiki/Wikip%C3%A9dia:Accueil_principal">Accueil</a></li>
+					<li id="n-thema"><a href="/wiki/Portail:Accueil">Portails thématiques</a></li>
+					<li id="n-alphindex"><a href="/wiki/Sp%C3%A9cial:Toutes_les_pages">Index alphabétique</a></li>
+					<li id="n-randompage"><a href="/wiki/Sp%C3%A9cial:Page_au_hasard" title="Afficher une page au hasard [x]" accesskey="x">Un article au hasard</a></li>
+					<li id="n-contact"><a href="/wiki/Wikip%C3%A9dia:Contact">Contacter Wikipédia</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- Contribuer -->
+<div class="portal" id='p-Contribuer'>
+	<h5>Contribuer</h5>
+	<div class="body">
+				<ul>
+					<li id="n-help"><a href="/wiki/Aide:Sommaire" title="Aide">Aide</a></li>
+					<li id="n-portal"><a href="/wiki/Wikip%C3%A9dia:Accueil_de_la_communaut%C3%A9" title="À propos du projet">Communauté</a></li>
+					<li id="n-recentchanges"><a href="/wiki/Sp%C3%A9cial:Modifications_r%C3%A9centes" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li>
+					<li id="n-aboutwp"><a href="/wiki/Wikip%C3%A9dia:Accueil_des_nouveaux_arrivants">Accueil des nouveaux arrivants</a></li>
+					<li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/Special:Landingcheck?landing_page=WMFJA085&amp;language=fr&amp;utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=20101204SB002" title="Aidez-nous">Faire un don</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Contribuer -->
+
+<!-- coll-print_export -->
+<div class="portal" id='p-coll-print_export'>
+	<h5>Imprimer / exporter</h5>
+	<div class="body">
+				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Sp%C3%A9cial:Livre&amp;bookcmd=book_creator&amp;referer=Python+%28langage%29" title="Créer un livre ou une collection d’articles" rel="nofollow">Créer un livre</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Sp%C3%A9cial:Livre&amp;bookcmd=render_article&amp;arttitle=Python+%28langage%29&amp;oldid=62815326&amp;writer=rl" title="Télécharge une version PDF de cette page wiki" rel="nofollow">Télécharger comme PDF</a></li><li id="t-print"><a href="/w/index.php?title=Python_(langage)&amp;printable=yes" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li></ul>			</div>
+</div>
+
+<!-- /coll-print_export -->
+
+<!-- TOOLBOX -->
+<div class="portal" id="p-tb">
+	<h5>Boîte à outils</h5>
+	<div class="body">
+		<ul>
+					<li id="t-whatlinkshere"><a href="/wiki/Sp%C3%A9cial:Pages_li%C3%A9es/Python_(langage)" title="Liste des pages liées à celle-ci [j]" accesskey="j">Pages liées</a></li>
+						<li id="t-recentchangeslinked"><a href="/wiki/Sp%C3%A9cial:Suivi_des_liens/Python_(langage)" title="Liste des modifications récentes des pages liées à celle-ci [k]" accesskey="k">Suivi des pages liées</a></li>
+																																					<li id="t-upload"><a href="/wiki/Aide:Importer_un_fichier" title="Envoyer une image ou fichier média sur le serveur [u]" accesskey="u">Importer un fichier</a></li>
+											<li id="t-specialpages"><a href="/wiki/Sp%C3%A9cial:Pages_sp%C3%A9ciales" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li>
+											<li id="t-permalink"><a href="/w/index.php?title=Python_(langage)&amp;oldid=62815326" title="Lien permanent vers cette version de la page">Adresse de cette version</a></li>
+				<li id="t-cite"><a href="/w/index.php?title=Sp%C3%A9cial:Citer&amp;page=Python_(langage)&amp;id=62815326" title="Informations sur comment citer cette page">Citer cette page</a></li>		</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+<div class="portal" id="p-lang">
+	<h5>Autres langues</h5>
+	<div class="body">
+		<ul>
+					<li class="interwiki-af"><a href="http://af.wikipedia.org/wiki/Python" title="Python">Afrikaans</a></li>
+					<li class="interwiki-als"><a href="http://als.wikipedia.org/wiki/Python_(Programmiersprache)" title="Python (Programmiersprache)">Alemannisch</a></li>
+					<li class="interwiki-an"><a href="http://an.wikipedia.org/wiki/Python" title="Python">Aragonés</a></li>
+					<li class="interwiki-ar"><a href="http://ar.wikipedia.org/wiki/%D8%A8%D8%A7%D9%8A%D8%AB%D9%88%D9%86" title="بايثون">العربية</a></li>
+					<li class="interwiki-az"><a href="http://az.wikipedia.org/wiki/Piton" title="Piton">Azərbaycanca</a></li>
+					<li class="interwiki-bg"><a href="http://bg.wikipedia.org/wiki/Python" title="Python">Български</a></li>
+					<li class="interwiki-bn"><a href="http://bn.wikipedia.org/wiki/%E0%A6%AA%E0%A6%BE%E0%A6%87%E0%A6%A5%E0%A6%A8_(%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A7%8B%E0%A6%97%E0%A7%8D%E0%A6%B0%E0%A6%BE%E0%A6%AE%E0%A6%BF%E0%A6%82_%E0%A6%AD%E0%A6%BE%E0%A6%B7%E0%A6%BE)" title="পাইথন (প্রোগ্রামিং ভাষা)">বাংলা</a></li>
+					<li class="interwiki-bs"><a href="http://bs.wikipedia.org/wiki/Python_programski_jezik" title="Python programski jezik">Bosanski</a></li>
+					<li class="interwiki-bug"><a href="http://bug.wikipedia.org/wiki/Python" title="Python">ᨅᨔ ᨕᨘᨁᨗ</a></li>
+					<li class="interwiki-ca"><a href="http://ca.wikipedia.org/wiki/Python" title="Python">Català</a></li>
+					<li class="interwiki-cs"><a href="http://cs.wikipedia.org/wiki/Python" title="Python">Česky</a></li>
+					<li class="interwiki-da"><a href="http://da.wikipedia.org/wiki/Python_(programmeringssprog)" title="Python (programmeringssprog)">Dansk</a></li>
+					<li class="interwiki-de"><a href="http://de.wikipedia.org/wiki/Python_(Programmiersprache)" title="Python (Programmiersprache)">Deutsch</a></li>
+					<li class="interwiki-el"><a href="http://el.wikipedia.org/wiki/Python" title="Python">Ελληνικά</a></li>
+					<li class="interwiki-en"><a href="http://en.wikipedia.org/wiki/Python_(programming_language)" title="Python (programming language)">English</a></li>
+					<li class="interwiki-eo"><a href="http://eo.wikipedia.org/wiki/Python_(programlingvo)" title="Python (programlingvo)">Esperanto</a></li>
+					<li class="interwiki-es"><a href="http://es.wikipedia.org/wiki/Python" title="Python">Español</a></li>
+					<li class="interwiki-et"><a href="http://et.wikipedia.org/wiki/Python_(programmeerimiskeel)" title="Python (programmeerimiskeel)">Eesti</a></li>
+					<li class="interwiki-eu"><a href="http://eu.wikipedia.org/wiki/Python" title="Python">Euskara</a></li>
+					<li class="interwiki-fa"><a href="http://fa.wikipedia.org/wiki/%D9%BE%D8%A7%DB%8C%D8%AA%D9%88%D9%86_(%D8%B2%D8%A8%D8%A7%D9%86_%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%E2%80%8C%D9%86%D9%88%DB%8C%D8%B3%DB%8C)" title="پایتون (زبان برنامه‌نویسی)">فارسی</a></li>
+					<li class="interwiki-fi"><a href="http://fi.wikipedia.org/wiki/Python" title="Python">Suomi</a></li>
+					<li class="interwiki-gl"><a href="http://gl.wikipedia.org/wiki/Python" title="Python">Galego</a></li>
+					<li class="interwiki-he"><a href="http://he.wikipedia.org/wiki/Python" title="Python">עברית</a></li>
+					<li class="interwiki-hi"><a href="http://hi.wikipedia.org/wiki/%E0%A4%AA%E0%A4%BE%E0%A4%87%E0%A4%A5%E0%A4%A8_(%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A5%8B%E0%A4%97%E0%A5%8D%E0%A4%B0%E0%A4%BE%E0%A4%AE%E0%A4%A8_%E0%A4%AD%E0%A4%BE%E0%A4%B7%E0%A4%BE)" title="पाइथन (प्रोग्रामन भाषा)">हिन्दी</a></li>
+					<li class="interwiki-hu"><a href="http://hu.wikipedia.org/wiki/Python_(programoz%C3%A1si_nyelv)" title="Python (programozási nyelv)">Magyar</a></li>
+					<li class="interwiki-ia"><a href="http://ia.wikipedia.org/wiki/Python_(linguage_de_programmation)" title="Python (linguage de programmation)">Interlingua</a></li>
+					<li class="interwiki-id"><a href="http://id.wikipedia.org/wiki/Python_(bahasa_pemrograman)" title="Python (bahasa pemrograman)">Bahasa Indonesia</a></li>
+					<li class="interwiki-is"><a href="http://is.wikipedia.org/wiki/Python_(forritunarm%C3%A1l)" title="Python (forritunarmál)">Íslenska</a></li>
+					<li class="interwiki-it"><a href="http://it.wikipedia.org/wiki/Python" title="Python">Italiano</a></li>
+					<li class="interwiki-ja"><a href="http://ja.wikipedia.org/wiki/Python" title="Python">日本語</a></li>
+					<li class="interwiki-jbo"><a href="http://jbo.wikipedia.org/wiki/paiton" title="paiton">Lojban</a></li>
+					<li class="interwiki-ka"><a href="http://ka.wikipedia.org/wiki/%E1%83%9E%E1%83%98%E1%83%97%E1%83%9D%E1%83%9C%E1%83%98_(%E1%83%9E%E1%83%A0%E1%83%9D%E1%83%92%E1%83%A0%E1%83%90%E1%83%9B%E1%83%98%E1%83%A0%E1%83%94%E1%83%91%E1%83%98%E1%83%A1_%E1%83%94%E1%83%9C%E1%83%90)" title="პითონი (პროგრამირების ენა)">ქართული</a></li>
+					<li class="interwiki-ko"><a href="http://ko.wikipedia.org/wiki/%ED%8C%8C%EC%9D%B4%EC%8D%AC" title="파이썬">한국어</a></li>
+					<li class="interwiki-la"><a href="http://la.wikipedia.org/wiki/Python" title="Python">Latina</a></li>
+					<li class="interwiki-lt"><a href="http://lt.wikipedia.org/wiki/Python" title="Python">Lietuvių</a></li>
+					<li class="interwiki-lv"><a href="http://lv.wikipedia.org/wiki/Python" title="Python">Latviešu</a></li>
+					<li class="interwiki-ml"><a href="http://ml.wikipedia.org/wiki/%E0%B4%AA%E0%B5%88%E0%B4%A4%E0%B5%8D%E0%B4%A4%E0%B5%BA_(%E0%B4%AA%E0%B5%8D%E0%B4%B0%E0%B5%8B%E0%B4%97%E0%B5%8D%E0%B4%B0%E0%B4%BE%E0%B4%AE%E0%B4%BF%E0%B4%99%E0%B5%8D%E0%B4%99%E0%B5%8D_%E0%B4%AD%E0%B4%BE%E0%B4%B7)" title="പൈത്തൺ (പ്രോഗ്രാമിങ്ങ് ഭാഷ)">മലയാളം</a></li>
+					<li class="interwiki-mr"><a href="http://mr.wikipedia.org/wiki/%E0%A4%AA%E0%A4%BE%E0%A4%AF%E0%A4%A5%E0%A4%A8" title="पायथन">मराठी</a></li>
+					<li class="interwiki-ms"><a href="http://ms.wikipedia.org/wiki/Python" title="Python">Bahasa Melayu</a></li>
+					<li class="interwiki-ne"><a href="http://ne.wikipedia.org/wiki/%E0%A4%AA%E0%A4%BE%E0%A4%87%E0%A4%A5%E0%A4%A8_%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A5%8B%E0%A4%97%E0%A5%8D%E0%A4%B0%E0%A4%BE%E0%A4%AE%E0%A4%BF%E0%A4%99%E0%A5%8D%E0%A4%97_%E0%A4%AD%E0%A4%BE%E0%A4%B7%E0%A4%BE" title="पाइथन प्रोग्रामिङ्ग भाषा">नेपाली</a></li>
+					<li class="interwiki-nl"><a href="http://nl.wikipedia.org/wiki/Python_(programmeertaal)" title="Python (programmeertaal)">Nederlands</a></li>
+					<li class="interwiki-no"><a href="http://no.wikipedia.org/wiki/Python" title="Python">‪Norsk (bokmål)‬</a></li>
+					<li class="interwiki-pl"><a href="http://pl.wikipedia.org/wiki/Python" title="Python">Polski</a></li>
+					<li class="interwiki-pt"><a href="http://pt.wikipedia.org/wiki/Python" title="Python">Português</a></li>
+					<li class="interwiki-ro"><a href="http://ro.wikipedia.org/wiki/Python" title="Python">Română</a></li>
+					<li class="interwiki-ru"><a href="http://ru.wikipedia.org/wiki/Python" title="Python">Русский</a></li>
+					<li class="interwiki-sh"><a href="http://sh.wikipedia.org/wiki/Python_programski_jezik" title="Python programski jezik">Srpskohrvatski / Српскохрватски</a></li>
+					<li class="interwiki-simple"><a href="http://simple.wikipedia.org/wiki/Python_(programming_language)" title="Python (programming language)">Simple English</a></li>
+					<li class="interwiki-sk"><a href="http://sk.wikipedia.org/wiki/Python_(programovac%C3%AD_jazyk)" title="Python (programovací jazyk)">Slovenčina</a></li>
+					<li class="interwiki-sl"><a href="http://sl.wikipedia.org/wiki/Python_(programski_jezik)" title="Python (programski jezik)">Slovenščina</a></li>
+					<li class="interwiki-sq"><a href="http://sq.wikipedia.org/wiki/Python" title="Python">Shqip</a></li>
+					<li class="interwiki-sr"><a href="http://sr.wikipedia.org/wiki/%D0%9F%D0%B0%D1%98%D1%82%D0%BE%D0%BD_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%81%D0%BA%D0%B8_%D1%98%D0%B5%D0%B7%D0%B8%D0%BA)" title="Пајтон (програмски језик)">Српски / Srpski</a></li>
+					<li class="interwiki-sv"><a href="http://sv.wikipedia.org/wiki/Python_(programspr%C3%A5k)" title="Python (programspråk)">Svenska</a></li>
+					<li class="interwiki-ta"><a href="http://ta.wikipedia.org/wiki/%E0%AE%AA%E0%AF%88%E0%AE%A4%E0%AF%8D%E0%AE%A4%E0%AF%8B%E0%AE%A9%E0%AF%8D" title="பைத்தோன்">தமிழ்</a></li>
+					<li class="interwiki-te"><a href="http://te.wikipedia.org/wiki/%E0%B0%AA%E0%B1%88%E0%B0%A5%E0%B0%BE%E0%B0%A8%E0%B1%8D_(%E0%B0%95%E0%B0%82%E0%B0%AA%E0%B1%8D%E0%B0%AF%E0%B1%82%E0%B0%9F%E0%B0%B0%E0%B1%8D_%E0%B0%AD%E0%B0%BE%E0%B0%B7)" title="పైథాన్ (కంప్యూటర్ భాష)">తెలుగు</a></li>
+					<li class="interwiki-tg"><a href="http://tg.wikipedia.org/wiki/Python" title="Python">Тоҷикӣ</a></li>
+					<li class="interwiki-th"><a href="http://th.wikipedia.org/wiki/%E0%B8%A0%E0%B8%B2%E0%B8%A9%E0%B8%B2%E0%B9%84%E0%B8%9E%E0%B8%97%E0%B8%AD%E0%B8%99" title="ภาษาไพทอน">ไทย</a></li>
+					<li class="interwiki-tr"><a href="http://tr.wikipedia.org/wiki/Python_(programlama_dili)" title="Python (programlama dili)">Türkçe</a></li>
+					<li class="interwiki-uk"><a href="http://uk.wikipedia.org/wiki/Python" title="Python">Українська</a></li>
+					<li class="interwiki-vi"><a href="http://vi.wikipedia.org/wiki/Python_(ng%C3%B4n_ng%E1%BB%AF_l%E1%BA%ADp_tr%C3%ACnh)" title="Python (ngôn ngữ lập trình)">Tiếng Việt</a></li>
+					<li class="interwiki-zh"><a href="http://zh.wikipedia.org/wiki/Python" title="Python">中文</a></li>
+				</ul>
+	</div>
+</div>
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+											<ul id="footer-info">
+																	<li id="footer-info-lastmod"> Dernière modification de cette page le 2 mars 2011 à 19:02.<br /></li>
+																							<li id="footer-info-copyright"><span style="white-space: normal"><a class="internal" href="/wiki/Wikip%C3%A9dia:Citation_et_r%C3%A9utilisation_du_contenu_de_Wikip%C3%A9dia" title="Droit d'auteur">Droit d'auteur</a> : les textes sont disponibles sous <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.fr" title="Licence Creative Commons paternité partage des conditions initiales à l’identique 3.0 unported">licence Creative Commons paternité partage à l’identique</a> ; d’autres conditions peuvent s’appliquer. Voyez les <a href="http://wikimediafoundation.org/wiki/Conditions_d%27utilisation" title="Conditions d’utilisation de la Wikimedia Foundation">conditions d’utilisation</a> pour plus de détails, ainsi que les <a class="internal" href="/wiki/Wikip%C3%A9dia:Cr%C3%A9dits_graphiques" title="Droit d'auteur de certaines icônes">crédits graphiques</a>. En cas de réutilisation des textes de cette page, voyez <a class="internal" href="/wiki/Sp%C3%A9cial:Citer/Python_(langage)" title="Citer ou réutiliser cette page">comment citer les auteurs et mentionner la licence</a>.<br />
+Wikipedia® est une marque déposée de la <a href="http://wikimediafoundation.org/wiki/Accueil" title="Wikimedia Foundation">Wikimedia Foundation, Inc.</a>, organisation de bienfaisance régie par le paragraphe <a class="internal" href="/wiki/501c" title="501c">501(c)(3)</a> du code fiscal des États-Unis.</span><br /></li>
+															</ul>
+															<ul id="footer-places">
+																	<li id="footer-places-privacy"><a href="http://wikimediafoundation.org/wiki/Politique_de_confidentialit%C3%A9" title="wikimedia:Politique de confidentialité">Politique de confidentialité</a></li>
+																							<li id="footer-places-about"><a href="/wiki/Wikip%C3%A9dia:%C3%80_propos" title="Wikipédia:À propos">À propos de Wikipédia</a></li>
+																							<li id="footer-places-disclaimer"><a href="/wiki/Wikip%C3%A9dia:Avertissements_g%C3%A9n%C3%A9raux" title="Wikipédia:Avertissements généraux">Avertissements</a></li>
+															</ul>
+											<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" width="88" height="31" alt="Wikimedia Foundation"/></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="http://bits.wikimedia.org/skins-1.17/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		
+<script src="http://bits.wikimedia.org/fr.wikipedia.org/load.php?debug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector" type="text/javascript"></script>
+<script type="text/javascript">if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Python_(langage)", "wgTitle": "Python (langage)", "wgAction": "view", "wgArticleId": 2340, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 62815326, "wgCategories": ["Article contenant un appel à traduction en anglais", "Portail:Informatique/Articles liés", "Portail:Programmation informatique/Articles liés", "Python", "Langage de programmation", "Langage impératif", "Langage fonctionnel", "Langage orienté objet", "Langage de script", "Article de qualité en russe"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgSearchNamespaces": [0], "wgWikimediaMobileUrl": "http://fr.m.wikipedia.org/wiki", "wgCollapsibleNavBucketTest": false, "wgCollapsibleNavForceNewVersion": false, "Geo": {"city": "", "country": ""}, "wgNoticeProject": "wikipedia"});
+}
+</script>
+<script type="text/javascript">if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.legacy.wikibits", "mediawiki.util", "mediawiki.legacy.ajax", "mediawiki.legacy.mwsuggest", "ext.vector.collapsibleNav", "ext.vector.collapsibleTabs", "ext.vector.editWarning", "ext.vector.simpleSearch"]);
+	mediaWiki.loader.go();
+}
+</script>
+
+<script src="http://bits.wikimedia.org/w/extensions-1.17/WikimediaMobile/MobileRedirect.js?2.2" type="text/javascript"></script>
+<script src="/w/index.php?title=Sp%C3%A9cial:BannerController&amp;cache=/cn.js&amp;301-2" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/fr.wikipedia.org/load.php?debug=false&amp;lang=fr&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;version=20110301T220806Z" type="text/javascript"></script>
+<script type="text/javascript">if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":4,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":0,"watchdeletion":0,"watchlistdays":"3","watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"vector-simplesearch":1,"useeditwarning":1,"vector-collapsiblenav":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"variant":"fr","language":"fr","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":false,"searchNs101":false,"searchNs102":false,"searchNs103":false,"searchNs104":false,"searchNs105":false});
+	mediaWiki.loader.state({"user.options":"ready"});
+	
+	
+	/* cache key: frwiki:resourceloader:filter:minify-js:3:97ed87c2e37e9d408dd4f85545db4124 */
+}
+</script><script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		<!-- Served by srv231 in 0.085 secs. -->			</body>
+</html>
