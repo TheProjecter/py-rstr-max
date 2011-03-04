@@ -37,9 +37,9 @@ class SubString:
 def pick(s):
   return iter(s).next()
 
-def getSuffixes(_str):
-  n = len(_str)
-  return [SubString(_str, i, n-i) for i in xrange(n)]
+#def getSuffixes(_str):
+#  n = len(_str)
+#  return [SubString(_str, i, n-i) for i in xrange(n)]
 
 def simple_kark_sort(s):
   n = len(s)
@@ -49,28 +49,27 @@ def simple_kark_sort(s):
   tools.kark_sort(s, SA, n, alpha)
   return SA
 
-def getSortedSuffixes(suffixes):
-  s = str(suffixes[0])
-  n = len(s)
-  result = []
-  return [SubString(s, v, n-v) for v in simple_kark_sort(s)]
-  return sorted(suffixes)
+def getSortedSuffixes(s):
+  return simple_kark_sort(s)
+  #n = len(s)
+  #result = []
+  #return [SubString(s, v, n-v) for v in simple_kark_sort(s)]
 
-def getLongestPrefixes(affixes, sortedAffixes):
-  n = len(affixes)
+def getLongestPrefixes(s, sortedAffixes):
+  n = len(s)
   rank = [0 for i in xrange(n)]
   LCP = [0 for i in xrange(n-1)]
   for i in xrange(n):
-    rank[sortedAffixes[i]._start] = i
+    rank[sortedAffixes[i]] = i
   l = 0
-  for j in affixes:
+  for j in xrange(n):
     l = max(0, l-1)
-    i = rank[j._start]
+    i = rank[j]
     j2 = sortedAffixes[i-1]
     if i:
-      while l < len(j) and l < len(j2) and j[l] == j2[l]:
+      while l + j < n and l + j2 < n and s[j+l] == s[j2+l]:
         l += 1
-      LCP[i-1] = (i-1, l, max(j._start + l, j2._start + l))
+      LCP[i-1] = (i-1, l, max(j + l, j2 + l))
     else:
       l = 0
   return LCP
@@ -101,9 +100,10 @@ class Stack:
         prevStart = idxStart
       m -= n
       self._top -= n
-    #print '//', m
+    #print '//', m, n
     if m < 0:
-      self._max.append(maxEnd)
+      #print maxEnd
+      self._max.append(maxEnd-n-m)
       self._lst.append((-m, idxStart))
       self._top -= m
     #print '**', self._lst
@@ -121,28 +121,34 @@ class Stack:
     self.removeMany(end_, self._top, idx)
 
       
-def getRepeatedStrings(sortedAffixes, longestPrefixes):
-  results = {}
+def getRepeatedStrings(s, sortedSuffixes, longestPrefixes):
+  global cpt
+  cpt = 0
   def fct(len_, start, stop, end_):
+    global cpt
     #print '=>', len_, start, stop, "'%s'"%(sortedAffixes[start][:len_]), end_
-    #print '  last=%d len=%d rep=%d'%(end_, len_, stop-start+1)
+    #print '  => last=%d len=%d rep=%d'%(end_, len_, stop-start+1), s[end_-len_:end_]
+    cpt += 1
     id_ = (end_, stop-start+1)
+    #print ' ', id_
     v = results.get(id_, 0)
     results[id_] = max(v, len_)
   stack = Stack(fct)
-  prev = sortedAffixes[0]
   prev_len = 0
   idx = 0
+  results = {}
   for idx, current_len, end_ in longestPrefixes:
+    #print '@@ %02d'%idx, current_len, '-'*10, s[end_-current_len:end_], stack._lst, stack._max, s[sortedSuffixes[idx+1]:]
     if prev_len < current_len:
       stack.pushMany(end_, current_len-prev_len, idx)
     elif prev_len > current_len:
       stack.removeMany(end_, prev_len-current_len, idx)
     else:
       stack.setMax(end_)
-    #print '@@ %02d'%idx, list(str(sortedAffixes[idx][:current_len])), stack._lst, stack._max, stack._top
     prev_len = current_len
-  stack.close(len(sortedAffixes), idx+1)
+  stack.close(len(longestPrefixes)+1, idx+1)
+  #print  stack._lst, stack._max
+  #print '!!!', cpt
   return results
 
 def test():
@@ -159,22 +165,41 @@ def test():
     #'azerty',
     'je suis content que ca fonctionne',
     ]
-  bench = ['a'*(2**i+8) for i in xrange(20)]
+  #bench = ['a'*(2**i) for i in xrange(10, 21)]
   #bench = ["totortoto"]
+  s = open('Python.htm').read()
+  s = unicode(s, "utf-8", 'replace')[:100000]
+  
+  bench = [s]
   for s in bench:
     print '<start :'
-    suffixes = getSuffixes(s)
+    #suffixes = getSuffixes(s)
     import time
     t= time.time()
-    sortedSuffixes = getSortedSuffixes(suffixes)
-    longestPrefixes = getLongestPrefixes(suffixes, sortedSuffixes)
-    results = getRepeatedStrings(sortedSuffixes, longestPrefixes)
-    print len(s), '->', time.time() - t 
+    sortedSuffixes = getSortedSuffixes(s)
+    longestPrefixes = getLongestPrefixes(s, sortedSuffixes)
+    results = getRepeatedStrings(s, sortedSuffixes, longestPrefixes)
+    print len(s), '->', time.time() - t
+    print len(results)
     #print repr(s)
     #print sortedSuffixes
     #print longestPrefixes
-    #for ((end, nb), l) in results.iteritems():
-    #  print repr(SubString(s, end-l, l)), '*', nb, ',',
+    #print s
+    for ((end, nb), l) in results.iteritems():
+      ss = s[end-l:end]#SubString(s, end-l, l) #), '*', nb, ',',
+      #ss = unicode(ss, 'utf8', 'replace')
+      #print '***', ss, nb
+      idx = 0
+      try: 
+        for i in xrange(nb):
+          idx = s.index(ss, idx) + 1
+      except ValueError, e:
+        print "+++", ss, end, i, nb
+      try:
+        idx = s.index(ss, idx) + 1
+        print "***", ss, end, i, nb
+      except ValueError, e:
+        pass
     #print 
     print '>stop'
 

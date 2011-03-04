@@ -113,7 +113,6 @@ class Rstr_max :
         l = 0
       lcp[rank[j]] = l
     lcp[k] = 0
-
     self.array_suffix = tmp
     self.lcp = lcp
     self.SA = SA
@@ -158,11 +157,13 @@ class Rstr_max :
     self.rstr(0,k)
 
   def step4_rstr_max(self) :
+    cpt = 0
     flag = False
     sort_list = []
     for i in xrange(self.n) :
       o = self.res_rev[i]
       if self.corres_su_pre.has_key(o) :
+        cpt += 1
         l = self.corres_su_pre[o].keys()
         l.sort()
         for length in l :
@@ -176,7 +177,7 @@ class Rstr_max :
           old_info = info
           old_su = new_su
           flag = True
-
+    print cpt
     sort_list.append(old_info)
     self.array_repeated = sort_list
 
@@ -188,6 +189,45 @@ class Rstr_max :
     return self.array_repeated
 
 if (__name__ == '__main__') :
+  import sys
+  limit_recur = sys.getrecursionlimit()
+  sys.setrecursionlimit(600000)
+  str1 = open('Python.htm','r').read()
+  s = unicode(str1,'utf-8','replace')[:100000]
+  
+  rstr = Rstr_max()
+  rstr.add_str(s)
+  #rstr.add_str(str2_unicode)
+
+  import time
+  t = time.time()
+  array_repeated = rstr.go()
+  print time.time() - t
+  print len(array_repeated)
+
+  idx = 0
+
+  #print s
+  for r in array_repeated :
+    first_suffix = rstr.get_suffix(r[1][0])
+    global_str = rstr.get_str(first_suffix[2])
+    l = first_suffix[0] + r[0]
+    ss = global_str[first_suffix[0]:l]
+  
+    nb = len(r[1])
+    idx = 0
+    try: 
+      for i in xrange(nb):
+        idx = s.index(ss, idx) + 1
+    except ValueError, e:
+      print "+++", ss, idx, nb
+    try:
+      idx = s.index(ss, idx) + 1
+      print "***", ss, nb
+    except ValueError, e:
+      pass
+
+def vafuche():
   str1 = 'ab'*200
   str1_unicode = unicode(str1,'utf-8','replace')
   rstr = Rstr_max()
