@@ -160,6 +160,7 @@ class Rstr_max :
     cpt = 0
     flag = False
     sort_list = []
+    old_info = ''
     for i in xrange(self.n) :
       o = self.res_rev[i]
       if self.corres_su_pre.has_key(o) :
