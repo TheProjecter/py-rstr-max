@@ -83,13 +83,11 @@ class Stack:
     self._max = []
 
   def pushMany(self, end_, n, idx):
-    #print '++', n, idx
     self._max.append(end_)
     self._lst.append((n, idx))
     self._top += n
       
   def removeMany(self, end_, m, idxEnd):
-    #print '--', m, idxEnd
     prevStart = -1
     maxEnd = end_
     while m > 0:
@@ -100,13 +98,10 @@ class Stack:
         prevStart = idxStart
       m -= n
       self._top -= n
-    #print '//', m, n
     if m < 0:
-      #print maxEnd
       self._max.append(maxEnd-n-m)
       self._lst.append((-m, idxStart))
       self._top -= m
-    #print '**', self._lst
 
   def setMax(self, value):
     #print '==', value
@@ -152,21 +147,6 @@ def getRepeatedStrings(s, sortedSuffixes, longestPrefixes):
   return results
 
 def test():
-  bench = [
-    'totor',
-    'zorro',
-    'azerty'*2 + 'z',
-    'aazaz',
-    'azazz',
-    '1234561234561234121123456123',
-    'aaaa',
-    'bbaaabb',
-    'baaab',
-    #'azerty',
-    'je suis content que ca fonctionne',
-    ]
-  #bench = ['a'*(2**i) for i in xrange(10, 21)]
-  #bench = ["totortoto"]
   s = open('Python.htm').read()
   s = unicode(s, "utf-8", 'replace')[:10000]
   
@@ -203,97 +183,6 @@ def test():
     #print 
     print '>stop'
 
-def main():
-  try:
-    test()
-    #unittest.main()
-  except SystemExit, e:
-    pass
-
-import unittest
-
-class TestLongestPrefix(unittest.TestCase):
-  def test_longestPrefix(self):
-    self.assertEqual(longestPrefix('toto', 'tota'), 3)
-    self.assertEqual(longestPrefix('toto', ''), 0)
-    self.assertEqual(longestPrefix('toto', 'ta'), 1)    
-    self.assertEqual(longestPrefix('toto', 'otota'), 0)
-    self.assertEqual(longestPrefix('toto', 'toto'), 4)
-
-class TestSubString(unittest.TestCase):
-
-  def test_str(self):
-    testStr = 'azerty'
-    subString = SubString(testStr, 2, 2)
-    self.assertEqual(str(subString), 'er')
-    subString = SubString(testStr, 2, 2, -1)
-    self.assertEqual(str(subString), 'ez')
-
-  def test_getitem(self):
-    testStr = 'azerty'
-    subString = SubString(testStr, 2, 2)
-    self.assertEqual(subString[3], 'y')
-    subString = SubString(testStr, 2, 2, -1)
-    self.assertEqual(subString[1], 'z')
-
-  def test_cmp(self):
-    testStr = 'azerty'
-    s = SubString(testStr, 2, 2)
-    t = SubString(testStr, 2, 2, -1)
-    self.assertTrue(t > s)
-    self.assertTrue(s < t)
-    self.assertTrue(s != t)
-    s = SubString(testStr, 2, 2)
-    t = SubString(testStr, 2, 5)
-    self.assertTrue(t > s)
-    self.assertTrue(s < t)
-    self.assertTrue(s != t)
-
-  def test_eq(self):
-    testStr = 'azertyazerty'
-    s = SubString(testStr, 0, 6)
-    t = SubString(testStr, 6, 6)
-    self.assertTrue(t == s)
-    self.assertTrue(not s<t)
-    self.assertTrue(not s>t)
-    self.assertTrue(not s != t)
-    testStr = 'azertyytreza'
-    s = SubString(testStr, 0, 6)
-    t = SubString(testStr, 11, 6, -1)
-    self.assertTrue(t == s)
-    self.assertTrue(not s<t)
-    self.assertTrue(not s>t)
-    self.assertTrue(not s != t)
-
 
 if __name__ == '__main__':
-  main()
-
-##def x(i, j):
-##  print '=>', i, j
-##
-##print '-------------'
-##s = Stack(x)
-##print 0, s._lst
-##s.pushMany(4, 7)
-##print 1, s._lst
-##s.addAll(10)
-##print 2, s._lst
-##s.removeMany(3)
-##print 3, s._lst
-##s.addAll(11)
-##print 4, s._lst
-##print '*'
-##s.pushMany(1, 2)
-##print 5, s._lst
-##s.addAll(12)
-##print 6, s._lst
-##s.removeMany(2)
-##print 7, s._lst
-##s.addAll(13)
-##print 8, s._lst
-##s.pushMany(1, 5)
-##print 9, s._lst
-##s.close()
-##print 0, s._lst
-##print '+++++++++++++'
+  test()
