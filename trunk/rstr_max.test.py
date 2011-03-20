@@ -16,7 +16,7 @@ r = rstr.go()
 
 for ((idStr, end), nb), (l, start_plage) in r.iteritems():
   ss = rstr.array_str[idStr][end-l:end]
-  print ss
+  print ss.encode('utf-8')
   for o in range(start_plage, start_plage + nb) :
     offset, id_str = rstr.array_suffix[o]
     print '   %d %d'%(offset, id_str)
