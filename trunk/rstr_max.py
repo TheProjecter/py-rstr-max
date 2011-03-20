@@ -35,9 +35,9 @@ class Stack:
 #        self._trigger(idxStart, idxEnd, end_)
         id_ = (end_, idxEnd-idxStart+1)
         if(self._results.has_key(id_) and self._top > self._results[id_][0]) :
-            self._results[id_] = (max(self._results[id_][0],self._top),idxStart,idxEnd)
+          self._results[id_] = (self._top,idxStart)
         else :
-          self._results[id_] = (self._top, idxStart, idxEnd)
+          self._results[id_] = (self._top, idxStart)
         prevStart = idxStart
       m -= n
       self._top -= n
@@ -85,19 +85,19 @@ class Rstr_max :
     #n = len(global_suffix)
     self.res = [0]*k
     global_suffix += char_final*3
-
     kark_sort(global_suffix, self.res, k, sorted(set(global_suffix)))
 
   def step2_lcp(self) :
     n = len(self.res)
-    c = n - len(self.array_str)
+    len_array_str = len(self.array_str)
+    c = n - len_array_str
 
     rank = [0]*c
     tmp = [0]*c
     SA = [0]*c
 
     k = 0
-    for i in xrange(len(self.array_str),n) :
+    for i in xrange(len_array_str,n) :
 #      if self.distrib.has_key(self.res[i]) :
       key = self.distrib[self.res[i]]
       tmp[k] = self.array_suffix[key]
@@ -111,15 +111,15 @@ class Rstr_max :
       if(l > 0) :
         l -= 1
       if rank[j] != 0 :
-        #o_j, id_str_j = self.array_suffix[j]
-        su1 = self.array_suffix[j]
-        str_j = self.array_str[su1[1]]
-        len_j = len(str_j) - su1[0]
-#        o_jj, id_str_jj  = self.array_suffix[SA[rank[j]-1]]
-        su2 = self.array_suffix[SA[rank[j]-1]]
-        str_jj = self.array_str[su2[1]]
-        len_jj = len(str_jj) - su2[0]
-        while(l < len_j and l < len_jj and str_j[l + su1[0]] == str_jj[l + su2[0]]) :
+        o1, id_str1 = self.array_suffix[j]
+#        su1 = self.array_suffix[j]
+        str_j = self.array_str[id_str1]
+        len_j = len(str_j) - o1
+        o2, id_str2  = self.array_suffix[SA[rank[j]-1]]
+#        su2 = self.array_suffix[SA[rank[j]-1]]
+        str_jj = self.array_str[id_str2]
+        len_jj = len(str_jj) - o2
+        while(l < len_j and l < len_jj and str_j[l + o1] == str_jj[l + o2]) :
           l += 1
         lcp[rank[j]-1] = l
       else :

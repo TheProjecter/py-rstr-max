@@ -24,9 +24,9 @@ r = rstr.go()
 #
 
 
-for ((idStr, end), nb), (l, start_plage, end_plage) in r.iteritems():
+for ((idStr, end), nb), (l, start_plage) in r.iteritems():
   ss = rstr.array_str[idStr][end-l:end]
-  for o in range(start_plage, end_plage+1) :
+  for o in range(start_plage, start_plage + nb) :
     offset, id_str = rstr.array_suffix[o]
     sss = rstr.array_str[id_str][offset:offset+l]
     if(ss != sss) :
