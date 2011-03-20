@@ -3,7 +3,7 @@
 
 from tools_karkkainen_sanders import *
 #from suffix_array import *
-from rstr_max import *
+from rstr_max_v0 import *
 from string import *
 import sys
 

@@ -34,7 +34,10 @@ class Stack:
       if (prevStart != idxStart):
 #        self._trigger(idxStart, idxEnd, end_)
         id_ = (end_, idxEnd-idxStart+1)
-        self._results[id_] = (max(self._results[id_][0],self._top),idxStart,idxEnd) if(self._results.has_key(id_)) else (self._top, idxStart, idxEnd)
+        if(self._results.has_key(id_) and self._top > self._results[id_][0]) :
+            self._results[id_] = (max(self._results[id_][0],self._top),idxStart,idxEnd)
+        else :
+          self._results[id_] = (self._top, idxStart, idxEnd)
         prevStart = idxStart
       m -= n
       self._top -= n
@@ -43,11 +46,6 @@ class Stack:
       self._lst.append((-m, idxStart))
       self._top -= m
 
-  def setMax(self, value):
-    if self._top <= 0:
-      return
-    if value > self._max[-1]:
-      self._max[-1] = value
 
   def close(self, end_, idx):
     if self._top <= 0:
@@ -60,22 +58,7 @@ class Rstr_max :
   def __init__(self) :
     self.array_suffix = []
     self.array_str = []
-    self.global_equiv = []
-
-    self.distrib_corres = []
     self.distrib = {}
-
-  def get_suffix(self,i) :
-    return self.array_suffix[i]
-
-  def get_array_suffix(self) :
-    return self.array_suffix
-
-  def get_str(self,i) :
-    return self.array_str[i] 
-
-  def get_array_str(self,i) :
-    return self.array_str
   
   def add_str(self, str_unicode) :
     self.array_str.append(str_unicode)
@@ -83,7 +66,7 @@ class Rstr_max :
     len_str = len(str_unicode)
 
     for i in xrange(len_str) :
-      self.array_suffix.append((i, len_str-i, id_str))
+      self.array_suffix.append((i, id_str))
 
   def step1_sort_suffix(self) :
     char_frontier = chr(2)
@@ -99,15 +82,13 @@ class Rstr_max :
         k += 1
       k += 1
 
-    n = len(global_suffix)
-    self.res = [0]*n
+    #n = len(global_suffix)
+    self.res = [0]*k
     global_suffix += char_final*3
-#    alphabet = sorted(set(global_suffix))
 
-    kark_sort(global_suffix, self.res, n, sorted(set(global_suffix)))
+    kark_sort(global_suffix, self.res, k, sorted(set(global_suffix)))
 
   def step2_lcp(self) :
-    k = 0
     n = len(self.res)
     c = n - len(self.array_str)
 
@@ -116,13 +97,13 @@ class Rstr_max :
     SA = [0]*c
 
     k = 0
-    for i in xrange(n) :
-      if self.distrib.has_key(self.res[i]) :
-        key = self.distrib[self.res[i]]
-        tmp[k] = self.array_suffix[key]
-        rank[key] = k
-        SA[k] = key
-        k += 1
+    for i in xrange(len(self.array_str),n) :
+#      if self.distrib.has_key(self.res[i]) :
+      key = self.distrib[self.res[i]]
+      tmp[k] = self.array_suffix[key]
+      rank[key] = k
+      SA[k] = key
+      k += 1
 
     l = 0
     lcp = [0]*(k-1)
@@ -130,11 +111,15 @@ class Rstr_max :
       if(l > 0) :
         l -= 1
       if rank[j] != 0 :
-        su_j   = self.array_suffix[j]
-        str_j  = self.array_str[su_j[2]]
-        su_jj  = self.array_suffix[SA[rank[j]-1]]
-        str_jj = self.array_str[su_jj[2]]
-        while(l < su_j[1] and l < su_jj[1] and str_j[l + su_j[0]] == str_jj[l + su_jj[0]]) :
+        #o_j, id_str_j = self.array_suffix[j]
+        su1 = self.array_suffix[j]
+        str_j = self.array_str[su1[1]]
+        len_j = len(str_j) - su1[0]
+#        o_jj, id_str_jj  = self.array_suffix[SA[rank[j]-1]]
+        su2 = self.array_suffix[SA[rank[j]-1]]
+        str_jj = self.array_str[su2[1]]
+        len_jj = len(str_jj) - su2[0]
+        while(l < len_j and l < len_jj and str_j[l + su1[0]] == str_jj[l + su2[0]]) :
           l += 1
         lcp[rank[j]-1] = l
       else :
@@ -145,43 +130,30 @@ class Rstr_max :
     self.SA = SA
 
   def step3_rstr(self) :
-
-#    def fct(len_, start, stop, end_):
-#      id_ = (end_, stop-start+1)
-#      if(results.has_key(id_)) :
-#        results[id_] = (max(results[id_][0],len_),start,stop)
-#      else :
-#        results[id_] = (len_, start, stop) #start stop == offset de lcp
-
     stack = Stack()
     prev_len = 0
     idx = 0
     results = {}
-#    for idx in xrange(len(longestPrefixes)):
+
     for idx,current_len in enumerate(self.lcp):
-#      current_len = longestPrefixes[idx]
-#      offset1, _, idStr1  = self.array_suffix[idx]
-#      offset2, _, idStr2  = self.array_suffix[idx+1]
       su1  = self.array_suffix[idx]
       su2  = self.array_suffix[idx+1]
-      end_ = max((su1[2], su1[0]+current_len), (su2[2], su2[0]+current_len)) 
+      end_ = max((su1[1], su1[0]+current_len), (su2[1], su2[0]+current_len)) 
       if prev_len < current_len:
         cp = current_len - prev_len
-#        stack.pushMany(end_, cp, idx)
         stack._max.append(end_)
         stack._lst.append((cp, idx))
         stack._top += cp
       elif prev_len > current_len:
         stack.removeMany(end_, prev_len-current_len, idx)
-#        stack.setMax(end_)
       elif stack._top > 0 and end_ > stack._max[-1]:
         stack._max[-1] = end_
       prev_len = current_len
 
-    stack.close(len(self.lcp)+1, idx+1)
+#    stack.close(len(self.lcp)+1, idx+1)
+    if stack._top > 0:
+      stack.removeMany(len(self.lcp)+1, stack._top, idx+1)
 
-#    1/0
-#    stack.close(len(longestPrefixes), idx+1)
     return stack._results
 
   def go(self) :
@@ -191,8 +163,6 @@ class Rstr_max :
     return r
 
 if (__name__ == '__main__') :
-#  str1 = "abd"
-#  str1_unicode = unicode(str1,'utf-8','replace')[24:34]
   str1 = open('Python.htm','r').read()
   str1_unicode = unicode(str1,'utf-8','replace')[0:4000]
   rstr = Rstr_max()
