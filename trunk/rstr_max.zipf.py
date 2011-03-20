@@ -25,19 +25,8 @@ r = rstr.go()
 #    offset, id_str = rstr.array_suffix[o]
 #    print '   %d %d'%(offset, id_str)
 #    sss = rstr.array_str[id_str][offset:offset+l]
-#
 
 l = r.keys()
-
-
-#for ((idStr, end), nb), (l, start_plage) in r.iteritems():
-#  ss = rstr.array_str[idStr][end-l:end]
-#  list_nb_occurences[((idStr,end),nb)] = nb
-#  for o in range(start_plage, start_plage + nb) :
-#    offset, id_str = rstr.array_suffix[o]
-#    sss = rstr.array_str[id_str][offset:offset+l]
-#    if(ss != sss) :
-#      print ss, sss
 
 def cmpval(x,y):
   return y[1] - x[1]
@@ -50,10 +39,4 @@ plt.plot(list_x, list_y, 'r-')
 filename = 'zipf_rstr.png'
 plt.xlabel('log(rank)')
 plt.ylabel('log(freq.)')
-#plt.legend('freq. / rank', 'upper left', shadow = True)
 plt.savefig(filename)
-
-
-
-#[('u', 9), ('p', 5), ('b', 4), ('z', 3), ('a', 2)]
-

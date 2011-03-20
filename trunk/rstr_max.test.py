@@ -14,38 +14,20 @@ rstr.add_str(str1_unicode)
 rstr.add_str(str2_unicode)
 r = rstr.go()
 
-#for ((idStr, end), nb), (l, start_plage, end_plage) in r.iteritems():
-#  ss = rstr.array_str[idStr][end-l:end]
-#  print ss
-#  for o in range(start_plage, end_plage+1) :
-#    offset, id_str = rstr.array_suffix[o]
-#    print '   %d %d'%(offset, id_str)
-#    sss = rstr.array_str[id_str][offset:offset+l]
-#
-
-
 for ((idStr, end), nb), (l, start_plage) in r.iteritems():
   ss = rstr.array_str[idStr][end-l:end]
+  print ss
   for o in range(start_plage, start_plage + nb) :
     offset, id_str = rstr.array_suffix[o]
+    print '   %d %d'%(offset, id_str)
     sss = rstr.array_str[id_str][offset:offset+l]
-    if(ss != sss) :
-      print ss, sss
+    assert(ss == sss)
 
-#for ((idStr, end), nb), (l, start_plage, end_plage) in r.iteritems():
+#run this routine to check the results
+#for ((idStr, end), nb), (l, start_plage) in r.iteritems():
 #  ss = rstr.array_str[idStr][end-l:end]
-#  s = rstr.array_str[idStr]
-#  #ss = s[end-l:end]#SubString(s, end-l, l) #), '*', nb, ',',
-#  #ss = unicode(ss, 'utf8', 'replace')
-#  #print '***', ss, nb
-#  idx = 0
-#  try:
-#    for i in xrange(nb):
-#      idx = s.index(ss, idx)# + 1
-#  except ValueError, e:
-#    print "+++", ss, end, i, nb
-#  try:
-#    idx = s.index(ss, idx)# + 1
-#    print "***", ss, end, i, nb
-#  except ValueError, e:
-#    pass
+#  for o in range(start_plage, start_plage + nb) :
+#    offset, id_str = rstr.array_suffix[o]
+#    sss = rstr.array_str[id_str][offset:offset+l]
+#    if(ss != sss) :
+#      print ss, sss
