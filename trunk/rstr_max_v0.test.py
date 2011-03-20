@@ -4,7 +4,6 @@
 from tools_karkkainen_sanders import *
 #from suffix_array import *
 from rstr_max_v0 import *
-from string import *
 import sys
 
 limit_recur = sys.getrecursionlimit()
@@ -20,28 +19,29 @@ rstr.add_str(str1_unicode)
 rstr.add_str(str2_unicode)
 array_repeated = rstr.go()
 
-
-print "πάλιν / δρόμος"
 for r in array_repeated :
   first_suffix = rstr.get_suffix(r[1][0])
   global_str = rstr.get_str(first_suffix[2])
-  l = first_suffix[0] + r[0]
-  s = global_str[first_suffix[0]:l].encode('utf-8', 'replace')
-  set_str_occur = set()
-#  print s, len(r[1])
+  l = r[0]
+  s = global_str[first_suffix[0]:first_suffix[0]+l].encode('utf-8')
+  print s, r[0]
   for id_suffix in r[1] :
-    suffix = rstr.get_suffix(id_suffix)
-    set_str_occur.add(suffix[2])
-#  print "    ", set_str_occur
-  if(len(set_str_occur) == 2) :
-    print "[%s] %d %d"%(s, r[0], len(r[1])) 
+    su = rstr.array_suffix[id_suffix]
+    ss = rstr.array_str[su[2]][su[0]:su[0]+l].encode('utf-8')
+    print '    ',ss, su[0], su[0]+l, su[2]
+    assert(s == ss)
+#    print ss
 
-#  for id_su in r[1] :
-
-#    suffix = rstr.get_suffix(id_su)
-#    str_corres = rstr.get_str(suffix[2])
-#    foreach($rstr[1] as $id_su){
-#      $suffix = $factory_rstr->__get_suffix($id_su);
-#      $str_correspondante  = $factory_rstr->__get_str($suffix[2]);
-#      echo "  string $suffix[2] - offset $suffix[0] - lenght $rstr[0]\n";
-#    }
+#print "πάλιν / δρόμος"
+#for r in array_repeated :
+#  first_suffix = rstr.get_suffix(r[1][0])
+#  global_str = rstr.get_str(first_suffix[2])
+#  l = first_suffix[0] + r[0]
+#  s = global_str[first_suffix[0]:l].encode('utf-8', 'replace')
+#  set_str_occur = set()
+##  print s, len(r[1])
+#  for id_suffix in r[1] :
+#    suffix = rstr.get_suffix(id_suffix)
+#    set_str_occur.add(suffix[2])
+#  if(len(set_str_occur) == 2) :
+#    print "[%s] %d %d"%(s, r[0], len(r[1]))
