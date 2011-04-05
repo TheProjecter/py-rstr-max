@@ -22,7 +22,7 @@ r = rstr.go()
 
 for ((id_str, end), nb), (l, start_plage) in r.iteritems():
   ss = rstr.array_str[id_str][end-l:end]
-  print ss
+#  print ss
   for o in range(start_plage, start_plage + nb) :
     su = rstr.array_suffix[o]
 #    print '   ' + str(su)

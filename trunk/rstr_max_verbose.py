@@ -105,6 +105,9 @@ class Rstr_max :
     n = len(self.res)
     c = n - len(self.array_str)
 
+    print n
+    1/0 
+
     rank = [0]*c
     tmp = [0]*c
     SA = [0]*c
