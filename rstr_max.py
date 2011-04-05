@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from tools_karkkainen_sanders_v3 import *
+from tools_karkkainen_sanders import *
 #from tools_karkkainen_sanders import *
 from array import array as array
 
