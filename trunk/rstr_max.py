@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from tools_karkkainen_sanders_v3 import direct_kark_sort as direct_kark_sort
+from tools_karkkainen_sanders import direct_kark_sort as direct_kark_sort
 #from tools_karkkainen_sanders import *
 from array import array as array
 
