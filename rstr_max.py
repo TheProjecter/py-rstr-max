@@ -1,33 +1,54 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from tools_karkkainen_sanders import direct_kark_sort as direct_kark_sort
-#from tools_karkkainen_sanders import *
-from array import array as array
+from tools_karkkainen_sanders import direct_kark_sort
+from array import array
 
-def removeMany(end_, m, idxEnd, _lst, _max, _top, _results):
-  prevStart = -1
-  while m > 0:
-    n, idxStart = _lst.pop()
-    end_ = _max.pop()
-    if (prevStart != idxStart):
-      _results[(end_, idxEnd-idxStart+1)] = (_top, idxStart)
-      prevStart = idxStart
-    m -= n
-    _top -= n
-  if m < 0:
-    _max.append((end_[0],end_[1]-n-m))
-    _lst.append((-m, idxStart))
-    _top -= m
-  return _top
+class Stack:
+  def __init__(self, trigger):
+    self._trigger = trigger
+    self._top = 0
+    self.lst_max = []
+
+#  def pushMany(self, end_, n, idx):
+#    self.lst_max.append([(n, idx), end_])
+#    self._top += n
+
+  def removeMany(self, end_, m, idxEnd):
+    prevStart = -1
+    maxEnd = end_
+    while m > 0:
+      (n, idxStart), maxEnd = self.lst_max.pop()
+      if (prevStart != idxStart):
+        self._trigger(self._top, idxStart, idxEnd, maxEnd)
+        prevStart = idxStart
+      m -= n
+      self._top -= n
+    if m < 0:
+      self.lst_max.append([(-m, idxStart), (maxEnd[0],maxEnd[1]-n-m)])
+      self._top -= m
+
+#  def setMax(self, value):
+#    if self._top <= 0:
+#      return
+#    if value > self.lst_max[-1][1] :
+#      self.lst_max[-1][1] = value
+
+#  def close(self, end_, idx):
+#    if self._top <= 0:
+#      return
+#    self.removeMany(end_, self._top, idx)
 
 class Rstr_max :
 
   def __init__(self) :
     self.array_suffix = []
     self.array_str = []
+    self.global_equiv = []
+
+    self.distrib_corres = []
     self.distrib = {}
-  
+
   def add_str(self, str_unicode) :
     self.array_str.append(str_unicode)
     id_str = len(self.array_str) - 1
@@ -86,39 +107,47 @@ class Rstr_max :
 
     self.array_suffix = tmp
     self.lcp = lcp
-    self.SA = SA
+#    self.SA = SA
 
   def step3_rstr(self) :
-    _results = {}
-    _top = 0         
-    _lst = []        
-    _max = []        
-    
     prev_len = 0
-
     idx = 0
+    results = {}
     len_lcp = len(self.lcp)
-#    for current_len in self.lcp :      
-    for idx in xrange(len_lcp) :
+
+    def fct(len_, start, stop, end_):
+      id_ = (end_, stop-start+1)
+      if(results.has_key(id_)) :
+        if(len_ > results[id_][0]) :
+          results[id_] = (max(results[id_][0],len_),start)
+      else :
+        results[id_] = (len_, start) #start stop == offset de lcp
+
+    stack = Stack(fct)
+    for idx in xrange(len_lcp):
       current_len = self.lcp[idx]
-      end_ = max((self.array_suffix[idx][1], self.array_suffix[idx][0]+current_len),
-                 (self.array_suffix[idx+1][1], self.array_suffix[idx+1][0]+current_len)) 
-      if prev_len < current_len:
-        cp = current_len - prev_len
-        _max.append(end_)
-        _lst.append((cp, idx))
-        _top += cp
-      elif prev_len > current_len:
-        _top = removeMany(end_, prev_len-current_len, idx, _lst, _max, _top, _results)
-      elif _top > 0 and end_ > _max[-1]:
-        _max[-1] = end_
+      offset1, idStr1  = self.array_suffix[idx]
+      offset2, idStr2  = self.array_suffix[idx+1]
+      end_ = max((idStr1, offset1+current_len), (idStr2, offset2+current_len)) 
+      n = prev_len - current_len
+      if n < 0 :
+        #pushMany
+        stack.lst_max.append([(-n, idx), end_])
+        stack._top += -n
+      elif n > 0:
+        stack.removeMany(end_, n, idx)
+      elif stack._top > 0 and end_ > stack.lst_max[-1][1] :
+        #setMax
+        stack.lst_max[-1][1] = end_
+
       prev_len = current_len
-#      idx += 1
 
-    if _top > 0:
-      _top = removeMany(len_lcp+1, _top, idx+1, _lst, _max, _top, _results)
+    if(stack._top <= 0) :
+      stack.removeMany(len_lcp+1, stack._top, idx+1)
 
-    return _results
+#    stack.close(len_lcp+1, idx+1)
+
+    return results
 
   def go(self) :
     self.step1_sort_suffix()
@@ -127,54 +156,12 @@ class Rstr_max :
     return r
 
 if (__name__ == '__main__') :
-  str1 = 'abd'*100000
-  str1_unicode = unicode(str1,'utf-8','replace')[0:4000]
+  str1 = 'toto'
+  str1_unicode = unicode(str1,'utf-8','replace')
   rstr = Rstr_max()
   rstr.add_str(str1_unicode)
-  rstr.add_str(str1_unicode)
-  rstr.add_str(str1_unicode)
-  rstr.add_str(str1_unicode)
   r = rstr.go()
+  for ((id_str, end), nb), (l, start_plage) in r.iteritems():
+    ss = rstr.array_str[id_str][end-l:end]
+    print '[%s] %d'%(ss.encode('utf-8'), nb)
 
-#  str1 = open('Python.htm','r').read()
-#  str1_unicode = unicode(str1,'utf-8','replace')[0:4000]
-#  rstr = Rstr_max()
-#  rstr.add_str(str1_unicode)
-#  r = rstr.go()
-
-def tt() :
-  #for ((end, nb), (l, start_plage, end_plage)) in r.iteritems():
-  for ((idStr, end), nb), (l, start_plage, end_plage) in r.iteritems():
-    ss = rstr.get_str(idStr)[end-l:end]
-    s = rstr.get_str(idStr)
-    #ss = s[end-l:end]#SubString(s, end-l, l) #), '*', nb, ',',
-    #ss = unicode(ss, 'utf8', 'replace')
-    #print '***', ss, nb
-    idx = 0
-    try:
-      for i in xrange(nb):
-        idx = s.index(ss, idx) + 1
-    except ValueError, e:
-      print "+++", ss, end, i, nb
-    try:
-      idx = s.index(ss, idx) + 1
-      print "***", ss, end, i, nb
-    except ValueError, e:
-      pass
-
-
-
-  1/0
-
-
-  for ((idStr, end), nb), (l, start_plage, end_plage) in r.iteritems():
-    ss = rstr.get_str(idStr)[end-l:end]
-    print ss
-    print l, start_plage, end_plage
-    for o in range(start_plage, end_plage+1) :
-      su = rstr.array_suffix[o]
-      sss = rstr.array_str[su[2]][su[0]:su[0]+l]
-#      print sss, su, su[0], l, su[2]
-
-  1/0
-  pass
