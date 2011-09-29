@@ -71,10 +71,10 @@ class Test_rstrmax:
       self.assertNotEqual(len(set_right_char), 1)
 
 
-#class Test_rstrmax_test1(Test_rstrmax, unittest.TestCase):
-#  def getString(self):
-#    str1 = " u u"
-#    return unicode(str1,'utf-8','replace')
+class Test_rstrmax_test1(Test_rstrmax, unittest.TestCase):
+  def getString(self):
+    str1 = " u u"
+    return unicode(str1,'utf-8','replace')
 
 #class Test_rstrmax_otto(Test_rstrmax, unittest.TestCase):
 #  def getString(self):
