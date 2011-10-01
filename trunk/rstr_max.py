@@ -58,18 +58,17 @@ class Rstr_max :
 
   def step1_sort_suffix(self) :
     char_frontier = chr(2)
-    char_final = chr(1)
-    global_suffix = ''
     x = k = 0
-    for mot in self.array_str :
-      global_suffix += mot + char_frontier
-      for _ in mot :
+    gs = char_frontier.join(self.array_str + [''])
+    for i in xrange(len(self.array_str)) :
+#      mot = self.array_str[i] 
+#    for mot in self.array_str :
+      for _ in xrange(len(self.array_str[i])) :
         self.distrib[k] = x
         x += 1
         k += 1
       k += 1
-
-    self.res = direct_kark_sort(global_suffix)
+    self.res = direct_kark_sort(gs)
 
   def step2_lcp(self) :
     n = len(self.res)
@@ -84,7 +83,6 @@ class Rstr_max :
       rank[key] = k
       SA[k] = key
       k += 1
-
     self.distrib = None
 
     l = 0
@@ -129,6 +127,8 @@ class Rstr_max :
       offset1, idStr1  = self.array_suffix[idx]
       offset2, idStr2  = self.array_suffix[idx+1]
       end_ = max((idStr1, offset1+current_len), (idStr2, offset2+current_len)) 
+#      e = max((idStr1, offset1), (idStr2, offset2))
+#      end_ = (e[0],e[1]+current_len)
       n = prev_len - current_len
       if n < 0 :
         #pushMany
@@ -159,6 +159,7 @@ if (__name__ == '__main__') :
   str1 = 'toto'
   str1_unicode = unicode(str1,'utf-8','replace')
   rstr = Rstr_max()
+  rstr.add_str(str1_unicode)
   rstr.add_str(str1_unicode)
   r = rstr.go()
   for ((id_str, end), nb), (l, start_plage) in r.iteritems():
