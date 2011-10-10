@@ -113,8 +113,9 @@ def kark_sort(s, SA, n, K):
 
 def LCP(s, suffix_array):
   n = len(s)
-  rank = array('i', [0]*n)
-  LCP = array('i', [0]*n)
+  init = [0]*n
+  rank = array('i', init)
+  LCP = array('i', init)
   for i in xrange(n):
     rank[suffix_array[i]] = i
   l = 0

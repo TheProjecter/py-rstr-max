@@ -5,8 +5,7 @@ from tools_karkkainen_sanders import direct_kark_sort
 from array import array
 
 class Stack:
-  def __init__(self, trigger):
-    self._trigger = trigger
+  def __init__(self):
     self._top = 0
     self.lst_max = []
 
@@ -14,19 +13,6 @@ class Stack:
 #    self.lst_max.append([(n, idx), end_])
 #    self._top += n
 
-  def removeMany(self, end_, m, idxEnd):
-    prevStart = -1
-    maxEnd = end_
-    while m > 0:
-      (n, idxStart), maxEnd = self.lst_max.pop()
-      if (prevStart != idxStart):
-        self._trigger(self._top, idxStart, idxEnd, maxEnd)
-        prevStart = idxStart
-      m -= n
-      self._top -= n
-    if m < 0:
-      self.lst_max.append([(-m, idxStart), (maxEnd[0],maxEnd[1]-n-m)])
-      self._top -= m
 
 #  def setMax(self, value):
 #    if self._top <= 0:
@@ -42,117 +28,134 @@ class Stack:
 class Rstr_max :
 
   def __init__(self) :
-    self.array_suffix = []
     self.array_str = []
-    self.global_equiv = []
-
-    self.distrib_corres = []
-    self.distrib = {}
 
   def add_str(self, str_unicode) :
     self.array_str.append(str_unicode)
-    id_str = len(self.array_str) - 1
-
-    for i in xrange(len(str_unicode)) :
-      self.array_suffix.append((i, id_str))
-
+    
+    
   def step1_sort_suffix(self) :
     char_frontier = chr(2)
-    x = k = 0
-    gs = char_frontier.join(self.array_str + [''])
-    for i in xrange(len(self.array_str)) :
-#      mot = self.array_str[i] 
-#    for mot in self.array_str :
-      for _ in xrange(len(self.array_str[i])) :
-        self.distrib[k] = x
-        x += 1
+
+    self.global_suffix = char_frontier.join(self.array_str)
+    
+    nbChars = len(self.global_suffix)
+    init = [-1]*nbChars
+    self.idxString = array('i', init)
+    self.idxPos = array('i', init)
+    self.endAt = array('i', init)
+    
+    k = idx = 0
+    for mot in self.array_str :
+      last = k + len(mot)
+      for p in xrange(len(mot)) :
+        self.idxString[k] = idx
+        self.idxPos[k] = p
+        self.endAt[k] = last
         k += 1
+      idx += 1
       k += 1
-    self.res = direct_kark_sort(gs)
+
+    self.res = direct_kark_sort(self.global_suffix)
 
   def step2_lcp(self) :
     n = len(self.res)
-    tmp = [0]*(n - len(self.array_str))
-    rank = array('i',tmp)
-    SA = array('i',tmp)
-
-    k = 0
-    for i in xrange(len(self.array_str),n) :
-      key = self.distrib[self.res[i]]
-      tmp[k] = self.array_suffix[key]
-      rank[key] = k
-      SA[k] = key
-      k += 1
-    self.distrib = None
-
+    init = [0]*n
+    rank = array('i', init)
+    LCP = array('i', init)
+    
+    s = self.global_suffix
+    suffix_array = self.res
+    endAt = self.endAt
+    
+    for i in xrange(n):
+      rank[self.res[i]] = i
     l = 0
-    lcp = array('i',[0]*(k-1))
-    for j in xrange(k) :
+    for j in xrange(n):
       if(l > 0) :
         l -= 1
-      if rank[j] != 0 :
-        su1 = self.array_suffix[j]
-        str_j = self.array_str[su1[1]]
-        len_j = len(str_j) - su1[0]
-        su2 = self.array_suffix[SA[rank[j]-1]]
-        str_jj = self.array_str[su2[1]]
-        len_jj = len(str_jj) - su2[0]
-        while(l < len_j and l < len_jj and str_j[l + su1[0]] == str_jj[l + su2[0]]) :
+      i = rank[j]
+      j2 = suffix_array[i-1]
+      if i:
+        while l + j < endAt[j] and l + j2 < endAt[j2] and s[j+l] == s[j2+l]:
           l += 1
-        lcp[rank[j]-1] = l
-      else :
+        LCP[i-1] = l 
+      else:
         l = 0
-
-    self.array_suffix = tmp
-    self.lcp = lcp
-#    self.SA = SA
+    self.lcp = LCP
 
   def step3_rstr(self) :
     prev_len = 0
     idx = 0
     results = {}
-    len_lcp = len(self.lcp)
-
-    def fct(len_, start, stop, end_):
-      id_ = (end_, stop-start+1)
-      if(results.has_key(id_)) :
-        if(len_ > results[id_][0]) :
-          results[id_] = (max(results[id_][0],len_),start)
-      else :
-        results[id_] = (len_, start) #start stop == offset de lcp
-
-    stack = Stack(fct)
+    len_lcp = len(self.lcp) -1
+      
+    stack = Stack()
+    pos1 = self.res[0]
+    #offset1 = self.idxPos[self.res[0]]
+    #idStr1 = self.idxString[self.res[0]]
     for idx in xrange(len_lcp):
+    
       current_len = self.lcp[idx]
-      offset1, idStr1  = self.array_suffix[idx]
-      offset2, idStr2  = self.array_suffix[idx+1]
-      end_ = max((idStr1, offset1+current_len), (idStr2, offset2+current_len)) 
+      pos2 = self.res[idx+1]
+      #offset2 = self.idxPos[pos2]
+      #idStr2 = self.idxString[pos2]
+      #offset2, idStr2  = self.array_suffix[idx+1]
+      end_ = max(pos1, pos2) + current_len 
 #      e = max((idStr1, offset1), (idStr2, offset2))
 #      end_ = (e[0],e[1]+current_len)
       n = prev_len - current_len
       if n < 0 :
         #pushMany
-        stack.lst_max.append([(-n, idx), end_])
+        stack.lst_max.append([-n, idx, end_])
         stack._top += -n
       elif n > 0:
-        stack.removeMany(end_, n, idx)
+        self.removeMany(stack, results, n, idx)
       elif stack._top > 0 and end_ > stack.lst_max[-1][1] :
         #setMax
-        stack.lst_max[-1][1] = end_
+        stack.lst_max[-1][-1] = end_
 
       prev_len = current_len
-
+      pos1 = pos2
+      #offset1 = offset2
+      #idStr1 = idStr2
+      
+      
     if(stack._top > 0) :
-      stack.removeMany(len_lcp+1, stack._top, idx+1)
-
-#    stack.close(len_lcp+1, idx+1)
+      self.removeMany(stack, results, stack._top, idx+1)
 
     return results
 
+  def removeMany(self, stack, results, m, idxEnd):
+      prevStart = -1
+      while m > 0:
+        n, idxStart, maxEnd = stack.lst_max.pop()
+        if prevStart != idxStart:
+          idStr = self.idxString[maxEnd-1]
+          pos = self.idxPos[maxEnd-1]
+          id_ = (idStr, pos, idxEnd-idxStart+1)
+          if id_ not in results or results[id_][0] < stack._top:
+              results[id_] = (stack._top,idxStart)
+          prevStart = idxStart
+        m -= n
+        stack._top -= n
+      if m < 0:
+        stack.lst_max.append([-m, idxStart, (maxEnd[0],maxEnd[1]-n-m)])
+        stack._top -= m    
+    
   def go(self) :
+    import time
+    t_start = t0 = time.time()
+    t0 = time.time()
     self.step1_sort_suffix()
+    print time.time() - t0
+    t0 = time.time()
     self.step2_lcp()
+    print time.time() - t0
+    t0 = time.time()
     r = self.step3_rstr()
+    print time.time() - t0
+    print time.time() - t_start
     return r
 
 if (__name__ == '__main__') :
