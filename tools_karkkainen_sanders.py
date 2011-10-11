@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 from array import array
 
-def radixpass(a, b, r, n, k) :
+def radixpass(a, b, r, s, n, k) :
   c = array("i", [0]*(k+1))
   for i in xrange(n) :
-    c[r[a[i]]]+=1
+    c[r[a[i]+s]]+=1
 
   somme = 0
   for i in xrange(k+1):
@@ -13,8 +13,8 @@ def radixpass(a, b, r, n, k) :
     somme += freq
 
   for i in xrange(n) :
-    b[c[r[a[i]]]] = a[i]
-    c[r[a[i]]] += 1
+    b[c[r[a[i]+s]]] = a[i]
+    c[r[a[i]+s]] += 1
 
 def simple_kark_sort(s) :
   alphabet = [None] + sorted(set(s))
@@ -49,9 +49,9 @@ def kark_sort(s, SA, n, K):
   s12.extend([0]*3)
   s12 = array('i', s12)
 
-  radixpass(s12, SA12, s[2:], n02, K)
-  radixpass(SA12, s12, s[1:], n02, K)
-  radixpass(s12, SA12, s, n02, K)
+  radixpass(s12, SA12, s, 2, n02, K)
+  radixpass(SA12, s12, s, 1, n02, K)
+  radixpass(s12, SA12, s, 0, n02, K)
 
   name = 0
   c0, c1, c2 = -1, -1, -1
@@ -75,7 +75,7 @@ def kark_sort(s, SA, n, K):
       SA12[s12[i]-1] = i
 
   s0 = array('i',[SA12[i]*3 for i in xrange(n02) if SA12[i]<n0])
-  radixpass(s0, SA0, s, n0, K)
+  radixpass(s0, SA0, s, 0, n0, K)
   
   p = j = k = 0
   t = n0 - n1

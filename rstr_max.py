@@ -4,27 +4,6 @@
 from tools_karkkainen_sanders import direct_kark_sort
 from array import array
 
-class Stack:
-  def __init__(self):
-    self._top = 0
-    self.lst_max = []
-
-#  def pushMany(self, end_, n, idx):
-#    self.lst_max.append([(n, idx), end_])
-#    self._top += n
-
-
-#  def setMax(self, value):
-#    if self._top <= 0:
-#      return
-#    if value > self.lst_max[-1][1] :
-#      self.lst_max[-1][1] = value
-
-#  def close(self, end_, idx):
-#    if self._top <= 0:
-#      return
-#    self.removeMany(end_, self._top, idx)
-
 class Rstr_max :
 
   def __init__(self) :
@@ -90,17 +69,25 @@ class Rstr_max :
     results = {}
     len_lcp = len(self.lcp) -1
       
+    class Stack:
+      pass
+
+    lcp = self.lcp
+    res = self.res
+      
     stack = Stack()
-    pos1 = self.res[0]
+    stack._top = 0
+    stack.lst_max = []
+    pos1 = res[0]
     #offset1 = self.idxPos[self.res[0]]
     #idStr1 = self.idxString[self.res[0]]
     for idx in xrange(len_lcp):
-      current_len = self.lcp[idx]
-      pos2 = self.res[idx+1]
+      current_len = lcp[idx]
+      pos2 = res[idx+1]
       #offset2 = self.idxPos[pos2]
       #idStr2 = self.idxString[pos2]
       #offset2, idStr2  = self.array_suffix[idx+1]
-      end_ = max(pos1, pos2) + current_len 
+      end_ = max(pos1, pos2) + current_len# max(pos1, pos2) + current_len 
 #      e = max((idStr1, offset1), (idStr2, offset2))
 #      end_ = (e[0],e[1]+current_len)
       n = prev_len - current_len
@@ -110,7 +97,7 @@ class Rstr_max :
         stack._top += -n
       elif n > 0:
         self.removeMany(stack, results, n, idx)
-      elif stack._top > 0 and end_ > stack.lst_max[-1][1] :
+      elif stack._top > 0 and end_ > stack.lst_max[-1][-1] :
         #setMax
         stack.lst_max[-1][-1] = end_
 
