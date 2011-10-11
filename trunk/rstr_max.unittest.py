@@ -11,9 +11,12 @@ class Test_rstrmax:
 
   def test_rstr_max(self) :
     r = self.rstr.go()
-    for ((idStr, end), nb), (l, start_plage) in r.iteritems():
-      ss = self.rstr.array_str[idStr][end-l:end]
-      s = self.rstr.array_str[idStr]
+    for (offset_end, nb), (l, start_plage) in r.iteritems():
+      ss = self.rstr.global_suffix[offset_end-l:offset_end]
+#      ss = self.rstr.array_str[idStr][end-l:end]
+      offset_end -= 1
+      id_chaine = self.rstr.idxString[offset_end]
+      s = self.rstr.array_str[id_chaine]
       idx = 0
       for i in xrange(nb):
         idx = s.index(ss, idx) + 1
@@ -27,12 +30,19 @@ class Test_rstrmax:
 
   def test_left_maximality(self) :
     r = self.rstr.go()
-    for ((idStr, end), nb), (l, start_plage) in r.iteritems():
-      ss = self.rstr.array_str[idStr][end-l:end]
-      s = self.rstr.array_str[idStr]
+#    for (idStr, end, nb), (l, start_plage) in r.iteritems():
+    for (offset_end, nb), (l, start_plage) in r.iteritems():
+      ss = self.rstr.global_suffix[offset_end-l:offset_end]
+#      ss = self.rstr.array_str[idStr][end-l:end]
+      offset_end -= 1
+      id_chaine = self.rstr.idxString[offset_end]
+      s = self.rstr.array_str[id_chaine]
+#      s = self.rstr.array_str[idStr]
       set_left_char = set()
       for o in range(start_plage, start_plage + nb) :
-        su = self.rstr.array_suffix[o]
+        offset_global = self.rstr.res[o]
+        su = (self.rstr.idxPos[offset_global],self.rstr.idxString[offset_global])
+#        su = self.rstr.array_suffix[o]
         if(su[0] == 0) :
           char_left = "START_STR"
         else :
@@ -47,9 +57,37 @@ class Test_rstrmax:
         print
       self.assertNotEqual(len(set_left_char), 1)
 
+
   def test_right_maximality(self) :
     r = self.rstr.go()
-    for ((idStr, end), nb), (l, start_plage) in r.iteritems():
+    for (offset_end, nb), (l, start_plage) in r.iteritems():
+      ss = self.rstr.global_suffix[offset_end-l:offset_end]
+      offset_end -= 1
+      id_chaine = self.rstr.idxString[offset_end]
+      s = self.rstr.array_str[id_chaine]
+      set_right_char = set()
+      for o in range(start_plage, start_plage + nb) :
+        offset_global = self.rstr.res[o]
+        su = (self.rstr.idxPos[offset_global],self.rstr.idxString[offset_global])
+        ls = len(self.rstr.array_str[su[1]])
+        if(su[0]+l == ls) :
+          char_right = "END_STR"
+        else :
+          char_right = self.rstr.array_str[su[1]][su[0]+l]
+        set_right_char.add(char_right)
+
+      if(len(set_right_char) == 1) :
+        print
+        print '*'*10
+        print set_right_char
+        print ss.encode('utf-8')
+        print '*'*10
+        print
+      self.assertNotEqual(len(set_right_char), 1)
+
+  def itest_right_maximality(self) :
+    r = self.rstr.go()
+    for (idStr, end, nb), (l, start_plage) in r.iteritems():
       ss = self.rstr.array_str[idStr][end-l:end]
       s = self.rstr.array_str[idStr]
       set_right_char = set()
@@ -71,10 +109,10 @@ class Test_rstrmax:
       self.assertNotEqual(len(set_right_char), 1)
 
 
-class Test_rstrmax_test1(Test_rstrmax, unittest.TestCase):
-  def getString(self):
-    str1 = " u u"
-    return unicode(str1,'utf-8','replace')
+#class Test_rstrmax_test1(Test_rstrmax, unittest.TestCase):
+#  def getString(self):
+#    str1 = " u u"
+#    return unicode(str1,'utf-8','replace')
 
 #class Test_rstrmax_otto(Test_rstrmax, unittest.TestCase):
 #  def getString(self):
