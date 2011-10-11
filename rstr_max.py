@@ -95,7 +95,6 @@ class Rstr_max :
     #offset1 = self.idxPos[self.res[0]]
     #idStr1 = self.idxString[self.res[0]]
     for idx in xrange(len_lcp):
-    
       current_len = self.lcp[idx]
       pos2 = self.res[idx+1]
       #offset2 = self.idxPos[pos2]
@@ -120,7 +119,6 @@ class Rstr_max :
       #offset1 = offset2
       #idStr1 = idStr2
       
-      
     if(stack._top > 0) :
       self.removeMany(stack, results, stack._top, idx+1)
 
@@ -131,16 +129,16 @@ class Rstr_max :
       while m > 0:
         n, idxStart, maxEnd = stack.lst_max.pop()
         if prevStart != idxStart:
-          idStr = self.idxString[maxEnd-1]
-          pos = self.idxPos[maxEnd-1]
-          id_ = (idStr, pos, idxEnd-idxStart+1)
+          #idStr = self.idxString[maxEnd-1]
+          #pos = self.idxPos[maxEnd-1]
+          id_ = (maxEnd, idxEnd-idxStart+1)
           if id_ not in results or results[id_][0] < stack._top:
               results[id_] = (stack._top,idxStart)
           prevStart = idxStart
         m -= n
         stack._top -= n
       if m < 0:
-        stack.lst_max.append([-m, idxStart, (maxEnd[0],maxEnd[1]-n-m)])
+        stack.lst_max.append([-m, idxStart, maxEnd-n-m])
         stack._top -= m    
     
   def go(self) :
@@ -168,4 +166,3 @@ if (__name__ == '__main__') :
   for ((id_str, end), nb), (l, start_plage) in r.iteritems():
     ss = rstr.array_str[id_str][end-l:end]
     print '[%s] %d'%(ss.encode('utf-8'), nb)
-
