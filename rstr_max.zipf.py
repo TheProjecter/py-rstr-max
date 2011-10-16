@@ -35,7 +35,7 @@ list_x = [math.log(elt[1]) for elt in l]
 list_y = [math.log(i) for i in range(1, len(list_x)+1)]
 
 plt.plot(list_y, list_x, 'r-')
-filename = 'zipf_rstr.pdf'
+filename = 'zipf_rstr.png'
 plt.xlabel('log(rank)')
 plt.ylabel('log(freq.)')
 plt.savefig(filename)
