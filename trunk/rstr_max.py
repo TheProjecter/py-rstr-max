@@ -45,15 +45,11 @@ class Rstr_max :
     s = self.global_suffix
     suffix_array = self.res
     endAt = self.endAt
-#    print n 
-#    print '='*20
-#    print list(self.res)
-#    print list(rank)
-#    print '='*20
-#    print rank[0]
+
     for i in xrange(len(self.array_str),n):
       v = self.res[i]
       rank[v] = i
+
     l = 0
     for j in xrange(n):
       if(l > 0) :
@@ -73,26 +69,25 @@ class Rstr_max :
     idx = 0
     results = {}
     len_lcp = len(self.lcp) -1
-      
+
+#    lcp = self.lcp
+#    res = self.res
+
     class Stack:
       pass
-
-    lcp = self.lcp
-    res = self.res
-
     stack = Stack()
     stack._top = 0
     stack.lst_max = []
 
-    if len(res) == 0 :
+    if len(self.res) == 0 :
       return {}
 
-    pos1 = res[0]
+    pos1 = self.res[0]
     #offset1 = self.idxPos[self.res[0]]
     #idStr1 = self.idxString[self.res[0]]
     for idx in xrange(len_lcp):
-      current_len = lcp[idx]
-      pos2 = res[idx+1]
+      current_len = self.lcp[idx]
+      pos2 = self.res[idx+1]
       #offset2 = self.idxPos[pos2]
       #idStr2 = self.idxString[pos2]
       #offset2, idStr2  = self.array_suffix[idx+1]
