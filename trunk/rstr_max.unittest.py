@@ -120,10 +120,10 @@ class Test_rstrmax_test1(Test_rstrmax, unittest.TestCase):
 #    str1 = open('otto.txt','r').read()
 #    return unicode(str1,'utf-8','replace')
    
-class iTest_rstrmax_python(Test_rstrmax, unittest.TestCase):
+class Test_rstrmax_python(Test_rstrmax, unittest.TestCase):
   def getString(self):
     str1 = open('Python.htm','r').read()
-    return unicode(str1,'utf-8','replace')[:1000]
+    return unicode(str1,'utf-8','replace')[:10000]
 
 class Test_rstrmax_a(Test_rstrmax, unittest.TestCase):
   def getString(self):
