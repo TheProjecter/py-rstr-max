@@ -174,9 +174,9 @@ class GappedMotif() :
 #path = 'UNIX_user_data/sanitized_all.981115184025'
 path = './002.art'
 str1 = file(path,'r').read()
-str1 = str1[0:500]
 #str1 = str1.replace('\n','#')
 s = unicode(str1,'utf-8','replace')
+s = s[0:1000]
 pat_tag = re.compile('</*[^>]+/*>', re.I | re.M)
 s = pat_tag.sub('', s)
 pat_space = re.compile('[\s]+', re.I | re.M)
@@ -212,17 +212,47 @@ for (offset_end, nb), (size, start_plage) in r.iteritems():
 
 print len(list_motifs)
 
+flag = False
 dic_gapped_motifs = {}
+tmp = {}
+tmp_l = {}
+
 for motif in list_motifs :
   (content,space),L = maximal_equiv_motif(motif, s, index_motifs)
   m = GappedMotif((content,space), L, list_motifs)
+#  if (content,space) in dic_gapped_motifs :
+#    print tmp[(content,space)].graphie(s)
+#    print tmp_l[(content,space)]
+#    flag = True
   dic_gapped_motifs[(content,space)] = m
+  tmp.setdefault((content,space), []).append(motif)
+  tmp_l.setdefault((content,space), []).append(L)
+
+#  if flag :
+#    print tmp[(content,space)].graphie(s)
+#    print tmp_l[(content,space)]
+#    print dic_gapped_motifs[(content,space)].graphie(s,list_motifs)
+#    print "="*20
+#  flag = False
+
+
 #  (nc,ns),nL = maximal_equiv_motif(m, s, index_motifs)
 #  assert(nc==content)
 #  assert(ns==space)
 #  assert(nL == L)
 #1/0
+for k,v in tmp.iteritems() :
+  if len(v) == 1 :
+    continue
+  for m in v :
+    print '[',m.graphie(s).encode('utf-8'),']'
+    print m.L
+  for l in tmp_l[k] :
+    print l
+  print
 
+print len(dic_gapped_motifs)
+1/0
 
 all_motifs = {}
 for k,m in dic_gapped_motifs.iteritems() :
