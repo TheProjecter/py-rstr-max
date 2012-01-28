@@ -77,6 +77,7 @@ step_alphabet = o.alphabet_size / o.alphabet_step
 
 dic_occurs = {'global_legend' : 'nb. occurences', 'global_x' : 'alphabet size', 'global_y' : 'nb. occurences'}
 dic_motifs = {'global_legend' : 'nb. motifs', 'global_x' : 'alphabet size', 'global_y' : 'nb. motifs'}
+dic_avg = {'global_legend' : 'nb. motifs', 'global_x' : 'alphabet size', 'global_y' : 'avg. occurences per motifs'}
 dic_sd_motifs = {'global_legend' : 'standart deviation :: nb. occurences', 'global_x' : 'alphabet size', 'global_y' : 'nb. occurences'}
 dic_sd_occurs = {'global_legend' : 'standart deviation :: nb. occurences', 'global_x' : 'alphabet size', 'global_y' : 'nb. motifs'}
 
@@ -88,14 +89,16 @@ for i in xrange(step_run, o.len_max+1, step_run) :
   list_x = []
   list_y_motifs = []
   list_y_occurs = []
+  list_y_avg = []
   list_y_sd_motifs = []
   list_y_sd_occurs = []
   for alpha_size in xrange(step_alphabet, o.alphabet_size+1, step_alphabet) :
-    r, occ, sd_motifs, sd_occurs = run(i, alpha_size, o.nb_part, o.nb_run, o.limit_run)
-    print '%s, %s, %s(%s), %s(%s)'%(alpha_size,i,r,sd_motifs,occ,sd_occurs)
+    r, occ, avg, sd_motifs, sd_occurs = ts.run(i, alpha_size, o.nb_part, o.nb_run, o.limit_run)
+    print '%s, %s, %s(%s), %s(%s), %s'%(alpha_size,i,r,sd_motifs,occ,sd_occurs, avg)
     list_x.append(alpha_size)
     list_y_motifs.append(r)
     list_y_occurs.append(occ)
+    list_y_avg.append(avg)
     list_y_sd_motifs.append(sd_motifs)
     list_y_sd_occurs.append(sd_occurs)
 
@@ -107,6 +110,10 @@ for i in xrange(step_run, o.len_max+1, step_run) :
                    'name_legend':'(len:%s)'%(i),
                    'list_x':list_x,
                    'list_y':list_y_motifs}
+  dic_avg[i] = {'style_plot':'%s'%lc[cpt],
+                   'name_legend':'(len:%s)'%(i),
+                   'list_x':list_x,
+                   'list_y':list_y_avg}
 
   dic_sd_occurs[i] = {'style_plot':'%s'%lc[cpt],
                       'name_legend':'(len:%s)'%(i),
@@ -123,6 +130,9 @@ file_out.write(str(dic_occurs))
 file_out.close()
 file_out = open('%s_%s'%('mot',o.fileout),'w')
 file_out.write(str(dic_motifs))
+file_out.close()
+file_out = open('%s_%s'%('avg',o.fileout),'w')
+file_out.write(str(dic_avg))
 file_out.close()
 file_out = open('%s_%s'%('sd_occ',o.fileout),'w')
 file_out.write(str(dic_sd_occurs))
