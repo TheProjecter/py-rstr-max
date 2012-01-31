@@ -31,7 +31,7 @@ for k,info in js_plot.iteritems() :
 
 plt.xlabel(js_plot['global_x'])
 plt.ylabel(js_plot['global_y'])
-plt.legend(list(name_legend), 'upper left', shadow = False)
+#plt.legend(list(name_legend), 'upper left', shadow = False)
 plt.savefig(opt_options.fileout)
 
 
