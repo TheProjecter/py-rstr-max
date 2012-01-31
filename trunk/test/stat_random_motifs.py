@@ -27,7 +27,7 @@ def opt_parser_xp():
   parser.add_option("-r", "--nb_run", dest="nb_run", default=20, type="int",
                      help="exec NB_RUN run", metavar="NB_RUN")
   parser.add_option("-i", "--limit_run", dest="limit_run", default=0, type="int",
-                     help="erase the LIMIT_RUM first and last runs for the computation of the mean", metavar="LIMIT_RUN")
+                     help="erase the LIMIT_RUN first and last runs for the computation of the mean", metavar="LIMIT_RUN")
 
   parser.add_option("-l", "--len_max", dest="len_max", default=10*1000, type="int",
                      help="exploite a LEN_MAX string of random characters", metavar="LEN_MAX")
@@ -35,53 +35,21 @@ def opt_parser_xp():
                      help="", metavar="LEN_STEP")
   return parser
 
-def run(len_str, len_alpha, nb_part, nb_run, extremum) :
-  nb_different_motifs = []
-  nb_occurs = []
-  stat_alpha = []
-  for _ in xrange(nb_run) :
-    rstr = Rstr_max()
-#    rs = ts.random_string_athmospheric(len_str,len_alpha,proxy_info)
-    rs = ts.random_string(len_str,len_alpha)
-    lp = ts.cut_str(rs,nb_part)
-#    rl = 0
-    for substring in lp :
-#      rl += len(substring)
-      rstr.add_str(substring)
-    r = rstr.go()
-
-    nb_different_motifs_run = len(r.keys())
-    nb_different_motifs.append(nb_different_motifs_run)
-    nb_occurs.append(sum([nb for (_, nb) in r.keys()]))
-
-  if extremum > 0 :
-    nb_different_motifs.sort()
-    nb_different_motifs = nb_different_motifs[extremum:-extremum]
-
-  if extremum > 0 :
-    nb_occurs.sort()
-    nb_occurs = nb_occurs[extremum:-extremum]
-
-  sd_motifs = tm.standart_deviation(nb_different_motifs)  
-  sd_occurs = tm.standart_deviation(nb_occurs)  
-
-  moy = sum(nb_different_motifs) / len(nb_different_motifs)
-  moy_occur = sum(nb_occurs) / len(nb_occurs)
-  return moy, moy_occur, sd_motifs, sd_occurs
-
 p = opt_parser_xp()
 (o, _) = p.parse_args(sys.argv[1:])
+
+signature = str(o)
 
 step_run = o.len_max / o.len_step
 step_alphabet = o.alphabet_size / o.alphabet_step
 
-dic_occurs = {'global_legend' : 'nb. occurences', 'global_x' : 'alphabet size', 'global_y' : 'nb. occurences'}
-dic_motifs = {'global_legend' : 'nb. motifs', 'global_x' : 'alphabet size', 'global_y' : 'nb. motifs'}
-dic_avg = {'global_legend' : 'nb. motifs', 'global_x' : 'alphabet size', 'global_y' : 'avg. occurences per motifs'}
-dic_sd_motifs = {'global_legend' : 'standart deviation :: nb. occurences', 'global_x' : 'alphabet size', 'global_y' : 'nb. occurences'}
-dic_sd_occurs = {'global_legend' : 'standart deviation :: nb. occurences', 'global_x' : 'alphabet size', 'global_y' : 'nb. motifs'}
+dic_occurs = {'global_signature' : signature, 'global_x' : 'alphabet size', 'global_y' : 'nb. occurences'}
+dic_motifs = {'global_signature' : signature, 'global_x' : 'alphabet size', 'global_y' : 'nb. motifs'}
+dic_avg = {'global_signature' : signature, 'global_x' : 'alphabet size', 'global_y' : 'avg. occurences per motifs'}
+#dic_sd_motifs = {'global_legend' : 'standart deviation :: nb. occurences', 'global_x' : 'alphabet size', 'global_y' : 'nb. occurences'}
+#dic_sd_occurs = {'global_legend' : 'standart deviation :: nb. occurences', 'global_x' : 'alphabet size', 'global_y' : 'nb. motifs'}
 
-lc = ['r-','ro','yo','bo','go','r^','y^','b^','g^','r--']
+lc = ['r-','y-','b-','g-','r.','y.','b.','g.','r--','y--','b--','g--']
 
 cpt = 0
 
@@ -90,17 +58,17 @@ for i in xrange(step_run, o.len_max+1, step_run) :
   list_y_motifs = []
   list_y_occurs = []
   list_y_avg = []
-  list_y_sd_motifs = []
-  list_y_sd_occurs = []
+#  list_y_sd_motifs = []
+#  list_y_sd_occurs = []
   for alpha_size in xrange(step_alphabet, o.alphabet_size+1, step_alphabet) :
-    r, occ, avg, sd_motifs, sd_occurs = ts.run(i, alpha_size, o.nb_part, o.nb_run, o.limit_run)
-    print '%s, %s, %s(%s), %s(%s), %s'%(alpha_size,i,r,sd_motifs,occ,sd_occurs, avg)
+    motif, occ, avg, sd_motifs, sd_occurs = ts.run(i, alpha_size, o.nb_part, o.nb_run, o.limit_run)
+    print '%s, %s, %s(%s), %s(%s), %s'%(alpha_size,i,motif,sd_motifs,occ,sd_occurs, avg)
     list_x.append(alpha_size)
-    list_y_motifs.append(r)
+    list_y_motifs.append(motif)
     list_y_occurs.append(occ)
     list_y_avg.append(avg)
-    list_y_sd_motifs.append(sd_motifs)
-    list_y_sd_occurs.append(sd_occurs)
+#    list_y_sd_motifs.append(sd_motifs)
+#    list_y_sd_occurs.append(sd_occurs)
 
   dic_occurs[i] = {'style_plot':'%s'%lc[cpt],
                    'name_legend':'(len:%s)'%(i),
@@ -115,14 +83,14 @@ for i in xrange(step_run, o.len_max+1, step_run) :
                    'list_x':list_x,
                    'list_y':list_y_avg}
 
-  dic_sd_occurs[i] = {'style_plot':'%s'%lc[cpt],
-                      'name_legend':'(len:%s)'%(i),
-                      'list_x':list_x,
-                      'list_y':list_y_sd_occurs}
-  dic_sd_motifs[i] = {'style_plot':'%s'%lc[cpt],
-                      'name_legend':'(len:%s)'%(i),
-                      'list_x':list_x,
-                      'list_y':list_y_sd_motifs}
+#  dic_sd_occurs[i] = {'style_plot':'%s'%lc[cpt],
+#                      'name_legend':'(len:%s)'%(i),
+#                      'list_x':list_x,
+#                      'list_y':list_y_sd_occurs}
+#  dic_sd_motifs[i] = {'style_plot':'%s'%lc[cpt],
+#                      'name_legend':'(len:%s)'%(i),
+#                      'list_x':list_x,
+#                      'list_y':list_y_sd_motifs}
   cpt += 1
 
 file_out = open('%s_%s'%('occ',o.fileout),'w')
@@ -134,9 +102,9 @@ file_out.close()
 file_out = open('%s_%s'%('avg',o.fileout),'w')
 file_out.write(str(dic_avg))
 file_out.close()
-file_out = open('%s_%s'%('sd_occ',o.fileout),'w')
-file_out.write(str(dic_sd_occurs))
-file_out.close()
-file_out = open('%s_%s'%('sd_mot',o.fileout),'w')
-file_out.write(str(dic_sd_motifs))
-file_out.close()
+#file_out = open('%s_%s'%('sd_occ',o.fileout),'w')
+#file_out.write(str(dic_sd_occurs))
+#file_out.close()
+#file_out = open('%s_%s'%('sd_mot',o.fileout),'w')
+#file_out.write(str(dic_sd_motifs))
+#file_out.close()
