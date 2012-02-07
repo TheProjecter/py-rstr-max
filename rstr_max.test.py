@@ -4,7 +4,7 @@ from rstr_max import *
 import sys
 
 rstr = Rstr_max()
-str1 = 'tototiti'
+str1 = 'tititoto'
 #str1 = 'a'*1000000
 str1_unicode = unicode(str1,'utf-8','replace')
 rstr.add_str(str1_unicode)
