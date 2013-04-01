@@ -3,6 +3,12 @@
 from array import array
 
 def radixpass(a, b, r, s, n, k) :
+'''a : word to sort
+   b : sorted words
+   r : initial string
+   s : 
+   n : input size
+   k : alphabet siz'''
   c = array("i", [0]*(k+1))
   for i in xrange(n) :
     c[r[a[i]+s]]+=1
@@ -37,6 +43,8 @@ def direct_kark_sort(s) :
   return SA[:n]
 
 def kark_sort(s, SA, n, K):
+
+
   n0  = (n+2) / 3
   n1  = (n+1) / 3
   n2  = n / 3
