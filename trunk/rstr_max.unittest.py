@@ -13,14 +13,23 @@ class Test_rstrmax:
   def test_rstr_max(self) :
     r = self.rstr.go()
     for (offset_end, nb), (l, start_plage) in r.iteritems():
-      ss = self.rstr.global_suffix[offset_end-l:offset_end]
+      id_chaine = self.rstr.idxString[offset_end-1]
+      ss = self.rstr.get_repeat(id_chaine, self.rstr.idxPos[offset_end-l], l)
+      for o in range(start_plage, start_plage + nb) :
+        offset_global = self.rstr.res[o]
+        offset = self.rstr.idxPos[offset_global]
+        id_str = self.rstr.idxString[offset_global]
+        self.assertEqual(ss, self.rstr.get_repeat(id_str, offset, l))
+#      ss = self.rstr.global_suffix[offset_end-l:offset_end]
 #      ss = self.rstr.array_str[idStr][end-l:end]
-      offset_end -= 1
-      id_chaine = self.rstr.idxString[offset_end]
-      s = self.rstr.global_suffix
-      idx = 0
-      for i in xrange(nb):
-        idx = s.index(ss, idx) + 1
+#      offset_end -= 1
+#      id_chaine = self.rstr.idxString[offset_end]
+
+#      s = self.rstr.global_suffix
+#      idx = 0
+#      for i in xrange(nb):
+#        idx = s.index(ss, idx) + 1
+
 #      except ValueError, e:
 #        print "+++", ss, end, i, nb
 #      try:
