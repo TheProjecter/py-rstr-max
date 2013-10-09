@@ -3,7 +3,7 @@
 from array import array
 
 def radixpass(a, b, r, s, n, k) :
-  c = array('i', [0]*(k+1))
+  c = array("i", [0]*(k+1))
   for i in xrange(n) :
     c[r[a[i]+s]]+=1
 
@@ -13,15 +13,8 @@ def radixpass(a, b, r, s, n, k) :
     somme += freq
 
   for i in xrange(n) :
-    k = r[a[i]+s]
-    b[c[k]] = a[i]
-    c[k] += 1
-
-def list2list_symbol(l) :
-  alphabet = [None] + sorted(set(l))
-  t = dict((c, i) for i,c in enumerate(alphabet))
-  s = [t[c] for c in l]
-  return s,len(alphabet)
+    b[c[r[a[i]+s]]] = a[i]
+    c[r[a[i]+s]] += 1
 
 def simple_kark_sort(s) :
   alphabet = [None] + sorted(set(s))
@@ -32,6 +25,7 @@ def simple_kark_sort(s) :
   s = array('i', [t[c] for c in s]+[0]*3)
   kark_sort(s, SA, n, k)
   return (s,SA)
+#  return (string, SA, length, k)
 
 def direct_kark_sort(s) :
   alphabet = [None] + sorted(set(s))
@@ -49,7 +43,6 @@ def kark_sort(s, SA, n, K):
   n02 = n0 + n2
       
   SA12 = array('i', [0]*(n02+3))
-  SA0  = array('i', [0]*n0)
 
   s12 = [i for i in xrange(n+(n0-n1)) if i%3] 
   s12.extend([0]*3)
@@ -81,6 +74,7 @@ def kark_sort(s, SA, n, K):
       SA12[s12[i]-1] = i
 
   s0 = array('i',[SA12[i]*3 for i in xrange(n02) if SA12[i]<n0])
+  SA0  = array('i', [0]*n0)
   radixpass(s0, SA0, s, 0, n0, K)
   
   p = j = k = 0
